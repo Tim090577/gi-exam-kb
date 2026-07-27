@@ -1,0 +1,141 @@
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>決策畫布索引</title><style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--grid:#e8e4dc;--shadow:0 1px 2px rgba(0,0,0,.06),0 6px 18px rgba(0,0,0,.05)}
+@media (prefers-color-scheme:dark){:root{--bg:#141619;--fg:#e6e4e0;--muted:#98a0a8;--line:#2b2f34;
+--accent:#d9a066;--accent2:#6fbcae;--card:#1b1e22;--grid:#232730;--shadow:0 1px 2px rgba(0,0,0,.4)}}
+:root[data-theme=dark]{--bg:#141619;--fg:#e6e4e0;--muted:#98a0a8;--line:#2b2f34;--accent:#d9a066;
+--accent2:#6fbcae;--card:#1b1e22;--grid:#232730;--shadow:0 1px 2px rgba(0,0,0,.4)}
+:root[data-theme=light]{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--grid:#e8e4dc;--shadow:0 1px 2px rgba(0,0,0,.06),0 6px 18px rgba(0,0,0,.05)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--fg);
+font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif;
+-webkit-text-size-adjust:100%}
+#vp{position:absolute;inset:0;cursor:grab;touch-action:none;
+background-image:radial-gradient(var(--grid) 1px,transparent 1px);background-size:28px 28px}
+#vp.drag{cursor:grabbing}
+#stage{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}
+#wires{position:absolute;top:0;left:0;overflow:visible;pointer-events:none}
+#wires path{fill:none;vector-effect:non-scaling-stroke}
+#wires text{font-size:11px;fill:var(--muted)}
+.bandbg{position:absolute;left:0;border-radius:18px;pointer-events:none;
+background:linear-gradient(180deg,rgba(127,127,127,.055),rgba(127,127,127,.02))}
+.bandbg.alt{background:transparent;outline:1px dashed var(--line);outline-offset:-1px}
+.nd{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:10px 12px 11px;box-shadow:var(--shadow);border-left-width:4px;overflow:hidden}
+.nd:hover{border-color:var(--accent)}
+.nd .co{font:600 10.5px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);
+letter-spacing:.04em;margin-bottom:3px;display:flex;gap:6px;align-items:center}
+.nd .co b{color:var(--accent);font-weight:700}
+.nd h4{margin:0 0 5px;font-size:14.5px;line-height:1.45;font-weight:650}
+.nd p{margin:0 0 3px;font-size:12.5px;line-height:1.5;color:var(--fg);opacity:.86}
+.nd .ft{margin-top:6px;font-size:11px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.nd img{width:100%;border-radius:7px;border:1px solid var(--line);display:block;margin:2px 0 7px;
+background:#fff}
+.nd.k-entry{border-left-color:#78716c}.nd.k-step{border-left-color:#3b82f6}
+.nd.k-fork{border-left-color:#f59e0b;background:linear-gradient(180deg,rgba(245,158,11,.07),transparent)}
+.nd.k-test{border-left-color:#06b6d4}.nd.k-dx{border-left-color:#8b5cf6}
+.nd.k-score{border-left-color:#6366f1}.nd.k-tx{border-left-color:#10b981}
+.nd.k-mech{border-left-color:#e11d76}.nd.k-trap{border-left-color:#ef4444}
+.nd.k-qa{border-left-color:#f97316}.nd.k-fig{border-left-color:#94a3b8}
+.nd.k-paper{border-left-color:#64748b}
+.nd.k-fork h4:after{content:"◆";color:#f59e0b;margin-left:6px;font-size:11px}
+.nd.star:before{content:"";position:absolute;top:0;right:0;border:12px solid transparent;
+border-top-color:var(--accent);border-right-color:var(--accent);opacity:.5}
+.nd.k-note{background:repeating-linear-gradient(180deg,transparent,transparent 27px,var(--line) 27px,var(--line) 28px);
+border-style:dashed;border-left-style:dashed;border-left-color:var(--line);box-shadow:none}
+.nd.k-note .ed{min-height:96px;outline:none;font-size:13px;line-height:28px;color:var(--fg)}
+.far .nd p,.far .nd img,.far .nd .ft,.far .nd .ed{display:none}
+.far .nd h4{font-size:34px;line-height:1.26;font-weight:600;display:-webkit-box;
+-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.far .nd .co{font-size:22px;margin-bottom:7px}
+.tiny .nd>*{display:none}.tiny .nd{border-left-width:10px}
+.tiny #wires text{display:none}
+.dim{opacity:.13}
+.on{border-color:var(--accent)!important;box-shadow:0 0 0 2px var(--accent),var(--shadow)}
+.col{border-color:var(--accent2)!important}
+mark{background:var(--accent);color:#fff;border-radius:3px;padding:0 2px}
+#lanebar{position:fixed;top:0;left:0;right:0;height:46px;pointer-events:none;z-index:20}
+#lanebar div{position:absolute;top:8px;height:32px;padding:6px 10px;border-radius:9px;
+background:var(--bg);border:1px solid var(--line);font-size:12.5px;font-weight:600;
+white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.96}
+#lanebar div small{color:var(--muted);font-weight:400;margin-left:6px}
+#bandbar{position:fixed;top:0;left:0;width:34px;bottom:0;pointer-events:none;z-index:19}
+#bandbar div{position:absolute;left:4px;width:26px;padding:8px 4px;border-radius:8px;
+background:var(--bg);border:1px solid var(--line);writing-mode:vertical-rl;font-size:12px;
+font-weight:600;text-align:center;overflow:hidden;opacity:.96}
+#hud{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;align-items:center;
+padding:9px 12px;background:linear-gradient(180deg,transparent,var(--bg) 42%);flex-wrap:wrap}
+.btn{font:inherit;font-size:12.5px;padding:5px 10px;border:1px solid var(--line);border-radius:8px;
+background:var(--card);color:var(--fg);cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+#q{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;
+background:var(--card);color:var(--fg);width:190px}
+#ttl{position:fixed;top:54px;left:44px;z-index:18;pointer-events:none;max-width:46ch;
+background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:9px 13px 10px;
+opacity:.97}
+#ttl{transition:opacity .3s}#ttl.away{opacity:.18}#ttl.away:hover{opacity:.97}
+#ttl h1{margin:0;font-size:18px;letter-spacing:-.01em}
+#ttl p{margin:2px 0 0;font-size:12.5px;color:var(--muted);line-height:1.5}
+#dr{position:fixed;top:0;right:0;bottom:0;width:min(400px,88vw);background:var(--card);
+border-left:1px solid var(--line);z-index:40;padding:22px 22px 40px;overflow:auto;
+transform:translateX(102%);transition:transform .22s ease;box-shadow:-8px 0 30px rgba(0,0,0,.09)}
+#dr.open{transform:none}
+#dr h3{margin:6px 0 4px;font-size:17px}#dr .co{font:600 11px ui-monospace,Menlo,monospace;color:var(--accent)}
+#dr p{font-size:13.5px;line-height:1.7}#dr .x{position:absolute;top:12px;right:14px;cursor:pointer;
+font-size:20px;color:var(--muted);border:0;background:none}
+#mini{position:fixed;right:12px;bottom:52px;width:172px;background:var(--card);border:1px solid var(--line);
+border-radius:9px;z-index:25;overflow:hidden;opacity:.94;cursor:crosshair}
+#mini svg{display:block;width:100%}
+#mini rect.v{fill:rgba(138,90,43,.16);stroke:var(--accent);stroke-width:1.5}
+#lg{position:fixed;right:12px;top:56px;z-index:25;background:var(--card);border:1px solid var(--line);
+border-radius:9px;padding:9px 11px;font-size:11.5px;opacity:.95;max-width:150px}
+#lg b{display:block;margin-bottom:5px;font-size:11px;color:var(--muted);font-weight:600}
+#lg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}
+#lg span{display:block;line-height:1.85}
+@media(max-width:760px){#lg,#mini{display:none}#ttl{left:42px;top:52px}#q{width:120px}}
+@media print{#hud,#mini,#lg,#lanebar,#bandbar,#dr{display:none}}
+
+html,body{overflow:auto;height:auto}body{padding:32px 24px 60px}
+.wrap{max-width:1000px;margin:0 auto}h1{font-size:26px;margin:0 0 6px}
+.cs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:20px 0 34px}
+.ci{display:block;padding:15px 16px;border:1px solid var(--line);border-radius:12px;
+background:var(--card);color:var(--fg);text-decoration:none}
+.ci:hover{border-color:var(--accent)}.ci h3{margin:0 0 4px;font-size:16px}
+.ci p{margin:0 0 8px;font-size:12.5px;color:var(--muted);line-height:1.5}
+.ci small{font-size:11.5px;color:var(--muted)}
+.cs>div{display:contents}
+.mob{display:block;margin:-8px 0 0;padding:7px 16px;border:1px solid var(--line);
+border-top:0;border-radius:0 0 12px 12px;font-size:12.5px;color:var(--accent2);
+text-decoration:none;background:var(--card)}
+.mob:hover{border-color:var(--accent)}
+.ci{border-radius:12px 12px 0 0;border-bottom:0}
+.bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:0 0 6px}
+.bar i{display:block;height:100%;background:var(--accent)}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:0 0 24px}
+td{border-bottom:1px solid var(--line);padding:6px 8px}
+td:first-child{width:130px;white-space:nowrap}
+</style></head><body><div class="wrap">
+<h1>決策畫布</h1>
+<p style="color:var(--muted);max-width:62ch">每一張都用同一套座標系：
+<b>橫軸八格＝臨床決策時間軸，縱軸七層＝知識面向</b>。
+停在任一格往下看，就是這一刻該看的檢驗、該記的考點、該認的圖、該引的文獻。</p>
+<div class="cs"><a class="ci" href="acute-abdomen-obstruction.html"><h3>急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</h3><p>二階醫學五的最大得分區；命題核心是「什麼時候要開刀、什麼時候還能等」</p><div class="bar"><i style="width:62%"></i></div><small>138 節點｜覆蓋 62%｜近五年 55 題</small></a><a class="mob" href="acute-abdomen-obstruction-m.html">📱 手機版</a><a class="ci" href="peptic-ulcer-hpylori.html"><h3>消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</h3><p>一階考胃腺細胞與胃酸調控，二階考根除療法與併發症手術，是最典型的「同一主題兩階段各考一半」</p><div class="bar"><i style="width:73%"></i></div><small>135 節點｜覆蓋 73%｜近五年 38 題</small></a><a class="mob" href="peptic-ulcer-hpylori-m.html">📱 手機版</a><a class="ci" href="cirrhosis-portal-hypertension.html"><h3>肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</h3><p>一個機轉（內臟血管擴張）串起全部併發症，是二階最會出「下一步處置」的章節</p><div class="bar"><i style="width:56%"></i></div><small>128 節點｜覆蓋 56%｜近五年 36 題</small></a><a class="mob" href="cirrhosis-portal-hypertension-m.html">📱 手機版</a><a class="ci" href="hbv-hcc.html"><h3>B 型肝炎與肝細胞癌</h3><p>台灣消化科命題的主軸；一階考病毒致癌機轉，二階考分期與治療決策，是整個知識庫的橋樑示範</p><div class="bar"><i style="width:69%"></i></div><small>122 節點｜覆蓋 69%｜近五年 29 題</small></a><a class="mob" href="hbv-hcc-m.html">📱 手機版</a><a class="ci" href="topic-膽結石與膽囊炎.html"><h3>膽結石與膽囊炎（歷屆題地圖）</h3><p>尚未撰寫章節，先看十年來這個主題被考在哪幾格</p><div class="bar"><i style="width:17%"></i></div><small>21 節點｜覆蓋 17%｜近五年 8 題</small></a><a class="mob" href="topic-膽結石與膽囊炎-m.html">📱 手機版</a></div>
+<h2 style="font-size:17px">橫軸：八條決策帶</h2><table><tr><td><b>① 進場</b></td><td>誰會來、誰是高風險</td></tr><tr><td><b>② 分流</b></td><td>穩不穩、有沒有警訊</td></tr><tr><td><b>③ 一線資料</b></td><td>先開哪些檢驗與影像</td></tr><tr><td><b>④ 鑑別</b></td><td>可能是什麼、怎麼分</td></tr><tr><td><b>⑤ 確診</b></td><td>什麼證據才算數</td></tr><tr><td><b>⑥ 分級</b></td><td>多嚴重、哪一期</td></tr><tr><td><b>⑦ 處置</b></td><td>依分級做什麼</td></tr><tr><td><b>⑧ 追蹤預後</b></td><td>之後追什麼</td></tr></table>
+<h2 style="font-size:17px">縱軸：七層知識帶</h2><table><tr><td><b>A 機轉層</b></td><td>為什麼會這樣（一階）</td></tr><tr><td><b>B 決策層</b></td><td>這一步做什麼（主脊椎）</td></tr><tr><td><b>C 數據層</b></td><td>看哪些數字、切點在哪</td></tr><tr><td><b>D 考點層</b></td><td>國考怎麼考、陷阱在哪</td></tr><tr><td><b>E 圖譜層</b></td><td>長什麼樣</td></tr><tr><td><b>F 證據層</b></td><td>背後的文獻</td></tr><tr><td><b>G 手寫層</b></td><td>留給你自己寫</td></tr></table>
+<h2 style="font-size:17px">在手機與 iPad 上用</h2>
+<p style="font-size:13px;color:var(--muted);max-width:64ch">
+<b>手機</b>用每張卡下面的「📱 手機版」——一次讀一條決策帶，往下捲過七層，座標文法一樣。<br>
+<b>iPad</b>直接用完整畫布（雙指捏合縮放）；要用 Apple Pencil 寫字就開
+<code>export/canvas/pdf/</code> 的 A4 手寫卡，或 <code>canvas/*.excalidraw</code>。<br>
+<b>同步</b>：跑 <code>python3 pipeline/publish.py --lan</code>，用 Mac 的網址在平板開，
+裝置端零佔用、永遠最新。</p>
+<p style="font-size:12.5px;color:var(--muted)">操作：拖曳平移／⌘＋滾輪縮放／點節點打亮整欄／
+<kbd>1</kbd>–<kbd>8</kbd> 跳決策帶／<kbd>f</kbd> 全覽／<kbd>/</kbd> 搜尋。
+列印版在 <code>export/canvas/</code>：<code>-map</code> 是 A3 全景，<code>-cards</code> 是 A4 手寫卡。</p>
+<p><a href="../index.html">← 回知識庫</a></p>
+</div></body></html>

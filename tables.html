@@ -1,0 +1,1423 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>高鑑別度比較表</title><style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;--accent2:#2c6e63;
+--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;
+--accent:#d9a066;--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}}
+:root[data-theme=dark]{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;--accent:#d9a066;
+--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}
+:root[data-theme=light]{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,
+"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;height:56px}
+.brand{font-weight:700;letter-spacing:.02em;color:var(--fg)}
+.brand small{color:var(--muted);font-weight:400;margin-left:8px}
+.grid{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
+nav.side{position:sticky;top:72px;max-height:calc(100vh - 90px);overflow:auto;font-size:14px;
+padding-right:8px;border-right:1px solid var(--line)}
+nav.side a{display:block;padding:5px 8px;border-radius:6px;color:var(--fg)}
+nav.side a:hover{background:var(--card);text-decoration:none}
+nav.side a.on{background:var(--card);color:var(--accent);font-weight:600}
+nav.side .grp{margin:14px 0 4px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+main{min-width:0;padding-bottom:80px}
+h1{font-size:30px;line-height:1.35;margin:24px 0 6px}
+h2{font-size:21px;margin:38px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:17px;margin:24px 0 6px;color:var(--accent)}
+h4{font-size:15px;margin:18px 0 4px;color:var(--muted)}
+p,li{overflow-wrap:break-word}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--card);font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--card) 60%,transparent)}
+code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:13px;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center}
+blockquote{margin:14px 0;padding:10px 14px;background:var(--warnbg);border-left:4px solid var(--warn);
+border-radius:0 8px 8px 0}
+blockquote p{margin:4px 0}
+details.rawblock{margin:12px 0;border:1px solid var(--line);border-radius:8px;padding:8px 12px;
+background:var(--card)}
+details.rawblock summary{cursor:pointer;color:var(--muted);font-size:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 20px;font-size:13px;color:var(--muted)}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.chip.hot{border-color:var(--accent);color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:16px}
+.card .bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0 4px}
+.card .bar i{display:block;height:100%;background:var(--accent)}
+.card .n{font-size:12px;color:var(--muted)}
+#q{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);
+color:var(--fg);font-size:14px}
+#results{margin-top:10px}
+#results .hit{padding:8px 10px;border-bottom:1px solid var(--line)}
+.tt{font-size:13px;color:var(--muted)}
+.btn{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:8px;
+padding:5px 10px;font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;color:var(--muted);font-size:13px}
+.qz{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.qz .opt{display:block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:6px 0;
+cursor:pointer}
+.qz .opt.ok{background:#dcfce7;border-color:#16a34a}
+.qz .opt.no{background:#fee2e2;border-color:#dc2626}
+@media (prefers-color-scheme:dark){.qz .opt.ok{background:#14351f}.qz .opt.no{background:#3a1717}}
+.qz .exp{display:none;margin-top:8px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:14px}
+mark{background:var(--hi);color:inherit}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:14px 0}
+figure.fig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+figure.fig img{width:100%;height:210px;object-fit:contain;background:var(--bg);border-radius:6px}
+figure.fig figcaption{font-size:13px;line-height:1.55;margin-top:8px}
+figure.fig .cred{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+@media(max-width:900px){figure.fig img{height:190px}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">消化科國考知識庫<small>逆向命題拆解</small></a>
+<span style="flex:1"></span>
+<button class="btn" onclick="toggleTheme()">☾/☀</button>
+</div></header>
+<div class="wrap"><div class="grid"><nav class="side"><a href="index.html" class="">總覽與命題地圖</a><a href="top100.html" class="">近五年 100 大考點</a><a href="tables.html" class="on">高鑑別度比較表</a><a href="scores.html" class="">分級系統總表</a><a href="quiz.html" class="">自我測驗</a><a href="canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></nav><main><h1 id="高鑑別度比較表">高鑑別度比較表</h1>
+<blockquote>
+<p>這些表的設計原則：<strong>只放會被拿來做誘答的對照組</strong>。 每張表最後一欄是「一句話決斷」— 考場上只來得及想這一句。</p>
+</blockquote>
+<hr />
+<h2 id="表-1上消化道出血-vs-下消化道出血">表 1｜上消化道出血 vs 下消化道出血</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>上消化道（Treitz 韌帶以上）</th>
+<th>下消化道</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>典型表現</td>
+<td>吐血、咖啡渣樣嘔吐、黑便</td>
+<td>鮮血便、暗紅色血便</td>
+</tr>
+<tr>
+<td>BUN/Cr 比值</td>
+<td><strong>升高（&gt;30）</strong></td>
+<td>多正常</td>
+</tr>
+<tr>
+<td>腸蠕動音</td>
+<td>常亢進</td>
+<td>多正常</td>
+</tr>
+<tr>
+<td>首選檢查</td>
+<td>上消化道內視鏡</td>
+<td>大腸鏡（穩定後）</td>
+</tr>
+<tr>
+<td>例外陷阱</td>
+<td>大量上消化道出血可表現為鮮血便（快速通過）</td>
+<td>右側大腸緩慢出血可呈黑便</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：血便但 BUN/Cr 明顯升高 → 先想大量上消化道出血。</p>
+<hr />
+<h2 id="表-2克隆氏症-vs-潰瘍性結腸炎">表 2｜克隆氏症 vs 潰瘍性結腸炎</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>克隆氏症</th>
+<th>潰瘍性結腸炎</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>侵犯範圍</td>
+<td>口腔到肛門任何一段，<strong>跳躍性</strong></td>
+<td>直腸開始<strong>連續</strong>往近端</td>
+</tr>
+<tr>
+<td>侵犯深度</td>
+<td><strong>全層</strong></td>
+<td>黏膜與黏膜下層</td>
+</tr>
+<tr>
+<td>特徵病灶</td>
+<td>鵝卵石外觀、裂隙潰瘍、<strong>非乾酪性肉芽腫</strong></td>
+<td>隱窩膿瘍、杯狀細胞減少、偽息肉</td>
+</tr>
+<tr>
+<td>廔管／狹窄</td>
+<td>常見</td>
+<td>罕見（有廔管要重新想診斷）</td>
+</tr>
+<tr>
+<td>直腸侵犯</td>
+<td>常倖免</td>
+<td><strong>幾乎必侵犯</strong></td>
+</tr>
+<tr>
+<td>吸菸</td>
+<td><strong>惡化</strong></td>
+<td>反而較少發病（但不建議吸菸）</td>
+</tr>
+<tr>
+<td>血便</td>
+<td>較少</td>
+<td>典型</td>
+</tr>
+<tr>
+<td>手術能否治癒</td>
+<td>不能（易復發於吻合處）</td>
+<td>全大腸切除可治癒腸道病灶</td>
+</tr>
+<tr>
+<td>癌症風險</td>
+<td>有（大腸受侵犯時）</td>
+<td>有，與病程長度與範圍相關</td>
+</tr>
+<tr>
+<td>p-ANCA / ASCA</td>
+<td>ASCA 較常陽性</td>
+<td>p-ANCA 較常陽性</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：直腸倖免＋全層＋肉芽腫 → 克隆氏；連續性＋隱窩膿瘍＋一定有直腸 → UC。</p>
+<hr />
+<h2 id="表-3胃潰瘍-vs-十二指腸潰瘍">表 3｜胃潰瘍 vs 十二指腸潰瘍</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>胃潰瘍</th>
+<th>十二指腸潰瘍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>與進食關係</td>
+<td>進食後<strong>疼痛加劇</strong></td>
+<td>進食後<strong>緩解</strong>、夜間痛、空腹痛</td>
+</tr>
+<tr>
+<td>胃酸分泌</td>
+<td>正常或偏低</td>
+<td>常偏高</td>
+</tr>
+<tr>
+<td>主要機轉</td>
+<td>黏膜防禦力下降</td>
+<td>酸攻擊 &gt; 防禦</td>
+</tr>
+<tr>
+<td>H. pylori 盛行率</td>
+<td>約 70%</td>
+<td>約 90%</td>
+</tr>
+<tr>
+<td>惡性可能</td>
+<td><strong>有，需切片</strong></td>
+<td>幾乎不惡性</td>
+</tr>
+<tr>
+<td>好發位置</td>
+<td>胃小彎、angularis</td>
+<td>球部前壁（穿孔）／後壁（出血）</td>
+</tr>
+<tr>
+<td>出血血管</td>
+<td>胃左動脈分支</td>
+<td><strong>胃十二指腸動脈</strong>（後壁潰瘍）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：吃了更痛＋需要切片 → 胃潰瘍；餓了會痛＋後壁出血想 GDA → 十二指腸潰瘍。</p>
+<hr />
+<h2 id="表-4abcde-型肝炎">表 4｜A、B、C、D、E 型肝炎</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>病毒核酸</td>
+<td>ssRNA</td>
+<td><strong>dsDNA（部分雙股）</strong></td>
+<td>ssRNA</td>
+<td>缺陷型 ssRNA（環狀）</td>
+<td>ssRNA</td>
+</tr>
+<tr>
+<td>傳染途徑</td>
+<td>糞口</td>
+<td>血液、性、<strong>垂直</strong></td>
+<td>血液</td>
+<td>需 HBV 外套膜</td>
+<td>糞口（豬為宿主）</td>
+</tr>
+<tr>
+<td>慢性化</td>
+<td>不會</td>
+<td>成人約 5%、<strong>新生兒約 90%</strong></td>
+<td><strong>約 75–85%</strong></td>
+<td>共同感染少、重疊感染高</td>
+<td>免疫正常者不會，免疫抑制者可能</td>
+</tr>
+<tr>
+<td>猛爆性肝炎</td>
+<td>少</td>
+<td>少</td>
+<td>罕見</td>
+<td><strong>重疊感染時風險最高</strong></td>
+<td><strong>孕婦死亡率高（可達 20%）</strong></td>
+</tr>
+<tr>
+<td>疫苗</td>
+<td>有</td>
+<td>有</td>
+<td><strong>無</strong></td>
+<td>靠 HBV 疫苗間接預防</td>
+<td>部分國家有</td>
+</tr>
+<tr>
+<td>致癌</td>
+<td>無</td>
+<td><strong>有（可不經肝硬化直接致癌）</strong></td>
+<td>有（幾乎都經肝硬化）</td>
+<td>加速</td>
+<td>無</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：新生兒垂直感染慢性化率最高的是 B；成人最容易慢性化的是 C；孕婦最致命的是 E。</p>
+<hr />
+<h2 id="表-5b-型肝炎血清學標記組合">表 5｜B 型肝炎血清學標記組合</h2>
+<table>
+<thead>
+<tr>
+<th>HBsAg</th>
+<th>Anti-HBs</th>
+<th>Anti-HBc IgM</th>
+<th>Anti-HBc IgG</th>
+<th>HBeAg</th>
+<th>判讀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>−</td>
+<td>+</td>
+<td>−</td>
+<td>+/−</td>
+<td>急性感染</td>
+</tr>
+<tr>
+<td>+</td>
+<td>−</td>
+<td>−</td>
+<td>+</td>
+<td>+</td>
+<td>慢性、<strong>高傳染性</strong></td>
+</tr>
+<tr>
+<td>+</td>
+<td>−</td>
+<td>−</td>
+<td>+</td>
+<td>−</td>
+<td>慢性、低傳染性或 precore 突變</td>
+</tr>
+<tr>
+<td>−</td>
+<td>+</td>
+<td>−</td>
+<td>+</td>
+<td>−</td>
+<td><strong>自然感染後恢復</strong></td>
+</tr>
+<tr>
+<td>−</td>
+<td>+</td>
+<td>−</td>
+<td>−</td>
+<td>−</td>
+<td><strong>疫苗接種後</strong></td>
+</tr>
+<tr>
+<td>−</td>
+<td>−</td>
+<td>+</td>
+<td>+/−</td>
+<td>−</td>
+<td>窗口期（window period）</td>
+</tr>
+<tr>
+<td>−</td>
+<td>−</td>
+<td>−</td>
+<td>+</td>
+<td>−</td>
+<td>遠期感染／隱匿性感染</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：分辨「打疫苗」與「感染過」，唯一靠 <strong>anti-HBc</strong>。</p>
+<hr />
+<h2 id="表-6黃疸三大類鑑別">表 6｜黃疸三大類鑑別</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>溶血性（肝前）</th>
+<th>肝細胞性</th>
+<th>阻塞性（肝後）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要膽紅素</td>
+<td><strong>未結合</strong></td>
+<td>混合</td>
+<td><strong>結合</strong></td>
+</tr>
+<tr>
+<td>尿膽紅素</td>
+<td>陰性</td>
+<td>陽性</td>
+<td><strong>強陽性</strong></td>
+</tr>
+<tr>
+<td>尿膽素原</td>
+<td>增加</td>
+<td>不定</td>
+<td><strong>減少或消失</strong></td>
+</tr>
+<tr>
+<td>糞便顏色</td>
+<td>正常或深</td>
+<td>不定</td>
+<td><strong>灰白（陶土色）</strong></td>
+</tr>
+<tr>
+<td>ALT/AST</td>
+<td>正常</td>
+<td><strong>顯著升高</strong></td>
+<td>輕度升高</td>
+</tr>
+<tr>
+<td>ALP／GGT</td>
+<td>正常</td>
+<td>輕度升高</td>
+<td><strong>顯著升高</strong></td>
+</tr>
+<tr>
+<td>搔癢</td>
+<td>無</td>
+<td>少</td>
+<td><strong>明顯</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：尿液顏色深但糞便灰白＋ALP 高 → 阻塞；未結合膽紅素高而尿膽紅素陰性 → 溶血。</p>
+<hr />
+<h2 id="表-7遺傳性高膽紅素血症">表 7｜遺傳性高膽紅素血症</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>疾病</th>
+<th>膽紅素型態</th>
+<th>缺陷</th>
+<th>臨床</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gilbert</td>
+<td>未結合</td>
+<td>UGT1A1 活性降低（約 30%）</td>
+<td>禁食、壓力、感染時黃疸；<strong>無害</strong></td>
+</tr>
+<tr>
+<td>Crigler-Najjar I</td>
+<td>未結合，極高</td>
+<td>UGT1A1 <strong>完全缺失</strong></td>
+<td>新生兒核黃疸，需換肝</td>
+</tr>
+<tr>
+<td>Crigler-Najjar II</td>
+<td>未結合</td>
+<td>UGT1A1 部分缺失</td>
+<td><strong>對 phenobarbital 有反應</strong></td>
+</tr>
+<tr>
+<td>Dubin-Johnson</td>
+<td>結合</td>
+<td>MRP2 排出缺陷</td>
+<td>肝呈<strong>黑色</strong>，尿 coproporphyrin I 上升</td>
+</tr>
+<tr>
+<td>Rotor</td>
+<td>結合</td>
+<td>肝細胞儲存／再攝取缺陷</td>
+<td>肝<strong>不黑</strong>，總 coproporphyrin 上升</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：黑肝 → Dubin-Johnson；對 phenobarbital 有反應 → Crigler-Najjar II；禁食後黃疸 → Gilbert。</p>
+<hr />
+<h2 id="表-8肝硬化併發症的機轉分流">表 8｜肝硬化併發症的機轉分流</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>併發症</th>
+<th>核心機轉</th>
+<th>第一線處置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>腹水</td>
+<td>門脈高壓 → 內臟血管擴張 → 有效循環容積下降 → RAAS 活化、鈉滯留</td>
+<td>限鈉＋spironolactone±furosemide</td>
+</tr>
+<tr>
+<td>SBP</td>
+<td>腸道菌移位＋腹水調理素不足</td>
+<td>第三代 cephalosporin＋白蛋白（Cr 或膽紅素高時）</td>
+</tr>
+<tr>
+<td>靜脈曲張出血</td>
+<td>門脈壓 &gt;12 mmHg，曲張靜脈壁張力超過極限</td>
+<td>血管收縮劑＋內視鏡結紮＋預防性抗生素</td>
+</tr>
+<tr>
+<td>肝性腦病</td>
+<td>氨與其他神經毒素通過側支循環繞過肝臟</td>
+<td>找誘因＋lactulose±rifaximin</td>
+</tr>
+<tr>
+<td>肝腎症候群</td>
+<td>內臟血管擴張 → 腎血管代償性收縮</td>
+<td>白蛋白＋terlipressin</td>
+</tr>
+<tr>
+<td>肝肺症候群</td>
+<td>肺內血管擴張 → 通氣灌流不匹配</td>
+<td>氧氣，唯一根治是移植</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：肝硬化的併發症幾乎都能回推到同一句話 —「內臟血管擴張造成有效循環容積不足」。</p>
+<hr />
+<h2 id="表-9腹水鑑別saag-與總蛋白雙軸">表 9｜腹水鑑別：SAAG 與總蛋白雙軸</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>腹水總蛋白 &lt;2.5</th>
+<th>腹水總蛋白 ≥2.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SAAG ≥1.1</strong></td>
+<td>肝硬化</td>
+<td><strong>心衰竭、Budd-Chiari、縮窄性心包炎</strong></td>
+</tr>
+<tr>
+<td><strong>SAAG &lt;1.1</strong></td>
+<td>腎病症候群</td>
+<td><strong>腹膜結核、腹膜癌症轉移、胰性腹水</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：SAAG 先分「是不是門脈高壓」，總蛋白再分「肝前 vs 肝後」。</p>
+<hr />
+<h2 id="表-10sbp-vs-續發性腹膜炎">表 10｜SBP vs 續發性腹膜炎</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>自發性細菌性腹膜炎</th>
+<th>續發性腹膜炎</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>菌種</td>
+<td><strong>單一菌種</strong>（E. coli、Klebsiella）</td>
+<td>多菌種（含厭氧菌）</td>
+</tr>
+<tr>
+<td>腹水多形核白血球</td>
+<td>≥250/mm³</td>
+<td>≥250/mm³（常更高）</td>
+</tr>
+<tr>
+<td>腹水葡萄糖</td>
+<td>正常</td>
+<td><strong>&lt;50 mg/dL</strong></td>
+</tr>
+<tr>
+<td>腹水 LDH</td>
+<td>&lt;血清值</td>
+<td><strong>&gt;血清值</strong></td>
+</tr>
+<tr>
+<td>腹水總蛋白</td>
+<td>低</td>
+<td><strong>&gt;1 g/dL</strong></td>
+</tr>
+<tr>
+<td>處置</td>
+<td>抗生素</td>
+<td><strong>需影像找破口並手術</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：多菌種＋低葡萄糖＋高 LDH → 找洞，不是加抗生素就好。</p>
+<hr />
+<h2 id="表-11急性胰臟炎病因與線索">表 11｜急性胰臟炎病因與線索</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>病因</th>
+<th>線索</th>
+<th>註記</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>膽結石</td>
+<td>ALT &gt;3 倍上限、女性、超音波見結石</td>
+<td><strong>台灣與全球最常見之一</strong></td>
+</tr>
+<tr>
+<td>酒精</td>
+<td>長期飲酒史、AST/ALT &gt;2</td>
+<td>常反覆發作</td>
+</tr>
+<tr>
+<td>高三酸甘油酯</td>
+<td>TG &gt;1000 mg/dL、乳糜血清</td>
+<td>amylase 可能假性正常</td>
+</tr>
+<tr>
+<td>高血鈣</td>
+<td>副甲狀腺亢進</td>
+<td></td>
+</tr>
+<tr>
+<td>ERCP 後</td>
+<td>術後數小時腹痛</td>
+<td>預防用直腸 indomethacin</td>
+</tr>
+<tr>
+<td>藥物</td>
+<td>azathioprine、valproate、GLP-1 類等</td>
+<td></td>
+</tr>
+<tr>
+<td>自體免疫（IgG4）</td>
+<td>臘腸狀胰臟、IgG4 升高</td>
+<td>對類固醇反應好</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：ALT &gt;3 倍 → 先想膽石性；乳糜血清 → 先想高三酸甘油酯。</p>
+<hr />
+<h2 id="表-12急性膽囊炎-vs-膽管炎-vs-膽絞痛">表 12｜急性膽囊炎 vs 膽管炎 vs 膽絞痛</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>膽絞痛</th>
+<th>急性膽囊炎</th>
+<th>急性膽管炎</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>疼痛時間</td>
+<td>&lt;6 小時、陣發</td>
+<td><strong>&gt;6 小時、持續</strong></td>
+<td>持續</td>
+</tr>
+<tr>
+<td>發燒</td>
+<td>無</td>
+<td>有</td>
+<td><strong>有，常合併寒顫</strong></td>
+</tr>
+<tr>
+<td>黃疸</td>
+<td>無</td>
+<td>通常無</td>
+<td><strong>有</strong></td>
+</tr>
+<tr>
+<td>Murphy sign</td>
+<td>陰性</td>
+<td><strong>陽性</strong></td>
+<td>可有可無</td>
+</tr>
+<tr>
+<td>白血球／CRP</td>
+<td>正常</td>
+<td>升高</td>
+<td>升高</td>
+</tr>
+<tr>
+<td>首選處置</td>
+<td>擇期手術</td>
+<td>早期腹腔鏡膽囊切除</td>
+<td><strong>緊急 ERCP 引流</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：有黃疸＋發燒 → 想膽管炎，處置是引流不是切膽囊。</p>
+<hr />
+<h2 id="表-13胰臟頭部腫瘤-vs-遠端膽管癌-vs-壺腹癌">表 13｜胰臟頭部腫瘤 vs 遠端膽管癌 vs 壺腹癌</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>胰頭癌</th>
+<th>遠端膽管癌</th>
+<th>壺腹癌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>黃疸出現</td>
+<td>較晚、無痛進行性</td>
+<td>早</td>
+<td><strong>最早</strong></td>
+</tr>
+<tr>
+<td>Courvoisier sign</td>
+<td>常見</td>
+<td>可見</td>
+<td>可見</td>
+</tr>
+<tr>
+<td>糞便</td>
+<td>灰白</td>
+<td>灰白</td>
+<td><strong>銀白色便（合併出血時）</strong></td>
+</tr>
+<tr>
+<td>預後</td>
+<td>最差</td>
+<td>中間</td>
+<td><strong>最好</strong></td>
+</tr>
+<tr>
+<td>手術</td>
+<td>Whipple</td>
+<td>Whipple</td>
+<td>Whipple</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：同樣做 Whipple，預後最好的是壺腹癌。</p>
+<hr />
+<h2 id="表-14大腸癌篩檢與遺傳症候群">表 14｜大腸癌篩檢與遺傳症候群</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>症候群</th>
+<th>基因</th>
+<th>息肉數量／型態</th>
+<th>大腸外表現</th>
+<th>監測起點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lynch（HNPCC）</td>
+<td>MMR（MLH1/MSH2/MSH6/PMS2）</td>
+<td>息肉不多但<strong>進展快</strong>、右側為主</td>
+<td>子宮內膜癌、卵巢、胃、泌尿道</td>
+<td>20–25 歲每 1–2 年大腸鏡</td>
+</tr>
+<tr>
+<td>FAP</td>
+<td>APC</td>
+<td><strong>上百至上千顆腺瘤</strong></td>
+<td>先天視網膜色素上皮肥厚、硬纖維瘤、十二指腸癌</td>
+<td>10–12 歲每年乙狀結腸鏡</td>
+</tr>
+<tr>
+<td>Peutz-Jeghers</td>
+<td>STK11</td>
+<td><strong>錯構瘤性</strong>息肉</td>
+<td>口唇黏膜色素斑、乳癌胰癌風險</td>
+<td>8 歲起</td>
+</tr>
+<tr>
+<td>MUTYH-associated</td>
+<td>MUTYH（<strong>體染色體隱性</strong>）</td>
+<td>十至數百顆</td>
+<td>較少</td>
+<td>25–30 歲</td>
+</tr>
+<tr>
+<td>幼年型息肉症</td>
+<td>SMAD4/BMPR1A</td>
+<td>幼年型息肉</td>
+<td>SMAD4 者合併遺傳性出血性微血管擴張</td>
+<td>15 歲起</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：息肉少但年輕得癌＋右側＋子宮內膜癌家族史 → Lynch；上千顆息肉 → FAP。</p>
+<hr />
+<h2 id="表-15大腸鏡息肉的處置與追蹤邏輯">表 15｜大腸鏡息肉的處置與追蹤邏輯</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>息肉</th>
+<th>惡性潛能</th>
+<th>追蹤間隔（一般風險、完整切除後）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>增生性息肉（&lt;10 mm、直腸乙狀結腸）</td>
+<td>極低</td>
+<td>同一般篩檢</td>
+</tr>
+<tr>
+<td>管狀腺瘤 1–2 顆 &lt;10 mm</td>
+<td>低</td>
+<td>7–10 年</td>
+</tr>
+<tr>
+<td>腺瘤 3–4 顆，或 ≥10 mm，或絨毛狀，或高度分化不良</td>
+<td>中至高</td>
+<td>3 年（部分 3–5 年）</td>
+</tr>
+<tr>
+<td>腺瘤 ≥5 顆</td>
+<td>高</td>
+<td>1–3 年</td>
+</tr>
+<tr>
+<td>鋸齒狀病變（SSL）伴分化不良</td>
+<td>高</td>
+<td>3 年</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：絨毛狀、≥10 mm、高度分化不良 — 三個字任一出現就縮短追蹤。</p>
+<hr />
+<h2 id="表-16感染性腹瀉的鑑別骨架">表 16｜感染性腹瀉的鑑別骨架</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>型態</th>
+<th>代表病原</th>
+<th>機轉</th>
+<th>糞便白血球</th>
+<th>治療原則</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分泌性水瀉</td>
+<td>霍亂弧菌、產毒性大腸桿菌</td>
+<td>腸毒素活化 cAMP/cGMP</td>
+<td>少</td>
+<td>補液為主</td>
+</tr>
+<tr>
+<td>發炎性血便</td>
+<td>志賀氏菌、沙門氏菌、曲狀桿菌、EIEC</td>
+<td>侵入黏膜</td>
+<td><strong>多</strong></td>
+<td>依病原決定是否抗生素</td>
+</tr>
+<tr>
+<td>出血性大腸炎</td>
+<td><strong>EHEC O157:H7</strong></td>
+<td>志賀樣毒素</td>
+<td>可有</td>
+<td><strong>禁用抗生素與止瀉劑</strong>（增加 HUS 風險）</td>
+</tr>
+<tr>
+<td>抗生素相關</td>
+<td>困難梭狀桿菌</td>
+<td>毒素 A/B</td>
+<td>多</td>
+<td>停用誘發抗生素＋vancomycin 口服或 fidaxomicin</td>
+</tr>
+<tr>
+<td>病毒性</td>
+<td>諾羅、輪狀</td>
+<td>絨毛損傷</td>
+<td>少</td>
+<td>支持治療</td>
+</tr>
+<tr>
+<td>寄生蟲</td>
+<td>阿米巴、梨形鞭毛蟲</td>
+<td>侵入／黏附</td>
+<td>阿米巴可有</td>
+<td>metronidazole 等</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：血便＋小孩＋腎功能惡化 → EHEC，千萬別給抗生素。</p>
+<hr />
+<h2 id="表-17吸收不良的定位">表 17｜吸收不良的定位</h2>
+<table>
+<thead>
+<tr>
+<th>缺陷位置</th>
+<th>代表疾病</th>
+<th>特徵檢查</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>腔內消化</td>
+<td>慢性胰臟炎（胰酵素不足）</td>
+<td>糞便彈性蛋白酶低、脂肪便</td>
+</tr>
+<tr>
+<td>膽鹽不足</td>
+<td>膽汁鬱積、迴腸切除</td>
+<td>脂溶性維生素缺乏</td>
+</tr>
+<tr>
+<td>黏膜吸收</td>
+<td>乳糜瀉、Whipple 病</td>
+<td>十二指腸切片、抗 tTG IgA</td>
+</tr>
+<tr>
+<td>淋巴運送</td>
+<td>腸道淋巴管擴張症</td>
+<td>低白蛋白、淋巴球減少</td>
+</tr>
+<tr>
+<td>特定部位</td>
+<td><strong>末端迴腸</strong> → B12、膽鹽</td>
+<td>Schilling test（歷史）、B12 低</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：先問「消化不了」還是「吸收不了」，再問「哪一段」。</p>
+<hr />
+<h2 id="表-18維生素缺乏與消化道疾病">表 18｜維生素缺乏與消化道疾病</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>缺乏</th>
+<th>常見情境</th>
+<th>表現</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B12</td>
+<td>惡性貧血（A 型胃炎）、末端迴腸切除、SIBO</td>
+<td>巨球性貧血＋<strong>神經症狀</strong></td>
+</tr>
+<tr>
+<td>葉酸</td>
+<td>酒精、乳糜瀉</td>
+<td>巨球性貧血，<strong>無</strong>神經症狀</td>
+</tr>
+<tr>
+<td>鐵</td>
+<td>慢性失血、乳糜瀉、胃切除</td>
+<td>小球性貧血</td>
+</tr>
+<tr>
+<td>維生素 A/D/E/K</td>
+<td>脂肪吸收不良、膽汁鬱積</td>
+<td>夜盲、骨病變、神經病變、凝血異常</td>
+</tr>
+<tr>
+<td>鋅</td>
+<td>短腸、慢性腹瀉</td>
+<td>肢端皮膚炎、味覺異常</td>
+</tr>
+<tr>
+<td>硫胺（B1）</td>
+<td>酒精</td>
+<td>Wernicke 腦病</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：巨球性貧血有沒有神經症狀，決定是 B12 還是葉酸。</p>
+<hr />
+<h2 id="表-19食道運動障礙鑑別">表 19｜食道運動障礙鑑別</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>疾病</th>
+<th>測壓特徵</th>
+<th>吞嚥困難型態</th>
+<th>影像</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Achalasia</td>
+<td>LES 鬆弛不全＋蠕動消失</td>
+<td><strong>固體與液體皆困難</strong></td>
+<td>鳥嘴狀狹窄</td>
+</tr>
+<tr>
+<td>瀰漫性食道痙攣</td>
+<td>早發性同步收縮</td>
+<td>間歇性、伴胸痛</td>
+<td>開瓶器狀／串珠狀</td>
+</tr>
+<tr>
+<td>硬皮症食道</td>
+<td>遠端蠕動消失＋<strong>LES 壓力低</strong></td>
+<td>逆流症狀重</td>
+<td>食道擴張、逆流</td>
+</tr>
+<tr>
+<td>機械性狹窄</td>
+<td>正常蠕動</td>
+<td><strong>固體為主，漸進</strong></td>
+<td>局部狹窄</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：固體與液體同時吞不下 → 想動力問題；只有固體且漸進 → 想機械阻塞或腫瘤。</p>
+<hr />
+<h2 id="表-20食道癌兩大型別">表 20｜食道癌兩大型別</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>鱗狀細胞癌</th>
+<th>腺癌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>好發位置</td>
+<td>中上段</td>
+<td><strong>下段、胃食道交界</strong></td>
+</tr>
+<tr>
+<td>危險因子</td>
+<td>抽菸、烈酒、熱飲、亞硝胺、achalasia、腐蝕傷</td>
+<td><strong>GERD、Barrett、肥胖</strong></td>
+</tr>
+<tr>
+<td>台灣流行病學</td>
+<td><strong>仍以鱗狀細胞癌為主</strong>（菸酒檳榔）</td>
+<td>比例上升中</td>
+</tr>
+<tr>
+<td>前驅病變</td>
+<td>鱗狀上皮分化不良</td>
+<td>Barrett 食道</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：台灣考題出現「菸酒檳榔＋中段食道」→ 鱗狀細胞癌。</p>
+<hr />
+<h2 id="表-21胃癌相關病灶">表 21｜胃癌相關病灶</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>腸型（intestinal）</th>
+<th>瀰漫型（diffuse）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>背景</td>
+<td>慢性萎縮性胃炎→腸化生→分化不良</td>
+<td>無明確前驅步驟</td>
+</tr>
+<tr>
+<td>年齡</td>
+<td>較大</td>
+<td><strong>較年輕</strong></td>
+</tr>
+<tr>
+<td>分子</td>
+<td>APC、TP53</td>
+<td><strong>CDH1（E-cadherin）</strong></td>
+</tr>
+<tr>
+<td>組織</td>
+<td>腺體結構</td>
+<td><strong>印戒細胞</strong>、皮革胃</td>
+</tr>
+<tr>
+<td>預後</td>
+<td>較好</td>
+<td>較差</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：年輕、印戒細胞、皮革胃、CDH1 → 瀰漫型。</p>
+<hr />
+<h2 id="表-22幽門螺旋桿菌相關疾病與根除治療">表 22｜幽門螺旋桿菌相關疾病與根除治療</h2>
+<table>
+<thead>
+<tr>
+<th>疾病</th>
+<th>與 H. pylori 關係</th>
+<th>根除後</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>十二指腸潰瘍</td>
+<td>約 90%</td>
+<td>復發率大幅下降</td>
+</tr>
+<tr>
+<td>胃潰瘍</td>
+<td>約 70%</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>胃腺癌</td>
+<td>明確致癌因子（WHO Group 1）</td>
+<td>風險下降</td>
+</tr>
+<tr>
+<td><strong>胃 MALT 淋巴瘤</strong></td>
+<td>極強相關</td>
+<td><strong>早期可單靠根除治癒</strong></td>
+</tr>
+<tr>
+<td>免疫性血小板減少症</td>
+<td>相關</td>
+<td>部分改善</td>
+</tr>
+<tr>
+<td>缺鐵性貧血</td>
+<td>相關</td>
+<td>部分改善</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：唯一「殺菌就可能治好癌」的是胃 MALT 淋巴瘤（早期、t(11;18) 陰性者）。</p>
+<hr />
+<h2 id="表-23小兒消化道急症">表 23｜小兒消化道急症</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>疾病</th>
+<th>典型年齡</th>
+<th>嘔吐性質</th>
+<th>關鍵徵象</th>
+<th>首選處置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>肥厚性幽門狹窄</td>
+<td>3–6 週</td>
+<td><strong>非膽汁性噴射狀</strong></td>
+<td>橄欖狀腫塊、低血氯低血鉀代謝性鹼中毒</td>
+<td>矯正電解質後幽門肌切開</td>
+</tr>
+<tr>
+<td>腸套疊</td>
+<td>6 月–2 歲</td>
+<td>可含膽汁</td>
+<td><strong>草莓果醬便</strong>、香腸狀腫塊、陣發性哭鬧</td>
+<td>空氣或水壓復位</td>
+</tr>
+<tr>
+<td>腸旋轉不良併中腸扭轉</td>
+<td>新生兒期</td>
+<td><strong>膽汁性</strong></td>
+<td>突發嘔吐＋休克</td>
+<td><strong>緊急手術</strong></td>
+</tr>
+<tr>
+<td>先天性巨結腸</td>
+<td>新生兒</td>
+<td>腹脹</td>
+<td>胎便延遲&gt;48 小時、直腸指診後噴便</td>
+<td>切片確診（無神經節細胞）</td>
+</tr>
+<tr>
+<td>壞死性腸炎</td>
+<td>早產兒</td>
+<td>餵食不耐</td>
+<td>腹壁紅腫、<strong>腸壁積氣</strong></td>
+<td>禁食、抗生素、必要時手術</td>
+</tr>
+<tr>
+<td>膽道閉鎖</td>
+<td>出生後數週</td>
+<td>—</td>
+<td><strong>陶土色便＋直接型高膽紅素</strong></td>
+<td>60 天內 Kasai 手術</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：<strong>膽汁性嘔吐的新生兒＝外科急症</strong>，先排除中腸扭轉。</p>
+<hr />
+<h2 id="表-24肝臟良性腫瘤鑑別">表 24｜肝臟良性腫瘤鑑別</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>腫瘤</th>
+<th>影像特徵</th>
+<th>與荷爾蒙關係</th>
+<th>併發症</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>血管瘤</td>
+<td>週邊結節狀漸進性填充</td>
+<td>無</td>
+<td>極少破裂</td>
+</tr>
+<tr>
+<td>局部結節增生（FNH）</td>
+<td><strong>中央疤痕</strong>、肝膽期攝取正常</td>
+<td>弱</td>
+<td>幾乎無</td>
+</tr>
+<tr>
+<td>肝腺瘤</td>
+<td>動脈期強化、易出血</td>
+<td><strong>與口服避孕藥、雄性素相關</strong></td>
+<td><strong>出血與惡性轉化</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：長期吃避孕藥＋肝腫瘤出血 → 肝腺瘤；有中央疤痕 → FNH。</p>
+<hr />
+<h2 id="表-25常用消化科藥物的機轉分流">表 25｜常用消化科藥物的機轉分流</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>藥物</th>
+<th>機轉</th>
+<th>關鍵副作用／考點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPI</td>
+<td>不可逆抑制 H⁺/K⁺-ATPase</td>
+<td>長期：B12 與鎂缺乏、腸道感染風險、骨折</td>
+</tr>
+<tr>
+<td>H₂ blocker</td>
+<td>阻斷壁細胞 H₂ 受體</td>
+<td>耐受性（tachyphylaxis）</td>
+</tr>
+<tr>
+<td>Sucralfate</td>
+<td>酸性環境形成保護層</td>
+<td><strong>需空腹、與 PPI 併用會失效</strong></td>
+</tr>
+<tr>
+<td>Misoprostol</td>
+<td>PGE1 類似物</td>
+<td><strong>孕婦禁用（子宮收縮）</strong></td>
+</tr>
+<tr>
+<td>Octreotide</td>
+<td>體抑素類似物，降內臟血流</td>
+<td>靜脈曲張出血、傾食症候群</td>
+</tr>
+<tr>
+<td>Terlipressin</td>
+<td>血管加壓素類似物</td>
+<td>肝腎症候群、缺血性副作用</td>
+</tr>
+<tr>
+<td>Lactulose</td>
+<td>酸化腸道、促氨排出</td>
+<td>肝性腦病第一線</td>
+</tr>
+<tr>
+<td>Rifaximin</td>
+<td>不吸收抗生素</td>
+<td>減少肝性腦病復發</td>
+</tr>
+<tr>
+<td>Ursodeoxycholic acid</td>
+<td>親水性膽酸</td>
+<td><strong>PBC 第一線</strong></td>
+</tr>
+<tr>
+<td>Mesalazine</td>
+<td>局部抗發炎</td>
+<td>UC 維持</td>
+</tr>
+<tr>
+<td>Infliximab</td>
+<td>抗 TNF-α</td>
+<td>用前需篩結核與 B 肝（<strong>再活化風險</strong>）</td>
+</tr>
+<tr>
+<td>Entecavir / TDF / TAF</td>
+<td>抑制 HBV 反轉錄</td>
+<td>停藥可能急性發作</td>
+</tr>
+<tr>
+<td>直接抗病毒藥（DAA）</td>
+<td>抑制 HCV NS3/4A、NS5A、NS5B</td>
+<td>治癒率 &gt;95%，需注意藥物交互作用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句話決斷</strong>：看到「孕婦」與消化道藥 → 先排除 misoprostol。</p>
+<hr />
+<details class="rawblock"><summary>Anki 卡片原始碼</summary><pre>上消化道出血為何 BUN/Cr 比值升高？   血紅素在小腸被消化吸收成含氮物質，加上低血容量造成腎前性氮血症 比較表
+克隆氏症與潰瘍性結腸炎最關鍵的三個區分點？   跳躍性 vs 連續性、全層 vs 黏膜層、直腸常倖免 vs 直腸幾乎必侵犯   比較表
+十二指腸後壁潰瘍出血最可能傷到哪條血管？    胃十二指腸動脈（gastroduodenal artery）  比較表
+如何區分打過疫苗與自然感染過 B 型肝炎？   看 anti-HBc：自然感染會陽性，疫苗接種者陰性  比較表
+阻塞性黃疸為何尿膽素原減少？  膽汁無法進入腸道，腸內細菌無法將膽紅素轉為尿膽素原   比較表
+Dubin-Johnson 與 Rotor 症候群怎麼分？   Dubin-Johnson 肝呈黑色、尿 coproporphyrin I 上升；Rotor 肝不黑  比較表
+SAAG ≥1.1 但腹水總蛋白 ≥2.5 要想什麼？ 心衰竭、Budd-Chiari、縮窄性心包炎等肝後性原因    比較表
+如何從腹水鑑別 SBP 與續發性腹膜炎？    續發性為多菌種、葡萄糖&lt;50、LDH&gt;血清值、蛋白&gt;1，需找破口手術  比較表
+EHEC O157:H7 為何禁用抗生素？   抗生素促使細菌釋放志賀樣毒素，增加溶血性尿毒症候群風險 比較表
+巨球性貧血合併神經症狀是缺什麼？    維生素 B12（葉酸缺乏不會有神經症狀）    比較表
+固體與液體同時吞嚥困難代表什麼？    食道動力障礙（如 achalasia），而非機械性阻塞 比較表
+台灣食道癌以哪一型為主？危險因子？   鱗狀細胞癌；菸、酒、檳榔、熱飲 比較表
+瀰漫型胃癌的關鍵分子與組織特徵？    CDH1（E-cadherin）突變；印戒細胞、皮革胃 比較表
+哪一種惡性腫瘤可能單靠根除 H. pylori 治癒？ 早期胃 MALT 淋巴瘤（t(11;18) 陰性者反應較好）  比較表
+新生兒膽汁性嘔吐要先想什麼？  腸旋轉不良併中腸扭轉，屬外科急症    比較表
+肥厚性幽門狹窄的電解質異常是什麼？   低血氯、低血鉀性代謝性鹼中毒  比較表
+膽道閉鎖的手術黃金期？ 出生後 60 天內施行 Kasai 手術    比較表
+肝腺瘤最重要的兩個併發症與危險因子？  出血與惡性轉化；與口服避孕藥、雄性素使用相關  比較表
+Sucralfate 使用上的關鍵限制？    需在酸性環境作用，故要空腹服用，與 PPI 併用會降低效果   比較表
+使用 infliximab 前必須篩檢什麼？  潛伏結核與 B 型肝炎（避免再活化）  比較表</pre></details>
+</main></div></div>
+<footer><div class="wrap">題源：考選部考畢試題（公開資料）111-1～115-2｜內容為自撰整理，非官方詳解｜
+最後建置：<span id="bt"></span></div></footer>
+<script>
+(function(){
+ var t=localStorage.getItem('theme'); if(t)document.documentElement.setAttribute('data-theme',t);
+ window.toggleTheme=function(){var c=document.documentElement.getAttribute('data-theme');
+  var n=c==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('theme',n); if(window.mermaid){location.reload();}};
+})();
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('table').forEach(function(t){
+    if(t.parentElement.classList.contains('tablewrap'))return;
+    var w=document.createElement('div');w.className='tablewrap';
+    t.parentNode.insertBefore(w,t);w.appendChild(t);});
+});
+document.getElementById('bt').textContent=new Date().toLocaleDateString('zh-TW');</script>
+<script src="assets/mermaid.min.js"></script><script>mermaid.initialize({{startOnLoad:true,theme:(document.documentElement.getAttribute("data-theme")==="dark"||(!document.documentElement.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme:dark)").matches))?"dark":"neutral",flowchart:{{useMaxWidth:true}}}});</script></body></html>

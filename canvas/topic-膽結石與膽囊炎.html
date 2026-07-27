@@ -1,0 +1,290 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="icon" href="data:,">
+<title>膽結石與膽囊炎（歷屆題地圖）｜決策畫布</title><style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--grid:#e8e4dc;--shadow:0 1px 2px rgba(0,0,0,.06),0 6px 18px rgba(0,0,0,.05)}
+@media (prefers-color-scheme:dark){:root{--bg:#141619;--fg:#e6e4e0;--muted:#98a0a8;--line:#2b2f34;
+--accent:#d9a066;--accent2:#6fbcae;--card:#1b1e22;--grid:#232730;--shadow:0 1px 2px rgba(0,0,0,.4)}}
+:root[data-theme=dark]{--bg:#141619;--fg:#e6e4e0;--muted:#98a0a8;--line:#2b2f34;--accent:#d9a066;
+--accent2:#6fbcae;--card:#1b1e22;--grid:#232730;--shadow:0 1px 2px rgba(0,0,0,.4)}
+:root[data-theme=light]{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--grid:#e8e4dc;--shadow:0 1px 2px rgba(0,0,0,.06),0 6px 18px rgba(0,0,0,.05)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--fg);
+font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif;
+-webkit-text-size-adjust:100%}
+#vp{position:absolute;inset:0;cursor:grab;touch-action:none;
+background-image:radial-gradient(var(--grid) 1px,transparent 1px);background-size:28px 28px}
+#vp.drag{cursor:grabbing}
+#stage{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}
+#wires{position:absolute;top:0;left:0;overflow:visible;pointer-events:none}
+#wires path{fill:none;vector-effect:non-scaling-stroke}
+#wires text{font-size:11px;fill:var(--muted)}
+.bandbg{position:absolute;left:0;border-radius:18px;pointer-events:none;
+background:linear-gradient(180deg,rgba(127,127,127,.055),rgba(127,127,127,.02))}
+.bandbg.alt{background:transparent;outline:1px dashed var(--line);outline-offset:-1px}
+.nd{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:10px 12px 11px;box-shadow:var(--shadow);border-left-width:4px;overflow:hidden}
+.nd:hover{border-color:var(--accent)}
+.nd .co{font:600 10.5px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);
+letter-spacing:.04em;margin-bottom:3px;display:flex;gap:6px;align-items:center}
+.nd .co b{color:var(--accent);font-weight:700}
+.nd h4{margin:0 0 5px;font-size:14.5px;line-height:1.45;font-weight:650}
+.nd p{margin:0 0 3px;font-size:12.5px;line-height:1.5;color:var(--fg);opacity:.86}
+.nd .ft{margin-top:6px;font-size:11px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.nd img{width:100%;border-radius:7px;border:1px solid var(--line);display:block;margin:2px 0 7px;
+background:#fff}
+.nd.k-entry{border-left-color:#78716c}.nd.k-step{border-left-color:#3b82f6}
+.nd.k-fork{border-left-color:#f59e0b;background:linear-gradient(180deg,rgba(245,158,11,.07),transparent)}
+.nd.k-test{border-left-color:#06b6d4}.nd.k-dx{border-left-color:#8b5cf6}
+.nd.k-score{border-left-color:#6366f1}.nd.k-tx{border-left-color:#10b981}
+.nd.k-mech{border-left-color:#e11d76}.nd.k-trap{border-left-color:#ef4444}
+.nd.k-qa{border-left-color:#f97316}.nd.k-fig{border-left-color:#94a3b8}
+.nd.k-paper{border-left-color:#64748b}
+.nd.k-fork h4:after{content:"◆";color:#f59e0b;margin-left:6px;font-size:11px}
+.nd.star:before{content:"";position:absolute;top:0;right:0;border:12px solid transparent;
+border-top-color:var(--accent);border-right-color:var(--accent);opacity:.5}
+.nd.k-note{background:repeating-linear-gradient(180deg,transparent,transparent 27px,var(--line) 27px,var(--line) 28px);
+border-style:dashed;border-left-style:dashed;border-left-color:var(--line);box-shadow:none}
+.nd.k-note .ed{min-height:96px;outline:none;font-size:13px;line-height:28px;color:var(--fg)}
+.far .nd p,.far .nd img,.far .nd .ft,.far .nd .ed{display:none}
+.far .nd h4{font-size:27px;line-height:1.28;font-weight:600}
+.far .nd .co{font-size:19px;margin-bottom:6px}
+.tiny .nd>*{display:none}.tiny .nd{border-left-width:10px}
+.tiny #wires text{display:none}
+.dim{opacity:.13}
+.on{border-color:var(--accent)!important;box-shadow:0 0 0 2px var(--accent),var(--shadow)}
+.col{border-color:var(--accent2)!important}
+mark{background:var(--accent);color:#fff;border-radius:3px;padding:0 2px}
+#lanebar{position:fixed;top:0;left:0;right:0;height:46px;pointer-events:none;z-index:20}
+#lanebar div{position:absolute;top:8px;height:32px;padding:6px 10px;border-radius:9px;
+background:var(--bg);border:1px solid var(--line);font-size:12.5px;font-weight:600;
+white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.96}
+#lanebar div small{color:var(--muted);font-weight:400;margin-left:6px}
+#bandbar{position:fixed;top:0;left:0;width:34px;bottom:0;pointer-events:none;z-index:19}
+#bandbar div{position:absolute;left:4px;width:26px;padding:8px 4px;border-radius:8px;
+background:var(--bg);border:1px solid var(--line);writing-mode:vertical-rl;font-size:12px;
+font-weight:600;text-align:center;overflow:hidden;opacity:.96}
+#hud{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;align-items:center;
+padding:9px 12px;background:linear-gradient(180deg,transparent,var(--bg) 42%);flex-wrap:wrap}
+.btn{font:inherit;font-size:12.5px;padding:5px 10px;border:1px solid var(--line);border-radius:8px;
+background:var(--card);color:var(--fg);cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+#q{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;
+background:var(--card);color:var(--fg);width:190px}
+#ttl{position:fixed;top:54px;left:44px;z-index:18;pointer-events:none;max-width:46ch;
+background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:9px 13px 10px;
+opacity:.97}
+#ttl h1{margin:0;font-size:18px;letter-spacing:-.01em}
+#ttl p{margin:2px 0 0;font-size:12.5px;color:var(--muted);line-height:1.5}
+#dr{position:fixed;top:0;right:0;bottom:0;width:min(400px,88vw);background:var(--card);
+border-left:1px solid var(--line);z-index:40;padding:22px 22px 40px;overflow:auto;
+transform:translateX(102%);transition:transform .22s ease;box-shadow:-8px 0 30px rgba(0,0,0,.09)}
+#dr.open{transform:none}
+#dr h3{margin:6px 0 4px;font-size:17px}#dr .co{font:600 11px ui-monospace,Menlo,monospace;color:var(--accent)}
+#dr p{font-size:13.5px;line-height:1.7}#dr .x{position:absolute;top:12px;right:14px;cursor:pointer;
+font-size:20px;color:var(--muted);border:0;background:none}
+#mini{position:fixed;right:12px;bottom:52px;width:172px;background:var(--card);border:1px solid var(--line);
+border-radius:9px;z-index:25;overflow:hidden;opacity:.94;cursor:crosshair}
+#mini svg{display:block;width:100%}
+#mini rect.v{fill:rgba(138,90,43,.16);stroke:var(--accent);stroke-width:1.5}
+#lg{position:fixed;right:12px;top:56px;z-index:25;background:var(--card);border:1px solid var(--line);
+border-radius:9px;padding:9px 11px;font-size:11.5px;opacity:.95;max-width:150px}
+#lg b{display:block;margin-bottom:5px;font-size:11px;color:var(--muted);font-weight:600}
+#lg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}
+#lg span{display:block;line-height:1.85}
+@media(max-width:760px){#lg,#mini{display:none}#ttl{left:42px;top:52px}#q{width:120px}}
+@media print{#hud,#mini,#lg,#lanebar,#bandbar,#dr{display:none}}
+</style></head><body>
+<div id="vp"><div id="stage"><div class="bandbg" style="top:24px;height:195px;width:3488px"></div><div class="bandbg alt" style="top:249px;height:176px;width:3488px"></div><div class="bandbg" style="top:455px;height:138px;width:3488px"></div><div class="bandbg alt" style="top:623px;height:701px;width:3488px"></div><div class="bandbg" style="top:1354px;height:92px;width:3488px"></div><div class="bandbg alt" style="top:1476px;height:92px;width:3488px"></div><div class="bandbg" style="top:1598px;height:182px;width:3488px"></div><svg id="wires" width="3488" height="1826"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="var(--accent)" opacity=".7"/></marker></defs></svg>
+<div class="nd k-entry star" data-id="n1" data-lane="present" style="left:40px;top:265px;width:336px;height:144px"><div class="co"><b>①B1</b></div><h4>膽結石與膽囊炎</h4><p>近五年 8 題（一階 3／二階 5）</p><p>器官：膽道</p><p>各格數字＝該格題數，空格＝十年沒考過</p><div class="ft">stats</div></div><div class="nd k-score" data-id="n2" data-lane="firstline" style="left:1192px;top:471px;width:336px;height:106px"><div class="co"><b>③C1</b>題型叢集</div><h4>影像判讀｜1 題</h4><p>111-1 醫學五 Q73：超音波診斷</p></div><div class="nd k-qa" data-id="n3" data-lane="firstline" style="left:1192px;top:639px;width:336px;height:182px"><div class="co"><b>③D1</b>答案 D</div><h4>111-1 醫學五 Q73</h4><p>下圖為右上腹部超音波掃描圖，最可能的診斷為：</p><p>A. 產氣性膽囊炎</p><p>B. 產氣性肝膿瘍</p><p>C. 膽囊癌</p><p>D. 膽囊結石</p></div><div class="nd k-qa" data-id="n4" data-lane="ddx" style="left:1576px;top:265px;width:336px;height:125px"><div class="co"><b>④B1</b>題型叢集</div><h4>診斷與鑑別｜2 題</h4><p>115-1 醫學三 Q22：非併發症</p><p>111-1 醫學三 Q19：急性膽囊炎特徵</p></div><div class="nd k-qa" data-id="n5" data-lane="ddx" style="left:1576px;top:639px;width:336px;height:182px"><div class="co"><b>④D1</b>答案 B</div><h4>115-1 醫學三 Q22</h4><p>下列何者不是膽囊／膽管結石所引發的併發症？</p><p>A. 急性膽囊炎（acute cholecystitis）</p><p>B. 膽管囊腫（choledochal cyst）</p><p>C. 急性胰臟炎（acute pancreatitis）</p><p>D. 急性膽管炎（acute cholangitis）</p></div><div class="nd k-qa" data-id="n6" data-lane="ddx" style="left:1576px;top:835px;width:336px;height:201px"><div class="co"><b>④D2</b>答案 A</div><h4>111-1 醫學三 Q19</h4><p>下列關於急性膽囊炎（acute cholecystitis）的敘述何者錯誤？</p><p>A. 必定同時伴隨膽囊結石</p><p>B. 及早進行膽囊切除對大多數患者是最佳治療方式</p><p>C. Murphy&#x27;s徵象（Murphy&#x27;s sign）常為陽性</p><p>D. 可能同時合併有總膽管結石</p></div><div class="nd k-qa" data-id="n7" data-lane="firstline" style="left:1192px;top:265px;width:336px;height:106px"><div class="co"><b>③B1</b>題型叢集</div><h4>診斷與鑑別｜1 題</h4><p>115-1 醫學五 Q8：超音波敏感度</p></div><div class="nd k-qa" data-id="n8" data-lane="firstline" style="left:1192px;top:835px;width:336px;height:239px"><div class="co"><b>③D2</b>答案 B</div><h4>115-1 醫學五 Q8</h4><p>關於膽結石合併急性膽囊炎（acute calculous cholecystitis）的敘述，何者最不適當？</p><p>A. 常以發燒和右上腹痛來表現</p><p>B. 電腦斷層診斷的敏感度優於超音波</p><p>C. 手術時若無法分出明確的構造時，可以只作部分膽囊切除以避免傷害總膽管</p><p>D. 先打抗生素作為保守治療，症狀改善後再作延遲的膽囊切除手術，這種策略約有 20％的失敗機會</p></div><div class="nd k-qa star" data-id="n9" data-lane="present" style="left:40px;top:40px;width:336px;height:163px"><div class="co"><b>①A1</b>題型叢集</div><h4>機轉與病生理｜4 題</h4><p>114-2 醫學二 Q32：薑片蟲感染</p><p>114-2 醫學二 Q91：前列腺素減少</p><p>113-2 醫學二 Q91：膽結石成因</p><p>111-2 醫學四 Q9：急性水腫成因</p></div><div class="nd k-qa" data-id="n10" data-lane="present" style="left:40px;top:639px;width:336px;height:239px"><div class="co"><b>①D1</b>答案 D</div><h4>114-2 醫學二 Q32</h4><p>李同學於暑假期間赴香港旅遊，期間遍嚐各種魚類美食，返國後因腹部嚴重不適就醫，經醫師診斷疑似膽囊 炎住院，隨後經糞便鏡檢而確認診斷，據此病史最可能感染下列何種寄生蟲？</p><p>A. 日本血吸蟲（Schistosoma japonicum）</p><p>B. 衛氏肺吸蟲（Paragonimus westermani）</p><p>C. 薑片蟲（Fasciolopsis buski）</p><p>D. 中華肝吸蟲（Clonorchis sinensis）</p></div><div class="nd k-qa" data-id="n11" data-lane="present" style="left:424px;top:639px;width:336px;height:239px"><div class="co"><b>①D2</b>答案 B</div><h4>114-2 醫學二 Q91</h4><p>關於急性膽囊炎，下列敘述何者最不適當？</p><p>A. 大多數的病例是由於結石阻塞膽囊頸或膽囊管而引發</p><p>B. 因前列腺素釋放的減少而導致黏膜和膽囊壁發炎</p><p>C. 急性非結石性膽囊炎（acute acalculous cholecystitis）可由缺血而引起</p><p>D. 急性非結石性膽囊炎（acute acalculous cholecystitis）的危險因子包括敗血症</p></div><div class="nd k-qa" data-id="n12" data-lane="present" style="left:424px;top:892px;width:336px;height:201px"><div class="co"><b>①D3</b>答案 A</div><h4>113-2 醫學二 Q91</h4><p>關於膽囊膽固醇結石（cholesterol stone）產生機制，下列敘述何者錯誤？</p><p>A. 膽汁中鈣離子過飽和</p><p>B. 膽囊運動不足（hypomotility）</p><p>C. 加速膽固醇晶體成核（nucleation）</p><p>D. 黏液分泌過多</p></div><div class="nd k-qa" data-id="n13" data-lane="present" style="left:424px;top:1107px;width:336px;height:201px"><div class="co"><b>①D4</b>答案 B</div><h4>111-2 醫學四 Q9</h4><p>下列何種狀況最不易見到急性膽囊水腫（Acute hydrops of the gallbladder）？</p><p>A. 川崎氏病（Kawasaki disease）</p><p>B. 囊腫性纖維化（Cystic fibrosis）</p><p>C. 病毒性肝炎（Viral hepatitis）</p><p>D. 沙門氏菌敗血症（Salmonellosis）</p></div><div class="nd k-note" data-id="hand_present" data-lane="present" style="left:40px;top:1614px;width:336px;height:150px"><div class="co"><b>①G1</b></div><h4>進場</h4><p>誰會來、誰是高風險</p><div class="ed" contenteditable="true" data-k="hand_present"></div></div><div class="nd k-note" data-id="hand_triage" data-lane="triage" style="left:808px;top:1614px;width:336px;height:150px"><div class="co"><b>②G1</b></div><h4>分流</h4><p>穩不穩、有沒有警訊</p><div class="ed" contenteditable="true" data-k="hand_triage"></div></div><div class="nd k-note" data-id="hand_firstline" data-lane="firstline" style="left:1192px;top:1614px;width:336px;height:150px"><div class="co"><b>③G1</b></div><h4>一線資料</h4><p>先開哪些檢驗與影像</p><div class="ed" contenteditable="true" data-k="hand_firstline"></div></div><div class="nd k-note" data-id="hand_ddx" data-lane="ddx" style="left:1576px;top:1614px;width:336px;height:150px"><div class="co"><b>④G1</b></div><h4>鑑別</h4><p>可能是什麼、怎麼分</p><div class="ed" contenteditable="true" data-k="hand_ddx"></div></div><div class="nd k-note" data-id="hand_confirm" data-lane="confirm" style="left:1960px;top:1614px;width:336px;height:150px"><div class="co"><b>⑤G1</b></div><h4>確診</h4><p>什麼證據才算數</p><div class="ed" contenteditable="true" data-k="hand_confirm"></div></div><div class="nd k-note" data-id="hand_stratify" data-lane="stratify" style="left:2344px;top:1614px;width:336px;height:150px"><div class="co"><b>⑥G1</b></div><h4>分級</h4><p>多嚴重、哪一期</p><div class="ed" contenteditable="true" data-k="hand_stratify"></div></div><div class="nd k-note" data-id="hand_treat" data-lane="treat" style="left:2728px;top:1614px;width:336px;height:150px"><div class="co"><b>⑦G1</b></div><h4>處置</h4><p>依分級做什麼</p><div class="ed" contenteditable="true" data-k="hand_treat"></div></div><div class="nd k-note" data-id="hand_followup" data-lane="followup" style="left:3112px;top:1614px;width:336px;height:150px"><div class="co"><b>⑧G1</b></div><h4>追蹤預後</h4><p>之後追什麼</p><div class="ed" contenteditable="true" data-k="hand_followup"></div></div></div></div>
+<div id="lanebar"><div>① 進場<small>誰會來、誰是高風險</small></div><div>② 分流<small>穩不穩、有沒有警訊</small></div><div>③ 一線資料<small>先開哪些檢驗與影像</small></div><div>④ 鑑別<small>可能是什麼、怎麼分</small></div><div>⑤ 確診<small>什麼證據才算數</small></div><div>⑥ 分級<small>多嚴重、哪一期</small></div><div>⑦ 處置<small>依分級做什麼</small></div><div>⑧ 追蹤預後<small>之後追什麼</small></div></div><div id="bandbar"><div>A 機轉層</div><div>B 決策層</div><div>C 數據層</div><div>D 考點層</div><div>E 圖譜層</div><div>F 證據層</div><div>G 手寫層</div></div>
+<div id="ttl"><h1>膽結石與膽囊炎（歷屆題地圖）</h1><p>尚未撰寫章節，先看十年來這個主題被考在哪幾格
+　·　近五年 8 題（一階 3／二階 5）</p></div>
+<div id="lg"><b>節點型別</b><span><i style="background:#3b82f6"></i>步驟</span><span><i style="background:#f59e0b"></i>判斷</span><span><i style="background:#06b6d4"></i>檢查</span><span><i style="background:#8b5cf6"></i>鑑別</span><span><i style="background:#6366f1"></i>評分</span><span><i style="background:#10b981"></i>治療</span><span><i style="background:#e11d76"></i>機轉</span><span><i style="background:#ef4444"></i>陷阱</span><span><i style="background:#f97316"></i>考題</span><span><i style="background:#64748b"></i>文獻</span></div>
+<div id="mini"></div>
+<div id="dr"></div>
+<div id="hud">
+<input id="q" placeholder="搜尋節點（/ 聚焦）" autocomplete="off"><span id="cnt" style="font-size:12px;color:var(--muted)"></span>
+<button class="btn" onclick="CV.fit()">全寬 f</button>
+<button class="btn" onclick="CV.fitAll()">全覽 ⇧F</button>
+<button class="btn" onclick="CV.lane(0)">①</button><button class="btn" onclick="CV.lane(1)">②</button><button class="btn" onclick="CV.lane(2)">③</button><button class="btn" onclick="CV.lane(3)">④</button><button class="btn" onclick="CV.lane(4)">⑤</button><button class="btn" onclick="CV.lane(5)">⑥</button><button class="btn" onclick="CV.lane(6)">⑦</button><button class="btn" onclick="CV.lane(7)">⑧</button>
+<button class="btn" onclick="CV.clear()">清除 Esc</button>
+<button class="btn" onclick="CV.theme()">☾/☀</button>
+<a class="btn" href="../ch/topic-膽結石與膽囊炎.html">回章節</a>
+<span style="font-size:11.5px;color:var(--muted)">拖曳平移　·　⌘/Ctrl＋滾輪縮放　·　點節點打亮整欄</span>
+</div>
+<script>
+(function(){
+var D={"id": "topic-膽結石與膽囊炎", "lanes": [{"key": "present", "label": "① 進場", "hint": "誰會來、誰是高風險"}, {"key": "triage", "label": "② 分流", "hint": "穩不穩、有沒有警訊"}, {"key": "firstline", "label": "③ 一線資料", "hint": "先開哪些檢驗與影像"}, {"key": "ddx", "label": "④ 鑑別", "hint": "可能是什麼、怎麼分"}, {"key": "confirm", "label": "⑤ 確診", "hint": "什麼證據才算數"}, {"key": "stratify", "label": "⑥ 分級", "hint": "多嚴重、哪一期"}, {"key": "treat", "label": "⑦ 處置", "hint": "依分級做什麼"}, {"key": "followup", "label": "⑧ 追蹤預後", "hint": "之後追什麼"}], "bands": [{"key": "mech", "label": "A 機轉層", "hint": "為什麼會這樣（一階）"}, {"key": "flow", "label": "B 決策層", "hint": "這一步做什麼（主脊椎）"}, {"key": "data", "label": "C 數據層", "hint": "看哪些數字、切點在哪"}, {"key": "exam", "label": "D 考點層", "hint": "國考怎麼考、陷阱在哪"}, {"key": "image", "label": "E 圖譜層", "hint": "長什麼樣"}, {"key": "evidence", "label": "F 證據層", "hint": "背後的文獻"}, {"key": "hand", "label": "G 手寫層", "hint": "留給你自己寫"}], "bandY": {"mech": 40, "flow": 265, "data": 471, "exam": 639, "image": 1370, "evidence": 1492, "hand": 1614}, "bandH": {"mech": 163, "flow": 144, "data": 106, "exam": 669, "image": 60, "evidence": 60, "hand": 150}, "laneX": {"present": 40, "triage": 808, "firstline": 1192, "ddx": 1576, "confirm": 1960, "stratify": 2344, "treat": 2728, "followup": 3112}, "laneW": {"present": 720, "triage": 336, "firstline": 336, "ddx": 336, "confirm": 336, "stratify": 336, "treat": 336, "followup": 336}, "size": {"w": 3488, "h": 1826}, "nodes": [{"id": "n1", "lane": "present", "band": "flow", "kind": "entry", "title": "膽結石與膽囊炎", "lines": ["近五年 8 題（一階 3／二階 5）", "器官：膽道", "各格數字＝該格題數，空格＝十年沒考過"], "coord": "①B1", "x": 40, "y": 265, "w": 336, "h": 144, "tag": null, "ref": "stats", "href": null, "img": null}, {"id": "n2", "lane": "firstline", "band": "data", "kind": "score", "title": "影像判讀｜1 題", "lines": ["111-1 醫學五 Q73：超音波診斷"], "coord": "③C1", "x": 1192, "y": 471, "w": 336, "h": 106, "tag": "題型叢集", "ref": null, "href": null, "img": null}, {"id": "n3", "lane": "firstline", "band": "exam", "kind": "qa", "title": "111-1 醫學五 Q73", "lines": ["下圖為右上腹部超音波掃描圖，最可能的診斷為：", "A. 產氣性膽囊炎", "B. 產氣性肝膿瘍", "C. 膽囊癌", "D. 膽囊結石"], "coord": "③D1", "x": 1192, "y": 639, "w": 336, "h": 182, "tag": "答案 D", "ref": null, "href": null, "img": null}, {"id": "n4", "lane": "ddx", "band": "flow", "kind": "qa", "title": "診斷與鑑別｜2 題", "lines": ["115-1 醫學三 Q22：非併發症", "111-1 醫學三 Q19：急性膽囊炎特徵"], "coord": "④B1", "x": 1576, "y": 265, "w": 336, "h": 125, "tag": "題型叢集", "ref": null, "href": null, "img": null}, {"id": "n5", "lane": "ddx", "band": "exam", "kind": "qa", "title": "115-1 醫學三 Q22", "lines": ["下列何者不是膽囊／膽管結石所引發的併發症？", "A. 急性膽囊炎（acute cholecystitis）", "B. 膽管囊腫（choledochal cyst）", "C. 急性胰臟炎（acute pancreatitis）", "D. 急性膽管炎（acute cholangitis）"], "coord": "④D1", "x": 1576, "y": 639, "w": 336, "h": 182, "tag": "答案 B", "ref": null, "href": null, "img": null}, {"id": "n6", "lane": "ddx", "band": "exam", "kind": "qa", "title": "111-1 醫學三 Q19", "lines": ["下列關於急性膽囊炎（acute cholecystitis）的敘述何者錯誤？", "A. 必定同時伴隨膽囊結石", "B. 及早進行膽囊切除對大多數患者是最佳治療方式", "C. Murphy's徵象（Murphy's sign）常為陽性", "D. 可能同時合併有總膽管結石"], "coord": "④D2", "x": 1576, "y": 835, "w": 336, "h": 201, "tag": "答案 A", "ref": null, "href": null, "img": null}, {"id": "n7", "lane": "firstline", "band": "flow", "kind": "qa", "title": "診斷與鑑別｜1 題", "lines": ["115-1 醫學五 Q8：超音波敏感度"], "coord": "③B1", "x": 1192, "y": 265, "w": 336, "h": 106, "tag": "題型叢集", "ref": null, "href": null, "img": null}, {"id": "n8", "lane": "firstline", "band": "exam", "kind": "qa", "title": "115-1 醫學五 Q8", "lines": ["關於膽結石合併急性膽囊炎（acute calculous cholecystitis）的敘述，何者最不適當？", "A. 常以發燒和右上腹痛來表現", "B. 電腦斷層診斷的敏感度優於超音波", "C. 手術時若無法分出明確的構造時，可以只作部分膽囊切除以避免傷害總膽管", "D. 先打抗生素作為保守治療，症狀改善後再作延遲的膽囊切除手術，這種策略約有 20％的失敗機會"], "coord": "③D2", "x": 1192, "y": 835, "w": 336, "h": 239, "tag": "答案 B", "ref": null, "href": null, "img": null}, {"id": "n9", "lane": "present", "band": "mech", "kind": "qa", "title": "機轉與病生理｜4 題", "lines": ["114-2 醫學二 Q32：薑片蟲感染", "114-2 醫學二 Q91：前列腺素減少", "113-2 醫學二 Q91：膽結石成因", "111-2 醫學四 Q9：急性水腫成因"], "coord": "①A1", "x": 40, "y": 40, "w": 336, "h": 163, "tag": "題型叢集", "ref": null, "href": null, "img": null}, {"id": "n10", "lane": "present", "band": "exam", "kind": "qa", "title": "114-2 醫學二 Q32", "lines": ["李同學於暑假期間赴香港旅遊，期間遍嚐各種魚類美食，返國後因腹部嚴重不適就醫，經醫師診斷疑似膽囊 炎住院，隨後經糞便鏡檢而確認診斷，據此病史最可能感染下列何種寄生蟲？", "A. 日本血吸蟲（Schistosoma japonicum）", "B. 衛氏肺吸蟲（Paragonimus westermani）", "C. 薑片蟲（Fasciolopsis buski）", "D. 中華肝吸蟲（Clonorchis sinensis）"], "coord": "①D1", "x": 40, "y": 639, "w": 336, "h": 239, "tag": "答案 D", "ref": null, "href": null, "img": null}, {"id": "n11", "lane": "present", "band": "exam", "kind": "qa", "title": "114-2 醫學二 Q91", "lines": ["關於急性膽囊炎，下列敘述何者最不適當？", "A. 大多數的病例是由於結石阻塞膽囊頸或膽囊管而引發", "B. 因前列腺素釋放的減少而導致黏膜和膽囊壁發炎", "C. 急性非結石性膽囊炎（acute acalculous cholecystitis）可由缺血而引起", "D. 急性非結石性膽囊炎（acute acalculous cholecystitis）的危險因子包括敗血症"], "coord": "①D2", "x": 424, "y": 639, "w": 336, "h": 239, "tag": "答案 B", "ref": null, "href": null, "img": null}, {"id": "n12", "lane": "present", "band": "exam", "kind": "qa", "title": "113-2 醫學二 Q91", "lines": ["關於膽囊膽固醇結石（cholesterol stone）產生機制，下列敘述何者錯誤？", "A. 膽汁中鈣離子過飽和", "B. 膽囊運動不足（hypomotility）", "C. 加速膽固醇晶體成核（nucleation）", "D. 黏液分泌過多"], "coord": "①D3", "x": 424, "y": 892, "w": 336, "h": 201, "tag": "答案 A", "ref": null, "href": null, "img": null}, {"id": "n13", "lane": "present", "band": "exam", "kind": "qa", "title": "111-2 醫學四 Q9", "lines": ["下列何種狀況最不易見到急性膽囊水腫（Acute hydrops of the gallbladder）？", "A. 川崎氏病（Kawasaki disease）", "B. 囊腫性纖維化（Cystic fibrosis）", "C. 病毒性肝炎（Viral hepatitis）", "D. 沙門氏菌敗血症（Salmonellosis）"], "coord": "①D4", "x": 424, "y": 1107, "w": 336, "h": 201, "tag": "答案 B", "ref": null, "href": null, "img": null}, {"id": "hand_present", "lane": "present", "band": "hand", "kind": "note", "title": "進場", "lines": ["誰會來、誰是高風險"], "coord": "①G1", "x": 40, "y": 1614, "w": 336, "h": 150, "tag": null, "ref": null, "href": null, "img": null}, {"id": "hand_triage", "lane": "triage", "band": "hand", "kind": "note", "title": "分流", "lines": ["穩不穩、有沒有警訊"], "coord": "②G1", "x": 808, "y": 1614, "w": 336, "h": 150, "tag": null, "ref": null, "href": null, "img": null}, {"id": "hand_firstline", "lane": "firstline", "band": "hand", "kind": "note", "title": "一線資料", "lines": ["先開哪些檢驗與影像"], "coord": "③G1", "x": 1192, "y": 1614, "w": 336, "h": 150, "tag": null, "ref": null, "href": null, "img": null}, {"id": "hand_ddx", "lane": "ddx", "band": "hand", "kind": "note", "title": "鑑別", "lines": ["可能是什麼、怎麼分"], "coord": "④G1", "x": 1576, "y": 1614, "w": 336, "h": 150, "tag": null, "ref": null, "href": null, "img": null}, {"id": "hand_confirm", "lane": "confirm", "band": "hand", "kind": "note", "title": "確診", "lines": ["什麼證據才算數"], "coord": "⑤G1", "x": 1960, "y": 1614, "w": 336, "h": 150, "tag": null, "ref": null, "href": null, "img": null}, {"id": "hand_stratify", "lane": "stratify", "band": "hand", "kind": "note", "title": "分級", "lines": ["多嚴重、哪一期"], "coord": "⑥G1", "x": 2344, "y": 1614, "w": 336, "h": 150, "tag": null, "ref": null, "href": null, "img": null}, {"id": "hand_treat", "lane": "treat", "band": "hand", "kind": "note", "title": "處置", "lines": ["依分級做什麼"], "coord": "⑦G1", "x": 2728, "y": 1614, "w": 336, "h": 150, "tag": null, "ref": null, "href": null, "img": null}, {"id": "hand_followup", "lane": "followup", "band": "hand", "kind": "note", "title": "追蹤預後", "lines": ["之後追什麼"], "coord": "⑧G1", "x": 3112, "y": 1614, "w": 336, "h": 150, "tag": null, "ref": null, "href": null, "img": null}], "edges": []};
+var vp=document.getElementById('vp'),stage=document.getElementById('stage'),
+    lanebar=document.getElementById('lanebar'),bandbar=document.getElementById('bandbar');
+var S={x:40,y:60,k:.5},W=D.size.w,H=D.size.h;
+var byId={};D.nodes.forEach(function(n){byId[n.id]=n;});
+var adj={},radj={};
+D.edges.forEach(function(e){(adj[e.f]=adj[e.f]||[]).push(e.t);(radj[e.t]=radj[e.t]||[]).push(e.f);});
+
+function apply(){
+  /* 細節層級：字在 k<.45 時已經看不清，與其擠成灰塊不如只留標題 */
+  stage.className=(S.k<.2?'tiny ':'')+(S.k<.45?'far':'');
+  stage.style.transform='translate('+S.x+'px,'+S.y+'px) scale('+S.k+')';
+  for(var i=0;i<D.lanes.length;i++){var el=lanebar.children[i],lk=D.lanes[i].key;
+    el.style.left=(S.x+D.laneX[lk]*S.k)+'px';el.style.width=(D.laneW[lk]*S.k)+'px';
+    el.style.display=(S.k<.14)?'none':'block';}
+  for(var j=0;j<D.bands.length;j++){var b=bandbar.children[j];
+    b.style.top=(S.y+D.bandY[D.bands[j].key]*S.k)+'px';
+    b.style.height=Math.max(30,D.bandH[D.bands[j].key]*S.k)+'px';}
+  var m=document.getElementById('mv');
+  if(m){m.setAttribute('x',-S.x/S.k);m.setAttribute('y',-S.y/S.k);
+        m.setAttribute('width',innerWidth/S.k);m.setAttribute('height',innerHeight/S.k);}
+}
+function clamp(v,a,b){return v<a?a:(v>b?b:v);}
+function zoomAt(cx,cy,f){var nk=clamp(S.k*f,.08,2.6);
+  S.x=cx-(cx-S.x)*(nk/S.k);S.y=cy-(cy-S.y)*(nk/S.k);S.k=nk;apply();}
+function fit(){/* 對齊寬度即可：整張塞進高度會縮到看不見，而橫向才是敘事方向 */
+  S.k=clamp(Math.min((innerWidth-70)/W,(innerHeight-130)/H*1.9,.95),.06,.95);
+  S.x=48;S.y=58;apply();}
+function fitAll(){S.k=clamp(Math.min((innerWidth-70)/W,(innerHeight-130)/H),.05,1);
+  S.x=48;S.y=58;apply();}
+function flyTo(x,y,k){S.k=k||S.k;S.x=innerWidth/2-x*S.k;S.y=innerHeight/2-y*S.k;apply();}
+
+vp.addEventListener('wheel',function(e){e.preventDefault();
+  if(e.ctrlKey||e.metaKey)zoomAt(e.clientX,e.clientY,Math.exp(-e.deltaY*0.012));
+  else{S.x-=e.deltaX;S.y-=e.deltaY;apply();}},{passive:false});
+var pts={},last=null,pd=0;
+vp.addEventListener('pointerdown',function(e){
+  if(e.target.closest('.nd'))return;
+  pts[e.pointerId]={x:e.clientX,y:e.clientY};vp.setPointerCapture(e.pointerId);
+  vp.classList.add('drag');last={x:e.clientX,y:e.clientY};
+  var k=Object.keys(pts);if(k.length===2)pd=dist();});
+function dist(){var k=Object.keys(pts);var a=pts[k[0]],b=pts[k[1]];
+  return Math.hypot(a.x-b.x,a.y-b.y);}
+vp.addEventListener('pointermove',function(e){
+  if(!pts[e.pointerId])return;pts[e.pointerId]={x:e.clientX,y:e.clientY};
+  var k=Object.keys(pts);
+  if(k.length===2){var d=dist();if(pd){var a=pts[k[0]],b=pts[k[1]];
+      zoomAt((a.x+b.x)/2,(a.y+b.y)/2,d/pd);}pd=d;return;}
+  if(last){S.x+=e.clientX-last.x;S.y+=e.clientY-last.y;last={x:e.clientX,y:e.clientY};apply();}});
+function up(e){delete pts[e.pointerId];if(!Object.keys(pts).length){last=null;pd=0;
+  vp.classList.remove('drag');}}
+vp.addEventListener('pointerup',up);vp.addEventListener('pointercancel',up);
+
+/* 選取：打亮同欄 + 決策層上下游路徑。跨層關係靠「同一欄」表達，不畫線。 */
+var sel=null;
+function select(id){
+  sel=id;var n=byId[id];
+  var keep={};keep[id]=1;
+  var q=[id];while(q.length){var c=q.pop();(adj[c]||[]).forEach(function(t){
+    if(!keep[t]){keep[t]=1;q.push(t);}});}
+  q=[id];while(q.length){var c2=q.pop();(radj[c2]||[]).forEach(function(t){
+    if(!keep[t]){keep[t]=1;q.push(t);}});}
+  document.querySelectorAll('.nd').forEach(function(el){
+    var i=el.dataset.id,same=el.dataset.lane===n.lane;
+    el.classList.toggle('on',i===id);
+    el.classList.toggle('col',same&&i!==id);
+    el.classList.toggle('dim',!keep[i]&&!same);});
+  document.querySelectorAll('#wires path').forEach(function(p){
+    p.style.opacity=(keep[p.dataset.f]&&keep[p.dataset.t])?1:.08;});
+  drawer(n);
+}
+function clear(){sel=null;
+  document.querySelectorAll('.nd').forEach(function(el){el.className=el.dataset.cls;});
+  document.querySelectorAll('#wires path').forEach(function(p){p.style.opacity=1;});
+  document.getElementById('dr').classList.remove('open');}
+function drawer(n){
+  var d=document.getElementById('dr'),lane=D.lanes.filter(function(l){return l.key===n.lane;})[0],
+      band=D.bands.filter(function(b){return b.key===n.band;})[0];
+  var h='<button class="x" onclick="CV.clear()">×</button><div class="co">'+n.coord+'</div>'+
+    '<h3>'+esc(n.title)+'</h3><p style="color:var(--muted);font-size:12.5px">'+
+    lane.label+'　'+lane.hint+'<br>'+band.label+'　'+band.hint+'</p>';
+  if(n.img)h+='<img src="'+n.img+'" style="width:100%;border-radius:8px;border:1px solid var(--line);background:#fff">';
+  (n.lines||[]).forEach(function(l){h+='<p>'+esc(l)+'</p>';});
+  if(n.href)h+='<p><a href="'+n.href+'" target="_blank" rel="noopener">開啟來源 ↗</a></p>';
+  var meta=[];if(n.ref)meta.push(n.ref);if(n.tag)meta.push(n.tag);
+  var ups=(radj[n.id]||[]).map(function(i){return byId[i]?byId[i].title:'';}).filter(Boolean);
+  var dns=(adj[n.id]||[]).map(function(i){return byId[i]?byId[i].title:'';}).filter(Boolean);
+  if(ups.length)h+='<p style="font-size:12.5px;color:var(--muted)">← 上游：'+esc(ups.join('、'))+'</p>';
+  if(dns.length)h+='<p style="font-size:12.5px;color:var(--muted)">→ 下游：'+esc(dns.join('、'))+'</p>';
+  if(meta.length)h+='<p style="font-size:12px;color:var(--muted)">'+esc(meta.join('　·　'))+'</p>';
+  d.innerHTML=h;d.classList.add('open');
+}
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+
+document.querySelectorAll('.nd').forEach(function(el){
+  el.dataset.cls=el.className;
+  el.addEventListener('click',function(e){
+    if(e.target.closest('.ed')||e.target.tagName==='A')return;
+    e.stopPropagation();select(el.dataset.id);});
+});
+vp.addEventListener('click',function(e){if(e.target===vp||e.target.id==='stage')clear();});
+
+/* 搜尋：打亮命中的節點，Enter 依序飛過去 */
+var hits=[],hi=0;
+function search(v){
+  document.querySelectorAll('.nd').forEach(function(el){el.classList.remove('on','dim');});
+  hits=[];if(!v){document.querySelectorAll('.nd').forEach(function(el){el.className=el.dataset.cls;});return;}
+  var re=new RegExp(v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i');
+  D.nodes.forEach(function(n){
+    var blob=n.title+' '+(n.lines||[]).join(' ')+' '+(n.tag||'');
+    var el=document.querySelector('.nd[data-id="'+n.id+'"]');if(!el)return;
+    if(re.test(blob)){hits.push(n);el.classList.add('on');el.classList.remove('dim');}
+    else el.classList.add('dim');});
+  hi=0;if(hits.length)go(0);
+}
+function go(i){hi=(i+hits.length)%hits.length;var n=hits[hi];
+  flyTo(n.x+n.w/2,n.y+n.h/2,Math.max(S.k,.62));
+  document.getElementById('cnt').textContent=hits.length?(hi+1)+'/'+hits.length:'';}
+var q=document.getElementById('q');
+q.addEventListener('input',function(){search(q.value.trim());});
+q.addEventListener('keydown',function(e){if(e.key==='Enter'&&hits.length){e.preventDefault();
+  go(hi+(e.shiftKey?-1:1));}});
+
+addEventListener('keydown',function(e){
+  if(e.target.tagName==='INPUT'||e.target.isContentEditable){if(e.key==='Escape')e.target.blur();return;}
+  if(e.key>='1'&&e.key<='8')CV.lane(+e.key-1);
+  else if(e.key==='f')fit();
+  else if(e.key==='F')fitAll();
+  else if(e.key==='Escape')clear();
+  else if(e.key==='/'){e.preventDefault();q.focus();}
+  else if(e.key==='+'||e.key==='=')zoomAt(innerWidth/2,innerHeight/2,1.25);
+  else if(e.key==='-')zoomAt(innerWidth/2,innerHeight/2,.8);
+});
+
+/* 手寫層：打字存本機，換裝置不同步是刻意的（這是你的草稿，不是知識庫內容） */
+document.querySelectorAll('.ed').forEach(function(el){
+  var key='canvas:'+D.id+':'+el.dataset.k;
+  el.textContent=localStorage.getItem(key)||'';
+  el.addEventListener('input',function(){localStorage.setItem(key,el.textContent);});
+});
+
+/* 小地圖：高度上限 150px，太高的畫布不能讓它吃掉半個螢幕 */
+(function(){
+  var m=document.getElementById('mini'),sc=Math.min(172/W,150/H);
+  m.style.width=Math.round(W*sc)+'px';
+  var svg='<svg viewBox="0 0 '+W+' '+H+'" height="'+Math.round(H*sc)+'">';
+  D.bands.forEach(function(b,i){if(i%2)return;
+    svg+='<rect x="0" y="'+D.bandY[b.key]+'" width="'+W+'" height="'+D.bandH[b.key]+
+      '" fill="rgba(127,127,127,.07)"/>';});
+  D.nodes.forEach(function(n){svg+='<rect x="'+n.x+'" y="'+n.y+'" width="'+n.w+'" height="'+n.h+
+    '" rx="6" fill="var(--line)"/>';});
+  svg+='<rect id="mv" class="v" x="0" y="0" width="100" height="100"/></svg>';
+  m.innerHTML=svg;
+  m.addEventListener('pointerdown',function(e){
+    var r=m.getBoundingClientRect();
+    flyTo((e.clientX-r.left)/r.width*W,(e.clientY-r.top)/r.height*H);});
+})();
+
+window.CV={clear:clear,fit:fit,fitAll:fitAll,select:select,
+  lane:function(i){var lk=D.lanes[i].key;
+    flyTo(D.laneX[lk]+D.laneW[lk]/2,H*.34,Math.max(S.k,.42));},
+  theme:function(){var c=document.documentElement.getAttribute('data-theme');
+    var n=c==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);
+    localStorage.setItem('theme',n);}};
+var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);
+fit();
+})();
+</script>
+</body></html>

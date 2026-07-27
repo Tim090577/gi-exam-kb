@@ -1,0 +1,132 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>消化科國考知識庫</title><style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;--accent2:#2c6e63;
+--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;
+--accent:#d9a066;--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}}
+:root[data-theme=dark]{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;--accent:#d9a066;
+--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}
+:root[data-theme=light]{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,
+"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;height:56px}
+.brand{font-weight:700;letter-spacing:.02em;color:var(--fg)}
+.brand small{color:var(--muted);font-weight:400;margin-left:8px}
+.grid{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
+nav.side{position:sticky;top:72px;max-height:calc(100vh - 90px);overflow:auto;font-size:14px;
+padding-right:8px;border-right:1px solid var(--line)}
+nav.side a{display:block;padding:5px 8px;border-radius:6px;color:var(--fg)}
+nav.side a:hover{background:var(--card);text-decoration:none}
+nav.side a.on{background:var(--card);color:var(--accent);font-weight:600}
+nav.side .grp{margin:14px 0 4px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+main{min-width:0;padding-bottom:80px}
+h1{font-size:30px;line-height:1.35;margin:24px 0 6px}
+h2{font-size:21px;margin:38px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:17px;margin:24px 0 6px;color:var(--accent)}
+h4{font-size:15px;margin:18px 0 4px;color:var(--muted)}
+p,li{overflow-wrap:break-word}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--card);font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--card) 60%,transparent)}
+code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:13px;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center}
+blockquote{margin:14px 0;padding:10px 14px;background:var(--warnbg);border-left:4px solid var(--warn);
+border-radius:0 8px 8px 0}
+blockquote p{margin:4px 0}
+details.rawblock{margin:12px 0;border:1px solid var(--line);border-radius:8px;padding:8px 12px;
+background:var(--card)}
+details.rawblock summary{cursor:pointer;color:var(--muted);font-size:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 20px;font-size:13px;color:var(--muted)}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.chip.hot{border-color:var(--accent);color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:16px}
+.card .bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0 4px}
+.card .bar i{display:block;height:100%;background:var(--accent)}
+.card .n{font-size:12px;color:var(--muted)}
+#q{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);
+color:var(--fg);font-size:14px}
+#results{margin-top:10px}
+#results .hit{padding:8px 10px;border-bottom:1px solid var(--line)}
+.tt{font-size:13px;color:var(--muted)}
+.btn{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:8px;
+padding:5px 10px;font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;color:var(--muted);font-size:13px}
+.qz{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.qz .opt{display:block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:6px 0;
+cursor:pointer}
+.qz .opt.ok{background:#dcfce7;border-color:#16a34a}
+.qz .opt.no{background:#fee2e2;border-color:#dc2626}
+@media (prefers-color-scheme:dark){.qz .opt.ok{background:#14351f}.qz .opt.no{background:#3a1717}}
+.qz .exp{display:none;margin-top:8px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:14px}
+mark{background:var(--hi);color:inherit}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:14px 0}
+figure.fig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+figure.fig img{width:100%;height:210px;object-fit:contain;background:var(--bg);border-radius:6px}
+figure.fig figcaption{font-size:13px;line-height:1.55;margin-top:8px}
+figure.fig .cred{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+@media(max-width:900px){figure.fig img{height:190px}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">消化科國考知識庫<small>逆向命題拆解</small></a>
+<span style="flex:1"></span>
+<button class="btn" onclick="toggleTheme()">☾/☀</button>
+</div></header>
+<div class="wrap"><div class="grid"><nav class="side"><a href="index.html" class="on">總覽與命題地圖</a><a href="top100.html" class="">近五年 100 大考點</a><a href="tables.html" class="">高鑑別度比較表</a><a href="scores.html" class="">分級系統總表</a><a href="quiz.html" class="">自我測驗</a><a href="canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></nav><main><h1>消化科國考知識庫</h1>
+<p class="tt">以考選部 111-1～115-2 醫師分階段考試（一階：醫學一、二；二階：醫學三、四、五、六）
+共 5200 題為語料，逆向拆解命題邏輯後依出題頻率排序。</p>
+<p><input id="q" placeholder="搜尋疾病、藥物、分級系統、考點關鍵字…"><div id="results"></div></p>
+<h2>章節（依近五年出題頻率排序）</h2><div class="cards"><div class="card"><h3><a href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a></h3><div class="n">肝｜近五年 29 題</div><div class="bar"><i style="width:52%"></i></div><div class="n">台灣消化科命題的主軸；一階考病毒致癌機轉，二階考分期與治療決策，是整個知識庫的橋樑示範</div></div><div class="card"><h3><a href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a></h3><div class="n">肝｜近五年 36 題</div><div class="bar"><i style="width:65%"></i></div><div class="n">一個機轉（內臟血管擴張）串起全部併發症，是二階最會出「下一步處置」的章節</div></div><div class="card"><h3><a href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a></h3><div class="n">胃｜近五年 38 題</div><div class="bar"><i style="width:69%"></i></div><div class="n">一階考胃腺細胞與胃酸調控，二階考根除療法與併發症手術，是最典型的「同一主題兩階段各考一半」</div></div><div class="card"><h3><a href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></h3><div class="n">腹膜腹壁｜近五年 55 題</div><div class="bar"><i style="width:100%"></i></div><div class="n">二階醫學五的最大得分區；命題核心是「什麼時候要開刀、什麼時候還能等」</div></div></div>
+<h2>怎麼用這個知識庫</h2>
+<ol>
+<li>先看每章「一句話定位」與「高頻考點與陷阱」，這是最短路徑。</li>
+<li>再讀「病理生理｜為什麼」，國考近年愈來愈多機轉題，背結論撐不住。</li>
+<li>一階讀者走「一階↔二階橋樑」的上半，二階讀者走下半，兩邊互相補完。</li>
+<li>每章末的自我測驗與 Anki 卡片用來做間隔複習。</li>
+</ol></main></div></div>
+<footer><div class="wrap">題源：考選部考畢試題（公開資料）111-1～115-2｜內容為自撰整理，非官方詳解｜
+最後建置：<span id="bt"></span></div></footer>
+<script>
+(function(){
+ var t=localStorage.getItem('theme'); if(t)document.documentElement.setAttribute('data-theme',t);
+ window.toggleTheme=function(){var c=document.documentElement.getAttribute('data-theme');
+  var n=c==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('theme',n); if(window.mermaid){location.reload();}};
+})();
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('table').forEach(function(t){
+    if(t.parentElement.classList.contains('tablewrap'))return;
+    var w=document.createElement('div');w.className='tablewrap';
+    t.parentNode.insertBefore(w,t);w.appendChild(t);});
+});
+document.getElementById('bt').textContent=new Date().toLocaleDateString('zh-TW');</script>
+<script>
+fetch('assets/search.json').then(r=>r.json()).then(function(idx){
+ var q=document.getElementById('q'),out=document.getElementById('results');
+ q.addEventListener('input',function(){
+  var v=q.value.trim();out.innerHTML='';if(v.length<2)return;
+  var re=new RegExp(v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'ig');
+  var hits=[];
+  idx.forEach(function(c){
+   var n=(c.title.match(re)||[]).length*10+(c.text.match(re)||[]).length;
+   if(n){var i=c.text.search(re);
+    hits.push({n:n,html:'<div class="hit"><a href="'+c.url+'">'+c.title+'</a> <span class="tt">'+
+     c.organ+'</span><div class="tt">…'+c.text.slice(Math.max(0,i-40),i+90).replace(re,m=>'<mark>'+m+'</mark>')+'…</div></div>'});}
+  });
+  hits.sort((a,b)=>b.n-a.n);
+  out.innerHTML=hits.slice(0,12).map(h=>h.html).join('')||'<div class="tt">沒有符合的章節</div>';
+ });});
+</script></body></html>

@@ -1,0 +1,134 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自我測驗</title><style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;--accent2:#2c6e63;
+--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;
+--accent:#d9a066;--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}}
+:root[data-theme=dark]{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;--accent:#d9a066;
+--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}
+:root[data-theme=light]{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,
+"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;height:56px}
+.brand{font-weight:700;letter-spacing:.02em;color:var(--fg)}
+.brand small{color:var(--muted);font-weight:400;margin-left:8px}
+.grid{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
+nav.side{position:sticky;top:72px;max-height:calc(100vh - 90px);overflow:auto;font-size:14px;
+padding-right:8px;border-right:1px solid var(--line)}
+nav.side a{display:block;padding:5px 8px;border-radius:6px;color:var(--fg)}
+nav.side a:hover{background:var(--card);text-decoration:none}
+nav.side a.on{background:var(--card);color:var(--accent);font-weight:600}
+nav.side .grp{margin:14px 0 4px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+main{min-width:0;padding-bottom:80px}
+h1{font-size:30px;line-height:1.35;margin:24px 0 6px}
+h2{font-size:21px;margin:38px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:17px;margin:24px 0 6px;color:var(--accent)}
+h4{font-size:15px;margin:18px 0 4px;color:var(--muted)}
+p,li{overflow-wrap:break-word}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--card);font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--card) 60%,transparent)}
+code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:13px;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center}
+blockquote{margin:14px 0;padding:10px 14px;background:var(--warnbg);border-left:4px solid var(--warn);
+border-radius:0 8px 8px 0}
+blockquote p{margin:4px 0}
+details.rawblock{margin:12px 0;border:1px solid var(--line);border-radius:8px;padding:8px 12px;
+background:var(--card)}
+details.rawblock summary{cursor:pointer;color:var(--muted);font-size:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 20px;font-size:13px;color:var(--muted)}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.chip.hot{border-color:var(--accent);color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:16px}
+.card .bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0 4px}
+.card .bar i{display:block;height:100%;background:var(--accent)}
+.card .n{font-size:12px;color:var(--muted)}
+#q{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);
+color:var(--fg);font-size:14px}
+#results{margin-top:10px}
+#results .hit{padding:8px 10px;border-bottom:1px solid var(--line)}
+.tt{font-size:13px;color:var(--muted)}
+.btn{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:8px;
+padding:5px 10px;font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;color:var(--muted);font-size:13px}
+.qz{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.qz .opt{display:block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:6px 0;
+cursor:pointer}
+.qz .opt.ok{background:#dcfce7;border-color:#16a34a}
+.qz .opt.no{background:#fee2e2;border-color:#dc2626}
+@media (prefers-color-scheme:dark){.qz .opt.ok{background:#14351f}.qz .opt.no{background:#3a1717}}
+.qz .exp{display:none;margin-top:8px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:14px}
+mark{background:var(--hi);color:inherit}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:14px 0}
+figure.fig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+figure.fig img{width:100%;height:210px;object-fit:contain;background:var(--bg);border-radius:6px}
+figure.fig figcaption{font-size:13px;line-height:1.55;margin-top:8px}
+figure.fig .cred{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+@media(max-width:900px){figure.fig img{height:190px}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">消化科國考知識庫<small>逆向命題拆解</small></a>
+<span style="flex:1"></span>
+<button class="btn" onclick="toggleTheme()">☾/☀</button>
+</div></header>
+<div class="wrap"><div class="grid"><nav class="side"><a href="index.html" class="">總覽與命題地圖</a><a href="top100.html" class="">近五年 100 大考點</a><a href="tables.html" class="">高鑑別度比較表</a><a href="scores.html" class="">分級系統總表</a><a href="quiz.html" class="on">自我測驗</a><a href="canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></nav><main><h1>自我測驗</h1>
+<p class="tt">共 23 題，全部自撰、對應各章高頻考點。可依章節篩選；作答後顯示解析。</p>
+<p><select id="f" class="btn"></select> <button class="btn" onclick="shuffleQ()">重新出題</button>
+<span id="score" class="tt"></span></p><div id="list"></div></main></div></div>
+<footer><div class="wrap">題源：考選部考畢試題（公開資料）111-1～115-2｜內容為自撰整理，非官方詳解｜
+最後建置：<span id="bt"></span></div></footer>
+<script>
+(function(){
+ var t=localStorage.getItem('theme'); if(t)document.documentElement.setAttribute('data-theme',t);
+ window.toggleTheme=function(){var c=document.documentElement.getAttribute('data-theme');
+  var n=c==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('theme',n); if(window.mermaid){location.reload();}};
+})();
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('table').forEach(function(t){
+    if(t.parentElement.classList.contains('tablewrap'))return;
+    var w=document.createElement('div');w.className='tablewrap';
+    t.parentNode.insertBefore(w,t);w.appendChild(t);});
+});
+document.getElementById('bt').textContent=new Date().toLocaleDateString('zh-TW');</script>
+<script>
+var QZ=[],cur=[];
+fetch('assets/quiz.json').then(r=>r.json()).then(function(d){QZ=d;
+ var f=document.getElementById('f');var chs=[...new Set(d.map(x=>x.ch))];
+ f.innerHTML='<option value="">全部章節</option>'+chs.map(c=>'<option>'+c+'</option>').join('');
+ f.onchange=render;render();});
+function shuffleQ(){cur=cur.sort(()=>Math.random()-0.5);draw();}
+function render(){var v=document.getElementById('f').value;
+ cur=QZ.filter(x=>!v||x.ch===v);draw();}
+function draw(){var el=document.getElementById('list');
+ el.innerHTML=cur.map(function(q,i){
+  var opts=Object.keys(q.opts).map(k=>'<label class="opt" data-k="'+k+'" onclick="pick(this,'+i+')">('+k+') '+q.opts[k]+'</label>').join('');
+  return '<div class="qz" id="q'+i+'"><b>'+(i+1)+'.</b> '+q.q+'<div class="tt">'+q.ch+'</div>'+opts+
+   '<div class="exp">正解 '+q.ans+'｜'+(q.why||'')+'</div></div>';}).join('');
+ document.getElementById('score').textContent='';}
+function pick(el,i){var box=document.getElementById('q'+i);
+ if(box.dataset.done)return;box.dataset.done=1;
+ var ans=cur[i].ans;
+ box.querySelectorAll('.opt').forEach(function(o){
+  if(o.dataset.k===ans)o.classList.add('ok');
+  else if(o===el)o.classList.add('no');});
+ box.querySelector('.exp').style.display='block';
+ var done=document.querySelectorAll('.qz[data-done]').length;
+ var right=document.querySelectorAll('.qz[data-done] .opt.ok.picked').length;
+ el.classList.add('picked');
+ right=[...document.querySelectorAll('.qz[data-done]')].filter(b=>b.querySelector('.opt.picked.ok')).length;
+ document.getElementById('score').textContent='已作答 '+done+' 題，答對 '+right+' 題';}
+</script></body></html>

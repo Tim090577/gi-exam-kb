@@ -1,0 +1,788 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>分級系統總表</title><style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;--accent2:#2c6e63;
+--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;
+--accent:#d9a066;--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}}
+:root[data-theme=dark]{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;--accent:#d9a066;
+--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}
+:root[data-theme=light]{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,
+"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;height:56px}
+.brand{font-weight:700;letter-spacing:.02em;color:var(--fg)}
+.brand small{color:var(--muted);font-weight:400;margin-left:8px}
+.grid{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
+nav.side{position:sticky;top:72px;max-height:calc(100vh - 90px);overflow:auto;font-size:14px;
+padding-right:8px;border-right:1px solid var(--line)}
+nav.side a{display:block;padding:5px 8px;border-radius:6px;color:var(--fg)}
+nav.side a:hover{background:var(--card);text-decoration:none}
+nav.side a.on{background:var(--card);color:var(--accent);font-weight:600}
+nav.side .grp{margin:14px 0 4px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+main{min-width:0;padding-bottom:80px}
+h1{font-size:30px;line-height:1.35;margin:24px 0 6px}
+h2{font-size:21px;margin:38px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:17px;margin:24px 0 6px;color:var(--accent)}
+h4{font-size:15px;margin:18px 0 4px;color:var(--muted)}
+p,li{overflow-wrap:break-word}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--card);font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--card) 60%,transparent)}
+code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:13px;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center}
+blockquote{margin:14px 0;padding:10px 14px;background:var(--warnbg);border-left:4px solid var(--warn);
+border-radius:0 8px 8px 0}
+blockquote p{margin:4px 0}
+details.rawblock{margin:12px 0;border:1px solid var(--line);border-radius:8px;padding:8px 12px;
+background:var(--card)}
+details.rawblock summary{cursor:pointer;color:var(--muted);font-size:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 20px;font-size:13px;color:var(--muted)}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.chip.hot{border-color:var(--accent);color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:16px}
+.card .bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0 4px}
+.card .bar i{display:block;height:100%;background:var(--accent)}
+.card .n{font-size:12px;color:var(--muted)}
+#q{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);
+color:var(--fg);font-size:14px}
+#results{margin-top:10px}
+#results .hit{padding:8px 10px;border-bottom:1px solid var(--line)}
+.tt{font-size:13px;color:var(--muted)}
+.btn{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:8px;
+padding:5px 10px;font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;color:var(--muted);font-size:13px}
+.qz{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.qz .opt{display:block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:6px 0;
+cursor:pointer}
+.qz .opt.ok{background:#dcfce7;border-color:#16a34a}
+.qz .opt.no{background:#fee2e2;border-color:#dc2626}
+@media (prefers-color-scheme:dark){.qz .opt.ok{background:#14351f}.qz .opt.no{background:#3a1717}}
+.qz .exp{display:none;margin-top:8px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:14px}
+mark{background:var(--hi);color:inherit}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:14px 0}
+figure.fig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+figure.fig img{width:100%;height:210px;object-fit:contain;background:var(--bg);border-radius:6px}
+figure.fig figcaption{font-size:13px;line-height:1.55;margin-top:8px}
+figure.fig .cred{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+@media(max-width:900px){figure.fig img{height:190px}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">消化科國考知識庫<small>逆向命題拆解</small></a>
+<span style="flex:1"></span>
+<button class="btn" onclick="toggleTheme()">☾/☀</button>
+</div></header>
+<div class="wrap"><div class="grid"><nav class="side"><a href="index.html" class="">總覽與命題地圖</a><a href="top100.html" class="">近五年 100 大考點</a><a href="tables.html" class="">高鑑別度比較表</a><a href="scores.html" class="on">分級系統總表</a><a href="quiz.html" class="">自我測驗</a><a href="canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></nav><main><h1 id="消化科分級與評分系統總表">消化科分級與評分系統總表</h1>
+<blockquote>
+<p>讀法：<strong>先看「這個分數在回答什麼問題」，再看「它不能回答什麼」</strong>。 國考的陷阱幾乎都不在計算，而在「用錯族群」「記錯組成」「把預後分數當診斷工具」。</p>
+</blockquote>
+<h2 id="一頁速查分數-它回答的臨床問題">0. 一頁速查：分數 → 它回答的臨床問題</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>分數</th>
+<th>一句話用途</th>
+<th>最常見國考陷阱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Child-Pugh</td>
+<td>肝硬化肝功能儲備分級</td>
+<td>誤以為含 creatinine（那是 MELD）</td>
+</tr>
+<tr>
+<td>MELD / MELD-Na / MELD 3.0</td>
+<td>肝移植等候排序、短期死亡率</td>
+<td>誤以為含腹水或肝性腦病</td>
+</tr>
+<tr>
+<td>ALBI</td>
+<td>只用 albumin + bilirubin 的客觀肝功能分級</td>
+<td>誤當作可取代 BCLC 分期</td>
+</tr>
+<tr>
+<td>Forrest</td>
+<td>消化性潰瘍出血的<strong>內視鏡</strong>分級 → 決定要不要止血</td>
+<td>Forrest III 仍給內視鏡治療（不需要）</td>
+</tr>
+<tr>
+<td>Glasgow-Blatchford</td>
+<td><strong>內視鏡前</strong>風險分層 → 能不能門診處理</td>
+<td>與 Rockall 混用時機</td>
+</tr>
+<tr>
+<td>Rockall</td>
+<td>內視鏡<strong>後</strong>再出血與死亡率</td>
+<td>誤用於決定是否住院</td>
+</tr>
+<tr>
+<td>AIMS65</td>
+<td>上消化道出血院內死亡率快速估算</td>
+<td>誤以為可預測再出血</td>
+</tr>
+<tr>
+<td>Ranson</td>
+<td>急性胰臟炎嚴重度（需 <strong>48 小時</strong>才完成）</td>
+<td>誤以為入院當下可算完</td>
+</tr>
+<tr>
+<td>BISAP</td>
+<td>24 小時內快速判斷重症風險</td>
+<td>誤以為比 Atlanta 更能定義重症</td>
+</tr>
+<tr>
+<td>Revised Atlanta 2012</td>
+<td>急性胰臟炎<strong>嚴重度定義</strong>（不是預測分數）</td>
+<td>器官衰竭 &lt;48 小時 vs &gt;48 小時</td>
+</tr>
+<tr>
+<td>CTSI / Balthazar</td>
+<td>影像上的壞死與發炎程度</td>
+<td>太早做 CT 會低估壞死</td>
+</tr>
+<tr>
+<td>Tokyo Guidelines 2018</td>
+<td>膽囊炎／膽管炎的<strong>診斷 + 嚴重度分級</strong></td>
+<td>Grade III 該做的是緊急引流不是等抗生素</td>
+</tr>
+<tr>
+<td>BCLC</td>
+<td>肝細胞癌分期<strong>並直接對應治療</strong></td>
+<td>誤以為單看腫瘤大小分期</td>
+</tr>
+<tr>
+<td>Milan criteria</td>
+<td>肝移植適應症</td>
+<td>誤用於決定射頻燒灼</td>
+</tr>
+<tr>
+<td>West Haven</td>
+<td>肝性腦病分級</td>
+<td>誤以為 Grade I 一定有撲翼樣震顫</td>
+</tr>
+<tr>
+<td>Maddrey DF / Lille</td>
+<td>酒精性肝炎是否用類固醇／七天後是否停藥</td>
+<td>把 DF ≥32 當診斷標準</td>
+</tr>
+<tr>
+<td>King’s College criteria</td>
+<td>猛爆性肝衰竭是否需移植</td>
+<td>乙醯胺酚與非乙醯胺酚兩套不同</td>
+</tr>
+<tr>
+<td>Chicago v4.0</td>
+<td>食道高解析度測壓分類</td>
+<td>把 achalasia 三型與 LA 分級搞混</td>
+</tr>
+<tr>
+<td>LA classification</td>
+<td>逆流性食道炎<strong>黏膜破損</strong>分級</td>
+<td>與 Barrett 的 Prague C&amp;M 混淆</td>
+</tr>
+<tr>
+<td>Prague C&amp;M</td>
+<td>Barrett 食道範圍描述</td>
+<td>誤以為含分化不良分級</td>
+</tr>
+<tr>
+<td>Montreal</td>
+<td>IBD 的部位／行為／年齡分類</td>
+<td>與 Truelove-Witts 嚴重度混用</td>
+</tr>
+<tr>
+<td>Truelove-Witts</td>
+<td>潰瘍性結腸炎<strong>急性期嚴重度</strong></td>
+<td>誤用於克隆氏症</td>
+</tr>
+<tr>
+<td>Hinchey</td>
+<td>憩室炎穿孔程度 → 決定手術方式</td>
+<td>把 Hinchey I 當手術適應症</td>
+</tr>
+<tr>
+<td>Alvarado</td>
+<td>闌尾炎臨床機率評分</td>
+<td>誤當作確診工具</td>
+</tr>
+<tr>
+<td>Amsterdam II / Bethesda</td>
+<td>Lynch 症候群篩選</td>
+<td>兩者用途不同（家族史 vs 腫瘤送檢）</td>
+</tr>
+<tr>
+<td>Paris / Kudo</td>
+<td>息肉形態與腺窩型態 → 預測侵犯深度</td>
+<td>與 TNM 混淆</td>
+</tr>
+<tr>
+<td>OLGA / OLGIM</td>
+<td>慢性胃炎萎縮／腸化生分期 → 胃癌風險</td>
+<td>誤以為是 H. pylori 活性分級</td>
+</tr>
+<tr>
+<td>Sarin</td>
+<td>胃靜脈曲張分類</td>
+<td>GOV2 與 IGV1 的治療差異</td>
+</tr>
+<tr>
+<td>Rome IV</td>
+<td>功能性腸胃疾病診斷準則</td>
+<td>誤以為需先做完所有影像才能診斷</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="child-pugh-分級">1. Child-Pugh 分級</h2>
+<p><strong>用途</strong>：估計肝硬化病人的<strong>肝功能儲備</strong>，預測手術（尤其肝切除、腹部手術）與短期存活。</p>
+<p><strong>組成（5 項，各 1–3 分，總分 5–15）</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>1 分</th>
+<th>2 分</th>
+<th>3 分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>總膽紅素 (mg/dL)</td>
+<td>&lt;2</td>
+<td>2–3</td>
+<td>&gt;3</td>
+</tr>
+<tr>
+<td>血清白蛋白 (g/dL)</td>
+<td>&gt;3.5</td>
+<td>2.8–3.5</td>
+<td>&lt;2.8</td>
+</tr>
+<tr>
+<td>INR（或 PT 延長秒數）</td>
+<td>&lt;1.7（&lt;4）</td>
+<td>1.7–2.3（4–6）</td>
+<td>&gt;2.3（&gt;6）</td>
+</tr>
+<tr>
+<td>腹水</td>
+<td>無</td>
+<td>輕度／利尿劑可控</td>
+<td>中重度／難治</td>
+</tr>
+<tr>
+<td>肝性腦病</td>
+<td>無</td>
+<td>Grade 1–2</td>
+<td>Grade 3–4</td>
+</tr>
+</tbody>
+</table>
+<p>分級：<strong>A 5–6｜B 7–9｜C 10–15</strong></p>
+<p><strong>適用族群</strong>：已確診肝硬化者。<strong>不適用</strong>於急性肝炎、非肝硬化門脈高壓、單純膽道阻塞（膽紅素被阻塞因素灌水）。</p>
+<p><strong>限制</strong> - 腹水與肝性腦病是<strong>主觀</strong>判定，觀察者間一致性差。 - 白蛋白會被輸注白蛋白、腎病症候群、營養狀態干擾。 - INR 受不同實驗室 thromboplastin 差異影響（這正是 MELD 改用 INR 標準化仍被詬病之處）。 - 有<strong>天花板效應</strong>：三個都達 3 分就無法再區分嚴重度。 - 不含腎功能，而肝腎症候群是肝硬化最致命的併發症之一。</p>
+<blockquote>
+<p><strong>國考陷阱</strong> 1. 「Child-Pugh 包含下列何者？」選項放 <strong>creatinine</strong> → 錯，那是 MELD。 2. 放 <strong>AST/ALT</strong> → 錯，Child-Pugh 完全不看轉胺酶（肝細胞壞死程度 ≠ 肝功能儲備）。 3. 「膽紅素&gt;3、白蛋白&lt;2.8、INR&gt;2.3」不是自動 Class C，還要加腹水與腦病才算總分。 4. 原始 Child-Turcotte 用的是<strong>營養狀態</strong>，Pugh 改成 PT/INR — 偶爾考沿革。</p>
+</blockquote>
+<p><strong>臨床決策連結</strong> - Child A：可考慮肝切除（再加上 portal pressure 與 bilirubin 評估）。 - Child B/C：肝切除風險陡升 → 轉向移植評估或局部治療。 - Child C 合併腹水／腦病：非緊急手術原則上避免。 - 抗病毒藥物選擇：Child B/C 者避免用會惡化的方案（例如失代償肝硬化不用 protease inhibitor 類 HCV 藥）。</p>
+<hr />
+<h2 id="meld-meld-na-meld-3.0">2. MELD / MELD-Na / MELD 3.0</h2>
+<p><strong>用途</strong>：預測末期肝病<strong>三個月死亡率</strong>，用於肝移植等候名單排序。原始開發目的其實是預測 <strong>TIPS 術後存活</strong>，2002 年才被 UNOS 採用為器官分配依據 — 這個沿革是考點。</p>
+<p><strong>公式（MELD）</strong></p>
+<pre><code>MELD = 3.78×ln(總膽紅素) + 11.2×ln(INR) + 9.57×ln(creatinine) + 6.43</code></pre>
+<ul>
+<li>任一數值 &lt;1.0 一律以 1.0 代入（避免 ln 為負）。</li>
+<li>creatinine 上限 4.0 mg/dL；一週內接受 ≥2 次透析者，creatinine 直接以 4.0 代入。</li>
+</ul>
+<p><strong>演進</strong> | 版本 | 新增 | 為什麼要改 | |—|—|—| | MELD-Na（2016 採用） | 血鈉 | 低血鈉本身是死亡率獨立因子，反映稀釋性低鈉與循環失能 | | MELD 3.0（2023 採用） | 女性校正、白蛋白 | 原公式低估女性死亡率（creatinine 受肌肉量影響），造成女性等候不利 |</p>
+<p><strong>適用族群</strong>：≥12 歲末期肝病。兒童用 <strong>PELD</strong>（含年齡、身高／體重、白蛋白、膽紅素、INR、生長遲滯）。</p>
+<p><strong>限制</strong> - 不含腹水、肝性腦病、營養狀態、生活品質。 - 對<strong>難治性腹水、反覆靜脈曲張出血、嚴重搔癢、肝肺症候群</strong>等「MELD 分數低但很痛苦」的病人會低估 → 需靠 <strong>exception points</strong>。 - creatinine 受肌肉量、性別、營養影響。 - 不適用於急性肝衰竭（那用 King’s College criteria）。</p>
+<blockquote>
+<p><strong>國考陷阱</strong> 1. 「MELD 包含下列何者？」放 <strong>腹水／肝性腦病</strong> → 錯。 2. 誤以為 MELD 分數越高越適合手術 — 相反，MELD ≥15 才有移植存活優勢（低於此，移植的風險大於留在名單上）。 3. 忘記透析病人 creatinine 代 4.0。</p>
+</blockquote>
+<p><strong>臨床決策連結</strong> - MELD ≥15：移植帶來存活利益的門檻。 - MELD ≥21 或 Maddrey DF ≥32：重症酒精性肝炎，考慮類固醇。 - 非肝臟手術風險評估：MELD &gt;20 死亡率顯著上升。</p>
+<hr />
+<h2 id="albi-gradealbuminbilirubin">3. ALBI grade（Albumin–Bilirubin）</h2>
+<p><strong>用途</strong>：<strong>只用白蛋白與膽紅素</strong>兩個客觀數值評估肝功能，避開 Child-Pugh 的主觀項目。 主要用在 <strong>HCC 病人分層</strong>（尤其 Child A 內部再細分）。</p>
+<table>
+<thead>
+<tr>
+<th>等級</th>
+<th>意義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALBI 1</td>
+<td>肝功能最好</td>
+</tr>
+<tr>
+<td>ALBI 2</td>
+<td>中等</td>
+</tr>
+<tr>
+<td>ALBI 3</td>
+<td>差</td>
+</tr>
+</tbody>
+</table>
+<p><strong>限制</strong>：不含腎功能與凝血；不是分期系統，不能取代 BCLC。 <strong>決策連結</strong>：Child A 但 ALBI 2 的病人接受 TACE 或標靶治療的耐受性明顯較差 — 近年文獻的重點。</p>
+<hr />
+<h2 id="上消化道出血三兄弟glasgow-blatchford-rockall-aims65">4. 上消化道出血三兄弟：Glasgow-Blatchford / Rockall / AIMS65</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Glasgow-Blatchford (GBS)</th>
+<th>Rockall</th>
+<th>AIMS65</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>何時算</td>
+<td><strong>內視鏡前</strong></td>
+<td>pre 版可術前算，完整版需內視鏡後</td>
+<td>入院即可</td>
+</tr>
+<tr>
+<td>組成</td>
+<td>BUN、Hb、收縮壓、脈搏、黑便、昏厥、肝病、心衰竭</td>
+<td>年齡、休克、共病＋（內視鏡診斷、出血徵象）</td>
+<td>Albumin&lt;3.0、INR&gt;1.5、Altered mental status、SBP≤90、age&gt;65</td>
+</tr>
+<tr>
+<td>預測什麼</td>
+<td><strong>需不需要介入</strong>（輸血、內視鏡治療、手術）</td>
+<td>再出血與死亡率</td>
+<td>院內死亡率</td>
+</tr>
+<tr>
+<td>關鍵切點</td>
+<td><strong>GBS ≤1 → 可門診處理</strong>（低風險）</td>
+<td>完整 Rockall ≥5 高風險</td>
+<td>≥2 分死亡率明顯上升</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>國考陷阱</strong> 1. 問「哪個分數用來決定病人能不能不住院」→ <strong>Glasgow-Blatchford</strong>，不是 Rockall。 2. GBS <strong>不含年齡</strong>；Rockall <strong>含年齡</strong> — 這是最愛考的區分點。 3. AIMS65 預測<strong>死亡</strong>不是再出血。</p>
+</blockquote>
+<hr />
+<h2 id="forrest-分級消化性潰瘍出血">5. Forrest 分級（消化性潰瘍出血）</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>分級</th>
+<th>內視鏡所見</th>
+<th>未治療再出血率（概略）</th>
+<th>處置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ia</strong></td>
+<td>噴射狀動脈出血</td>
+<td>~55%</td>
+<td>內視鏡止血（雙重療法）＋高劑量 PPI</td>
+</tr>
+<tr>
+<td><strong>Ib</strong></td>
+<td>滲血</td>
+<td>~50%</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><strong>IIa</strong></td>
+<td>可見裸露血管</td>
+<td>~43%</td>
+<td>內視鏡止血</td>
+</tr>
+<tr>
+<td><strong>IIb</strong></td>
+<td>附著血塊</td>
+<td>~22%</td>
+<td>沖洗／移除血塊後評估，暴露出 Ia–IIa 則治療</td>
+</tr>
+<tr>
+<td><strong>IIc</strong></td>
+<td>平坦色素斑</td>
+<td>~10%</td>
+<td>不需內視鏡止血</td>
+</tr>
+<tr>
+<td><strong>III</strong></td>
+<td>乾淨潰瘍底</td>
+<td>~5%</td>
+<td>不需止血，可早期進食、早期出院</td>
+</tr>
+</tbody>
+</table>
+<p><strong>適用族群</strong>：消化性潰瘍出血。<strong>不適用</strong>於靜脈曲張出血（那看 Sarin 分類與 Baveno 準則）、Dieulafoy、Mallory-Weiss。</p>
+<p><strong>限制</strong>：觀察者間一致性中等（尤其 IIb 與 IIc）；不含病人全身狀況與共病。</p>
+<blockquote>
+<p><strong>國考陷阱</strong> 1. Forrest <strong>III 給予內視鏡治療</strong> → 錯，反而增加風險且無益。 2. IIb（附著血塊）是最有爭議的一格，題目常設計成「該不該沖掉血塊」。 3. 拼字：是 <strong>Forrest</strong>（雙 r），不是 Forest。</p>
+</blockquote>
+<p><strong>決策連結</strong>：Ia–IIa → 內視鏡治療後 IV PPI（bolus + infusion 或高劑量間歇）72 小時；IIc/III → 口服 PPI、早期進食、考慮早期出院。</p>
+<hr />
+<h2 id="急性胰臟炎ranson-bisap-revised-atlanta-ctsi">6. 急性胰臟炎：Ranson / BISAP / Revised Atlanta / CTSI</h2>
+<h3 id="ranson-criteria">Ranson criteria</h3>
+<ul>
+<li>入院時 5 項：年齡&gt;55、WBC&gt;16000、glucose&gt;200、AST&gt;250、LDH&gt;350。</li>
+<li>48 小時內 6 項：Hct 下降&gt;10%、BUN 上升&gt;5、Ca&lt;8、PaO₂&lt;60、base deficit&gt;4、體液滯留&gt;6L。</li>
+<li><strong>必須等 48 小時才完整</strong> — 這是最大限制，也是最常考的陷阱。</li>
+<li>膽石性胰臟炎有另一套略不同的切點。</li>
+</ul>
+<h3 id="bisap24-小時內">BISAP（24 小時內）</h3>
+<p><strong>B</strong>UN&gt;25、<strong>I</strong>mpaired mental status、<strong>S</strong>IRS、<strong>A</strong>ge&gt;60、<strong>P</strong>leural effusion。≥3 分死亡率顯著上升。</p>
+<h3 id="revised-atlanta-2012這是定義不是預測分數">Revised Atlanta 2012（這是<strong>定義</strong>不是預測分數）</h3>
+<table>
+<thead>
+<tr>
+<th>嚴重度</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>輕度</td>
+<td>無器官衰竭、無局部或全身併發症</td>
+</tr>
+<tr>
+<td>中重度</td>
+<td><strong>暫時性</strong>器官衰竭（&lt;48 小時）或局部／全身併發症</td>
+</tr>
+<tr>
+<td>重度</td>
+<td><strong>持續性</strong>器官衰竭（&gt;48 小時）</td>
+</tr>
+</tbody>
+</table>
+<p>局部併發症術語也一併更新：&lt;4 週為 acute peripancreatic fluid collection／acute necrotic collection；&gt;4 週有包膜者為 pseudocyst／walled-off necrosis。</p>
+<h3 id="ctsibalthazar-壞死程度">CTSI（Balthazar + 壞死程度）</h3>
+<ul>
+<li>太早（&lt;72 小時）做 CT 會<strong>低估壞死範圍</strong>，這是影像題常考的判讀陷阱。</li>
+</ul>
+<blockquote>
+<p><strong>國考陷阱</strong> 1. 「入院當下可用何者評估嚴重度」→ 不能選 Ranson（要 48 小時）。 2. 器官衰竭 48 小時是中重度與重度的分水嶺。 3. 血中 amylase／lipase 的<strong>高低與嚴重度無關</strong> — 常被設計成誘答。</p>
+</blockquote>
+<hr />
+<h2 id="tokyo-guidelines-2018tg18">7. Tokyo Guidelines 2018（TG18）</h2>
+<h3 id="急性膽囊炎">急性膽囊炎</h3>
+<ul>
+<li>診斷：A 局部發炎徵象（Murphy sign、右上腹痛／腫塊）＋ B 全身發炎（發燒、CRP↑、WBC↑）＋ C 影像所見。 <strong>A+B 疑似，A+B+C 確診</strong>。</li>
+<li>嚴重度：Grade I 輕度｜Grade II 局部發炎嚴重（WBC&gt;18000、可觸及腫塊、症狀&gt;72 小時、明顯局部併發症）｜<strong>Grade III 合併器官功能障礙</strong>。</li>
+</ul>
+<h3 id="急性膽管炎">急性膽管炎</h3>
+<ul>
+<li>診斷：A 全身性發炎 ＋ B 膽汁鬱積（黃疸、肝功能異常）＋ C 影像（膽管擴張、病因）。</li>
+<li>Grade III：合併器官功能障礙（低血壓需升壓劑、意識改變、PaO₂/FiO₂&lt;300、Cr&gt;2.0、INR&gt;1.5、血小板&lt;10 萬）。</li>
+</ul>
+<blockquote>
+<p><strong>國考陷阱</strong> 1. Charcot triad（發燒、黃疸、右上腹痛）<strong>敏感度低</strong>（約 26–72%），不能拿來排除膽管炎； Reynolds pentad（再加低血壓、意識改變）代表重症。 2. Grade III 膽管炎的正解是<strong>緊急膽道引流（ERCP）＋支持治療</strong>，不是「先抗生素觀察」。 3. 輕度膽囊炎的手術時機：早期腹腔鏡膽囊切除（發病 72 小時內）優於延遲手術。</p>
+</blockquote>
+<hr />
+<h2 id="肝細胞癌bclc-與-milan-criteria">8. 肝細胞癌：BCLC 與 Milan criteria</h2>
+<h3 id="bclcbarcelona-clinic-liver-cancer">BCLC（Barcelona Clinic Liver Cancer）</h3>
+<p><strong>唯一同時整合腫瘤負荷、肝功能、體能狀態並直接連到治療的分期系統</strong> — 這句話本身就是考點。</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>分期</th>
+<th>腫瘤</th>
+<th>肝功能／PS</th>
+<th>首選治療</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0（極早期）</td>
+<td>單顆 &lt;2 cm</td>
+<td>Child A、PS 0</td>
+<td>切除／燒灼</td>
+</tr>
+<tr>
+<td>A（早期）</td>
+<td>單顆或 ≤3 顆且各 ≤3 cm</td>
+<td>Child A–B、PS 0</td>
+<td>切除／移植／燒灼</td>
+</tr>
+<tr>
+<td>B（中期）</td>
+<td>多發、無血管侵犯</td>
+<td>Child A–B、PS 0</td>
+<td>TACE（近年加入全身治療合併策略）</td>
+</tr>
+<tr>
+<td>C（進展期）</td>
+<td>血管侵犯或肝外轉移</td>
+<td>Child A–B、PS 1–2</td>
+<td>全身治療（免疫合併抗血管新生為第一線）</td>
+</tr>
+<tr>
+<td>D（末期）</td>
+<td>任何</td>
+<td>Child C、PS &gt;2</td>
+<td>支持療法／移植評估</td>
+</tr>
+</tbody>
+</table>
+<p>2022 年更新引入 <strong>treatment stage migration</strong> 與「非最佳候選者」概念：同一期別內可依個別條件上下移動。</p>
+<h3 id="milan-criteria移植適應症">Milan criteria（移植適應症）</h3>
+<p>單顆 ≤5 cm，或 ≤3 顆且每顆 ≤3 cm，<strong>無大血管侵犯、無肝外轉移</strong>。 - UCSF criteria 為放寬版本。 - <strong>陷阱</strong>：Milan 是<strong>移植</strong>適應症，不是射頻燒灼或切除的適應症。</p>
+<hr />
+<h2 id="肝性腦病west-haven">9. 肝性腦病：West Haven</h2>
+<table>
+<thead>
+<tr>
+<th>級別</th>
+<th>表現</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimal (covert)</td>
+<td>只有心理計量測驗異常，臨床看不出來</td>
+</tr>
+<tr>
+<td>I</td>
+<td>注意力下降、睡眠週期改變、輕微人格改變</td>
+</tr>
+<tr>
+<td>II</td>
+<td>嗜睡、定向障礙、明顯撲翼樣震顫</td>
+</tr>
+<tr>
+<td>III</td>
+<td>昏睡但可喚醒、明顯混亂</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>昏迷</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>陷阱</strong>：撲翼樣震顫（asterixis）在 Grade IV 反而<strong>消失</strong>（因為病人已無自主肌張力）， 「昏迷病人沒有 asterixis 所以不是肝性腦病」是典型錯誤推論。</p>
+</blockquote>
+<hr />
+<h2 id="酒精性肝炎maddrey-df-與-lille-score">10. 酒精性肝炎：Maddrey DF 與 Lille score</h2>
+<ul>
+<li><strong>Maddrey Discriminant Function</strong> = 4.6 ×（PT − 對照 PT）＋ 總膽紅素。 <strong>DF ≥32</strong> → 重症，考慮 prednisolone 40 mg/day 28 天。</li>
+<li><strong>Lille score</strong>：治療第 7 天評估反應，<strong>≥0.45 代表無反應</strong> → 停用類固醇，避免感染風險。</li>
+<li>使用類固醇前必須排除活動性感染、消化道出血、腎衰竭。</li>
+</ul>
+<hr />
+<h2 id="急性肝衰竭kings-college-criteria">11. 急性肝衰竭：King’s College Criteria</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>乙醯胺酚中毒</th>
+<th>非乙醯胺酚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pH &lt;7.3（補液後）<strong>或</strong> 同時具備 PT&gt;100 秒（INR&gt;6.5）、Cr&gt;3.4、Grade III–IV 腦病</td>
+<td>PT&gt;100 秒（INR&gt;6.5）<strong>單獨即可</strong>，或以下五項中任三項：年齡&lt;10 或&gt;40、病因為非 A 非 B 肝炎／藥物、黃疸至腦病&gt;7 天、PT&gt;50 秒、膽紅素&gt;17.5</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>陷阱</strong>：兩套準則完全不同，題目常用乙醯胺酚的數字套到病毒性肝炎。</p>
+</blockquote>
+<hr />
+<h2 id="食道chicago-v4.0la-classificationprague-cm">12. 食道：Chicago v4.0、LA classification、Prague C&amp;M</h2>
+<ul>
+<li><strong>Chicago Classification v4.0</strong>（高解析度測壓）：achalasia I 型（無蠕動）、II 型（全食道加壓，<strong>治療反應最好</strong>）、III 型（痙攣型，最難治）。</li>
+<li><strong>LA classification</strong>（逆流性食道炎黏膜破損）：A（≤5 mm）、B（&gt;5 mm 不連續）、C（跨黏膜皺襞但 &lt;75% 周徑）、D（≥75% 周徑）。 <strong>C/D 才算確診 GERD 的客觀證據</strong>（Lyon consensus）。</li>
+<li><strong>Prague C&amp;M</strong>：Barrett 食道的環周長度 C 與最大長度 M。<strong>不含分化不良分級</strong>，dysplasia 要另外病理報告。</li>
+</ul>
+<hr />
+<h2 id="發炎性腸道疾病montrealtruelove-wittsmayocdai">13. 發炎性腸道疾病：Montreal、Truelove-Witts、Mayo、CDAI</h2>
+<ul>
+<li><strong>Montreal</strong>：克隆氏症 A（年齡）L（部位 L1 迴腸／L2 大腸／L3 迴結腸／L4 上消化道）B（行為 B1 非狹窄非穿透／B2 狹窄／B3 穿透，＋p 肛周）；潰瘍性結腸炎 E1 直腸／E2 左側／E3 廣泛。</li>
+<li><strong>Truelove-Witts</strong>：UC 急性期嚴重度（排便次數、血便、發燒、心搏、貧血、ESR）→ 重度者需住院靜脈類固醇。</li>
+<li><strong>Mayo score</strong>：UC 疾病活動度與治療反應（含內視鏡次分數，臨床試驗常用）。</li>
+<li><strong>CDAI / Harvey-Bradshaw</strong>：克隆氏症活動度，HBI 是簡化版。</li>
+</ul>
+<blockquote>
+<p><strong>陷阱</strong>：Truelove-Witts 只用於 UC；把它套到克隆氏症是常見誘答。</p>
+</blockquote>
+<hr />
+<h2 id="其他高頻小分類">14. 其他高頻小分類</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>系統</th>
+<th>重點</th>
+<th>決策連結</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hinchey</strong>（憩室炎）</td>
+<td>I 局限膿瘍｜II 骨盆膿瘍｜III 化膿性腹膜炎｜IV 糞性腹膜炎</td>
+<td>III/IV 需緊急手術；I/II 多可引流＋抗生素</td>
+</tr>
+<tr>
+<td><strong>Alvarado</strong>（闌尾炎）</td>
+<td>MANTRELS 8 項，≥7 高機率</td>
+<td>高分者可直接手術；中間分數者做影像</td>
+</tr>
+<tr>
+<td><strong>Sarin</strong>（胃靜脈曲張）</td>
+<td>GOV1／GOV2／IGV1／IGV2</td>
+<td>GOV2、IGV1 首選 <strong>cyanoacrylate 注射</strong>，不是結紮</td>
+</tr>
+<tr>
+<td><strong>Baveno VII</strong></td>
+<td>CSPH 定義、LSM rule-of-five、carvedilol 為優先 NSBB</td>
+<td>LSM ≤15 kPa 且血小板 ≥150 K 可排除 CSPH</td>
+</tr>
+<tr>
+<td><strong>SAAG</strong></td>
+<td>≥1.1 g/dL → 門脈高壓性腹水</td>
+<td>決定是否走肝硬化路線；比舊的「滲出液／漏出液」準</td>
+</tr>
+<tr>
+<td><strong>OLGA / OLGIM</strong></td>
+<td>慢性胃炎萎縮／腸化生分期</td>
+<td>III–IV 期需內視鏡監測（胃癌風險）</td>
+</tr>
+<tr>
+<td><strong>Paris / Kudo / JNET</strong></td>
+<td>息肉形態與腺窩型態</td>
+<td>預測黏膜下侵犯 → 決定內視鏡切除 vs 外科</td>
+</tr>
+<tr>
+<td><strong>Amsterdam II / Bethesda</strong></td>
+<td>Lynch 症候群篩選</td>
+<td>Amsterdam 看<strong>家族史</strong>，Bethesda 決定<strong>腫瘤要不要送 MSI/IHC</strong></td>
+</tr>
+<tr>
+<td><strong>Rome IV</strong></td>
+<td>功能性腸胃疾病（DGBI）診斷準則</td>
+<td>症狀導向診斷，不需先排除所有器質病因才能下診斷</td>
+</tr>
+<tr>
+<td><strong>Bristol stool scale</strong></td>
+<td>糞便形態 1–7</td>
+<td>IBS 亞型分類（IBS-C／IBS-D／IBS-M）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="這一章怎麼被考三種常見題型">15. 這一章怎麼被考：三種常見題型</h2>
+<ol type="1">
+<li><strong>組成題</strong>：「下列何者<strong>不是</strong>Child-Pugh 的項目？」→ 熟記五項與 MELD 三（四）項的差異。</li>
+<li><strong>時機題</strong>：「入院當下最適合用哪個分數？」→ 考 Ranson 需 48 小時、GBS 可術前算。</li>
+<li><strong>決策題</strong>：給臨床情境問下一步 → 分數只是中介，真正要答的是<strong>處置</strong>（例如 TG18 Grade III 膽管炎 → 緊急引流）。</li>
+</ol>
+<details class="rawblock"><summary>測驗題原始碼</summary><pre>Q: 68 歲男性肝硬化病人，總膽紅素 3.5 mg/dL、白蛋白 2.6 g/dL、INR 2.5、中度腹水、意識清楚。下列敘述何者正確？
+A) Child-Pugh 為 Class B
+B) 需再測 creatinine 才能算出 Child-Pugh 分數
+C) Child-Pugh 為 Class C，肝切除風險極高
+D) 因無肝性腦病，Child-Pugh 最高只能到 Class B
+ans: C
+why: 膽紅素&gt;3 得 3 分、白蛋白&lt;2.8 得 3 分、INR&gt;2.3 得 3 分、中度腹水 2 分、無腦病 1 分，共 12 分為 Class C。Child-Pugh 不含 creatinine（B 錯），單項無異常不會限制總級別（D 錯）。
+
+Q: 55 歲男性因解黑便入院，血壓 100/60 mmHg、脈搏 105 次/分、Hb 9.8 g/dL、BUN 35 mg/dL。急診醫師想決定病人可否安排門診追蹤而不住院，最適合使用下列何者？
+A) Rockall score
+B) Glasgow-Blatchford score
+C) Forrest classification
+D) AIMS65
+ans: B
+why: GBS 是內視鏡前的風險分層工具，≤1 分可考慮門診處理。Rockall 完整版需內視鏡結果，Forrest 需內視鏡所見，AIMS65 預測死亡率而非是否需介入。
+
+Q: 急性胰臟炎病人入院 36 小時後仍有持續低血壓需升壓劑支持。依 2012 修訂版 Atlanta 分類，此時最適當的描述為何？
+A) 重度急性胰臟炎
+B) 中重度急性胰臟炎，若器官衰竭於 48 小時內緩解
+C) 輕度急性胰臟炎合併局部併發症
+D) 需等 Ranson 分數滿 48 小時才能分類
+ans: B
+why: Atlanta 2012 以器官衰竭是否持續超過 48 小時區分中重度與重度。36 小時尚未跨過 48 小時門檻，須待後續是否緩解才能定論；Atlanta 是定義而非預測分數，不需等 Ranson。</pre></details>
+<details class="rawblock"><summary>Anki 卡片原始碼</summary><pre>Child-Pugh 的五個組成？   總膽紅素、白蛋白、INR(PT)、腹水、肝性腦病（不含 creatinine、不含轉胺酶）   分級系統
+MELD 原始三項是什麼？開發目的為何？    總膽紅素、INR、creatinine；原本用來預測 TIPS 術後存活，2002 年才用於移植分配  分級系統
+MELD 3.0 相較 MELD-Na 多了什麼？為什麼？   多了性別校正與白蛋白；因原公式低估女性死亡率（creatinine 受肌肉量影響）   分級系統
+哪個上消化道出血分數用來決定可否門診處理？切點？    Glasgow-Blatchford score，≤1 分為低風險   分級系統
+Rockall 與 Glasgow-Blatchford 最關鍵的組成差異？  Rockall 含年齡，GBS 不含年齡    分級系統
+Forrest 分級中哪幾級需要內視鏡止血？  Ia、Ib、IIa 需要；IIb 需移除血塊後評估；IIc、III 不需要   分級系統
+Ranson criteria 最大的臨床限制是什麼？ 必須等滿 48 小時才能完成評分，無法在入院當下分層  分級系統
+Atlanta 2012 區分中重度與重度胰臟炎的關鍵？    器官衰竭是否持續超過 48 小時    分級系統
+Tokyo Guidelines 2018 中 Grade III 膽管炎的處置原則？ 合併器官功能障礙，需緊急膽道引流（ERCP）加支持治療 分級系統
+Milan criteria 的內容與用途？  單顆≤5cm 或≤3顆各≤3cm、無血管侵犯與肝外轉移；用於肝移植適應症    分級系統
+BCLC 分期與其他分期最大的不同？  同時整合腫瘤負荷、肝功能與體能狀態，並直接對應治療選擇 分級系統
+West Haven Grade IV 為何沒有 asterixis？ 病人已昏迷、無自主肌張力，撲翼樣震顫消失    分級系統
+Maddrey DF 的切點與意義？  DF ≥32 為重症酒精性肝炎，考慮類固醇治療 分級系統
+Lille score 何時評估？切點意義？  類固醇治療第 7 天評估，≥0.45 代表無反應應停藥 分級系統
+SAAG ≥1.1 g/dL 代表什麼？    門脈高壓性腹水 分級系統
+Sarin 分類中 GOV2 與 IGV1 的治療首選？    Cyanoacrylate 組織膠注射，而非橡皮圈結紮 分級系統
+LA classification 哪幾級可作為 GERD 的客觀證據？    C 級與 D 級    分級系統
+Prague C&amp;M 描述什麼？不含什麼？   描述 Barrett 食道的環周長度 C 與最大長度 M；不含分化不良分級   分級系統
+Truelove-Witts 用於哪個疾病？  潰瘍性結腸炎的急性期嚴重度，不用於克隆氏症   分級系統
+Amsterdam II 與 Bethesda criteria 的用途差異？ Amsterdam 依家族史篩選 Lynch 症候群；Bethesda 決定腫瘤檢體是否送 MSI/IHC 檢測    分級系統</pre></details>
+</main></div></div>
+<footer><div class="wrap">題源：考選部考畢試題（公開資料）111-1～115-2｜內容為自撰整理，非官方詳解｜
+最後建置：<span id="bt"></span></div></footer>
+<script>
+(function(){
+ var t=localStorage.getItem('theme'); if(t)document.documentElement.setAttribute('data-theme',t);
+ window.toggleTheme=function(){var c=document.documentElement.getAttribute('data-theme');
+  var n=c==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('theme',n); if(window.mermaid){location.reload();}};
+})();
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('table').forEach(function(t){
+    if(t.parentElement.classList.contains('tablewrap'))return;
+    var w=document.createElement('div');w.className='tablewrap';
+    t.parentNode.insertBefore(w,t);w.appendChild(t);});
+});
+document.getElementById('bt').textContent=new Date().toLocaleDateString('zh-TW');</script>
+<script src="assets/mermaid.min.js"></script><script>mermaid.initialize({{startOnLoad:true,theme:(document.documentElement.getAttribute("data-theme")==="dark"||(!document.documentElement.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme:dark)").matches))?"dark":"neutral",flowchart:{{useMaxWidth:true}}}});</script></body></html>

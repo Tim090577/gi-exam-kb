@@ -1,0 +1,879 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>近五年 100 大考點</title><style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;--accent2:#2c6e63;
+--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;
+--accent:#d9a066;--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}}
+:root[data-theme=dark]{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;--accent:#d9a066;
+--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}
+:root[data-theme=light]{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,
+"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;height:56px}
+.brand{font-weight:700;letter-spacing:.02em;color:var(--fg)}
+.brand small{color:var(--muted);font-weight:400;margin-left:8px}
+.grid{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
+nav.side{position:sticky;top:72px;max-height:calc(100vh - 90px);overflow:auto;font-size:14px;
+padding-right:8px;border-right:1px solid var(--line)}
+nav.side a{display:block;padding:5px 8px;border-radius:6px;color:var(--fg)}
+nav.side a:hover{background:var(--card);text-decoration:none}
+nav.side a.on{background:var(--card);color:var(--accent);font-weight:600}
+nav.side .grp{margin:14px 0 4px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+main{min-width:0;padding-bottom:80px}
+h1{font-size:30px;line-height:1.35;margin:24px 0 6px}
+h2{font-size:21px;margin:38px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:17px;margin:24px 0 6px;color:var(--accent)}
+h4{font-size:15px;margin:18px 0 4px;color:var(--muted)}
+p,li{overflow-wrap:break-word}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--card);font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--card) 60%,transparent)}
+code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:13px;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center}
+blockquote{margin:14px 0;padding:10px 14px;background:var(--warnbg);border-left:4px solid var(--warn);
+border-radius:0 8px 8px 0}
+blockquote p{margin:4px 0}
+details.rawblock{margin:12px 0;border:1px solid var(--line);border-radius:8px;padding:8px 12px;
+background:var(--card)}
+details.rawblock summary{cursor:pointer;color:var(--muted);font-size:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 20px;font-size:13px;color:var(--muted)}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.chip.hot{border-color:var(--accent);color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:16px}
+.card .bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0 4px}
+.card .bar i{display:block;height:100%;background:var(--accent)}
+.card .n{font-size:12px;color:var(--muted)}
+#q{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);
+color:var(--fg);font-size:14px}
+#results{margin-top:10px}
+#results .hit{padding:8px 10px;border-bottom:1px solid var(--line)}
+.tt{font-size:13px;color:var(--muted)}
+.btn{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:8px;
+padding:5px 10px;font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;color:var(--muted);font-size:13px}
+.qz{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.qz .opt{display:block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:6px 0;
+cursor:pointer}
+.qz .opt.ok{background:#dcfce7;border-color:#16a34a}
+.qz .opt.no{background:#fee2e2;border-color:#dc2626}
+@media (prefers-color-scheme:dark){.qz .opt.ok{background:#14351f}.qz .opt.no{background:#3a1717}}
+.qz .exp{display:none;margin-top:8px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:14px}
+mark{background:var(--hi);color:inherit}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:14px 0}
+figure.fig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+figure.fig img{width:100%;height:210px;object-fit:contain;background:var(--bg);border-radius:6px}
+figure.fig figcaption{font-size:13px;line-height:1.55;margin-top:8px}
+figure.fig .cred{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+@media(max-width:900px){figure.fig img{height:190px}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">消化科國考知識庫<small>逆向命題拆解</small></a>
+<span style="flex:1"></span>
+<button class="btn" onclick="toggleTheme()">☾/☀</button>
+</div></header>
+<div class="wrap"><div class="grid"><nav class="side"><a href="index.html" class="">總覽與命題地圖</a><a href="top100.html" class="on">近五年 100 大考點</a><a href="tables.html" class="">高鑑別度比較表</a><a href="scores.html" class="">分級系統總表</a><a href="quiz.html" class="">自我測驗</a><a href="canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></nav><main><h1 id="近五年消化科-100-大考點111-1-115-2">近五年消化科 100 大考點（111-1 ～ 115-2）</h1>
+<p><strong>產生方式</strong>：以考選部 111-1～115-2 共 5,200 題為語料，篩出 446 題消化科核心題， 依考點群出現次數排序後人工彙整。每一條都在近五年題本中實際出現過。</p>
+<p><strong>題型分布（446 題）</strong>：診斷與鑑別 27%、機轉與病生理 25%、治療與處置 14%、 解剖組織胚胎 9%、檢驗判讀 4%。 → <strong>機轉題與診斷題合計超過一半</strong>，只背結論的讀法會直接失分。</p>
+<p><strong>科目分布</strong>：醫學五（外科）166 題 &gt; 醫學三（內科）100 題 &gt; 醫學二 74 題 &gt; 醫學一 69 題 &gt; 醫學四 31 題 &gt; 醫學六 6 題。 → 二階消化科的主戰場是<strong>外科題本</strong>。</p>
+<hr />
+<h2 id="a.-消化道生理解剖組織胚胎一階主戰場43-題">A. 消化道生理・解剖・組織・胚胎（一階主戰場，43 題）</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>考點</th>
+<th>命題角度</th>
+<th>常見陷阱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>壁細胞：分泌鹽酸與內在因子、嗜酸性、胃底腺上中段</td>
+<td>「哪個細胞分布在胃底腺而非幽門腺」</td>
+<td>幽門腺<strong>沒有</strong>壁細胞</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>主細胞：分泌胃蛋白酶原、<strong>嗜鹼性</strong>、腺體底部</td>
+<td>H&amp;E 染色特徵直接入題</td>
+<td>把主細胞當成嗜酸性</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>胃酸三條刺激路徑：組織胺 H₂（cAMP）、gastrin CCK-B、ACh M₃</td>
+<td>「何者刺激胃酸效果最低」</td>
+<td>忽略組織胺是<strong>放大器</strong>，gastrin/ACh 多經它作用</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>胃酸分泌三期：頭期 30%、<strong>胃期 60%</strong>、腸期 10%</td>
+<td>比例與介質</td>
+<td>誤以為頭期最大</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>Gastrin：胃竇 G 細胞，低 pH 經 somatostatin 負回饋</td>
+<td>萎縮性胃炎 gastrin 代償升高</td>
+<td>把「gastrin 高」直接等同 ZES</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Secretin：十二指腸 S 細胞、酸刺激、<strong>促胰管碳酸氫鹽</strong></td>
+<td>「最主要的直接作用」</td>
+<td>誤答「促進消化酵素分泌」（那是 CCK）</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>CCK：促膽囊收縮、Oddi 括約肌鬆弛、胰酵素分泌</td>
+<td>脂肪餐後的生理反應</td>
+<td>與 secretin 作用對調</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>Brunner 腺位於<strong>十二指腸黏膜下層</strong>，分泌鹼性黏液</td>
+<td>「黏膜層與黏膜下層皆有腺體者」</td>
+<td>誤答食道（食道腺體也在黏膜下但無吸收上皮特徵）</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>大腸特徵：結腸帶、結腸袋、腸脂垂，<strong>無絨毛</strong></td>
+<td>「何者不是大腸特徵」</td>
+<td>把絨毛當大腸特徵</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>三條結腸帶匯聚點＝闌尾根部</td>
+<td>手術中定位闌尾</td>
+<td>誤答迴盲瓣</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>闌尾位置變異：後盲腸位最常見</td>
+<td>「闌尾最不可能在何處」</td>
+<td>忽略位置變異造成非典型表現</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>內臟傳入節段：前腸 T5–9、中腸 T10、後腸 T11–L1</td>
+<td>腹痛定位推理</td>
+<td>把轉移痛當成器官移動</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td>SMA 分支與供應範圍（至橫結腸右 2/3）</td>
+<td>缺血範圍判斷</td>
+<td>忘記脾曲屬分水嶺</td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td>分水嶺區：脾曲（Griffith）、直腸乙狀交界（Sudeck）</td>
+<td>缺血性大腸炎好發處</td>
+<td>誤答升結腸</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td>腹膜後器官（SAD PUCKER）</td>
+<td>「何者是腹膜後器官」</td>
+<td>忘記十二指腸第 2、3 部與胰臟</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td>肝臟雙重血流：門靜脈 75% 血流、動脈供氧各半</td>
+<td>HCC 動脈供血的基礎</td>
+<td>誤以為肝臟主要靠動脈供血</td>
+</tr>
+<tr>
+<td style="text-align: right;">17</td>
+<td>肝小葉分區：Zone 1 富氧、<strong>Zone 3 最缺氧且 CYP450 最多</strong></td>
+<td>中央小葉壞死</td>
+<td>把 Zone 1 當最易受損</td>
+</tr>
+<tr>
+<td style="text-align: right;">18</td>
+<td>肝星狀細胞（Ito）：儲存維生素 A，活化後纖維化</td>
+<td>肝硬化病理機轉</td>
+<td>誤答庫佛氏細胞</td>
+</tr>
+<tr>
+<td style="text-align: right;">19</td>
+<td>主胰管與膽總管共同開口於 <strong>Vater 壺腹</strong></td>
+<td>解剖與膽石性胰臟炎</td>
+<td>誤答十二指腸第一部</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td>膽汁的腸肝循環（末端迴腸重吸收）</td>
+<td>迴腸切除後脂肪吸收不良</td>
+<td>誤以為空腸吸收膽鹽</td>
+</tr>
+<tr>
+<td style="text-align: right;">21</td>
+<td>脂溶性維生素 A/D/E/K 需膽汁協助吸收</td>
+<td>膽汁鬱積的缺乏表現</td>
+<td>把 B12 也算進去</td>
+</tr>
+<tr>
+<td style="text-align: right;">22</td>
+<td>B12 吸收：內在因子 ＋ <strong>末端迴腸</strong></td>
+<td>胃切除、迴腸切除後貧血</td>
+<td>誤答十二指腸</td>
+</tr>
+<tr>
+<td style="text-align: right;">23</td>
+<td>中腸旋轉 270°、生理性臍疝復位</td>
+<td>腸旋轉不良與臍膨出</td>
+<td>旋轉方向記反</td>
+</tr>
+<tr>
+<td style="text-align: right;">24</td>
+<td>前腸／中腸／後腸的血管與衍生構造</td>
+<td>胚胎題常態</td>
+<td>十二指腸由前中腸交界發育（雙重供血）</td>
+</tr>
+<tr>
+<td style="text-align: right;">25</td>
+<td>分節運動 vs 蠕動的生理功能</td>
+<td>「分節運動的功能」</td>
+<td>誤以為分節運動主要推進食糜（其實是混合）</td>
+</tr>
+<tr>
+<td style="text-align: right;">26</td>
+<td>腸道神經系統：Auerbach（肌間）管蠕動、Meissner（黏膜下）管分泌</td>
+<td>Hirschsprung 缺乏兩者神經節</td>
+<td>兩層對調</td>
+</tr>
+<tr>
+<td style="text-align: right;">27</td>
+<td>唾液澱粉酶與胰澱粉酶、刷狀緣雙醣酶（麥芽糖酶等）</td>
+<td>醣類消化路徑</td>
+<td>誤把麥芽糖水解歸給澱粉酶</td>
+</tr>
+<tr>
+<td style="text-align: right;">28</td>
+<td>胰脂酶需 colipase 與膽鹽；胃脂酶不需</td>
+<td>「何種脂酶需膽汁協助」</td>
+<td>忽略 colipase 角色</td>
+</tr>
+<tr>
+<td style="text-align: right;">29</td>
+<td>胰臟腺泡細胞兼具外分泌與類內分泌功能</td>
+<td>組織學題</td>
+<td>誤答肝細胞</td>
+</tr>
+<tr>
+<td style="text-align: right;">30</td>
+<td>胰臟酵素以酵素原分泌，由腸激酶活化 trypsinogen</td>
+<td>胰臟炎自我消化機轉</td>
+<td>誤以為胰臟內就已活化</td>
+</tr>
+</tbody>
+</table>
+<p>（本節共 43 題，上表列出重複出現者。）</p>
+<hr />
+<h2 id="b.-肝膽105-題最大器官群">B. 肝膽（105 題，最大器官群）</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>考點</th>
+<th>命題角度</th>
+<th>常見陷阱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">31</td>
+<td>HBV 為部分雙股 DNA、具反轉錄酶、cccDNA 難清除</td>
+<td>為何需長期治療</td>
+<td>以為核苷類似物可根治</td>
+</tr>
+<tr>
+<td style="text-align: right;">32</td>
+<td>HBV 可<strong>不經肝硬化直接致癌</strong>（嵌入＋HBx 抑 p53）</td>
+<td>「何種病毒直接致細胞增生」</td>
+<td>把 HCV 也當直接致癌</td>
+</tr>
+<tr>
+<td style="text-align: right;">33</td>
+<td>HCC 分子事件：<strong>TERT 啟動子突變最早最常見</strong>，其次 CTNNB1、TP53</td>
+<td>分子基因變異題</td>
+<td>誤答 KRAS</td>
+</tr>
+<tr>
+<td style="text-align: right;">34</td>
+<td>anti-HBc 是分辨「疫苗 vs 感染」的唯一標記</td>
+<td>血清學判讀</td>
+<td>用 anti-HBs 效價判斷</td>
+</tr>
+<tr>
+<td style="text-align: right;">35</td>
+<td>窗口期只有 anti-HBc IgM 陽性</td>
+<td>血清學組合題</td>
+<td>誤判為未感染</td>
+</tr>
+<tr>
+<td style="text-align: right;">36</td>
+<td>台灣 1984 年新生兒 B 肝疫苗計畫 → 兒童肝癌下降</td>
+<td>本土公衛考點</td>
+<td>記錯年代或誤以為成人計畫</td>
+</tr>
+<tr>
+<td style="text-align: right;">37</td>
+<td>慢性 B 肝治療適應症：肝硬化者不論 ALT 一律治療</td>
+<td>「何者不是治療依據」</td>
+<td>以為 ALT 正常就不用治療</td>
+</tr>
+<tr>
+<td style="text-align: right;">38</td>
+<td>孕婦慢性 B 肝首選 <strong>TDF</strong>；第三孕期給藥降低垂直傳染</td>
+<td>用藥安全</td>
+<td>誤選 entecavir</td>
+</tr>
+<tr>
+<td style="text-align: right;">39</td>
+<td>HCC 影像診斷特殊性：<strong>動脈期強化＋門脈期洗脫可免切片</strong></td>
+<td>診斷流程</td>
+<td>堅持一定要病理</td>
+</tr>
+<tr>
+<td style="text-align: right;">40</td>
+<td>AFP 敏感度僅約 60%</td>
+<td>監測限制</td>
+<td>用 AFP 正常排除 HCC</td>
+</tr>
+<tr>
+<td style="text-align: right;">41</td>
+<td>HCC 監測：高風險者每 6 個月超音波 ± AFP</td>
+<td>篩檢間隔</td>
+<td>誤答每 12 個月</td>
+</tr>
+<tr>
+<td style="text-align: right;">42</td>
+<td><strong>米蘭準則</strong>：單顆≤5 cm 或≤3 顆各≤3 cm、無血管侵犯與肝外轉移</td>
+<td>移植適應症</td>
+<td>用於決定燒灼或切除</td>
+</tr>
+<tr>
+<td style="text-align: right;">43</td>
+<td>BCLC 同時整合腫瘤、肝功能、體能狀態並對應治療</td>
+<td>分期系統比較</td>
+<td>只看腫瘤大小</td>
+</tr>
+<tr>
+<td style="text-align: right;">44</td>
+<td>浸潤型 HCC 常合併<strong>門靜脈腫瘤栓塞</strong></td>
+<td>影像判讀</td>
+<td>與單純血栓混淆</td>
+</tr>
+<tr>
+<td style="text-align: right;">45</td>
+<td>TACE 肝外側支供血最常見為<strong>右下橫膈動脈</strong></td>
+<td>介入治療細節</td>
+<td>誤答胃左動脈</td>
+</tr>
+<tr>
+<td style="text-align: right;">46</td>
+<td>肝切除術前評估：肝功能、ICG、剩餘肝體積、門脈壓</td>
+<td>「何者非必要」</td>
+<td>加入無關檢查當必要</td>
+</tr>
+<tr>
+<td style="text-align: right;">47</td>
+<td>活體肝移植的親屬與法定條件</td>
+<td>醫學倫理法規</td>
+<td>忽略配偶的附加條件</td>
+</tr>
+<tr>
+<td style="text-align: right;">48</td>
+<td>Child-Pugh 五項：膽紅素、白蛋白、INR、腹水、腦病</td>
+<td>「不包含何者」</td>
+<td>誤以為含 creatinine 或轉胺酶</td>
+</tr>
+<tr>
+<td style="text-align: right;">49</td>
+<td>MELD 三項：膽紅素、INR、creatinine</td>
+<td>同上</td>
+<td>誤以為含腹水</td>
+</tr>
+<tr>
+<td style="text-align: right;">50</td>
+<td>門脈高壓雙重機轉：肝內 NO 不足 vs 內臟 NO 過多</td>
+<td>機轉題</td>
+<td>兩者方向記反</td>
+</tr>
+<tr>
+<td style="text-align: right;">51</td>
+<td>竇前性門脈高壓（血吸蟲、門靜脈栓塞）<strong>肝功能常正常</strong></td>
+<td>分類題</td>
+<td>以為門脈高壓必有肝功能異常</td>
+</tr>
+<tr>
+<td style="text-align: right;">52</td>
+<td>HVPG ≥10 為 CSPH、≥12 出血風險</td>
+<td>數值題</td>
+<td>記成 ≥5</td>
+</tr>
+<tr>
+<td style="text-align: right;">53</td>
+<td>SAAG ≥1.1 → 門脈高壓性腹水</td>
+<td>腹水鑑別</td>
+<td>沿用舊的滲出／漏出液分類</td>
+</tr>
+<tr>
+<td style="text-align: right;">54</td>
+<td>腹水總蛋白 ≥2.5 且 SAAG ≥1.1 → <strong>心因性</strong></td>
+<td>雙軸判讀</td>
+<td>只看 SAAG</td>
+</tr>
+<tr>
+<td style="text-align: right;">55</td>
+<td>SBP：PMN ≥250、<strong>單一</strong>革蘭氏陰性菌、第三代 cephalosporin</td>
+<td>診斷與治療</td>
+<td>與續發性腹膜炎混淆</td>
+</tr>
+<tr>
+<td style="text-align: right;">56</td>
+<td>SBP 加白蛋白時機：Cr&gt;1、BUN&gt;30、膽紅素&gt;4</td>
+<td>降低 HRS 與死亡率</td>
+<td>一律給或一律不給</td>
+</tr>
+<tr>
+<td style="text-align: right;">57</td>
+<td>急性靜脈曲張出血四件事：血管收縮劑、抗生素、結紮、限制性輸血</td>
+<td>處置題</td>
+<td>輸血目標訂太高</td>
+</tr>
+<tr>
+<td style="text-align: right;">58</td>
+<td>胃靜脈曲張 GOV2／IGV1 用 <strong>cyanoacrylate</strong></td>
+<td>治療差異</td>
+<td>一律用結紮</td>
+</tr>
+<tr>
+<td style="text-align: right;">59</td>
+<td>肝性腦病<strong>不限制蛋白質</strong></td>
+<td>新舊觀念</td>
+<td>沿用舊教科書限蛋白</td>
+</tr>
+<tr>
+<td style="text-align: right;">60</td>
+<td>血氨不能用於診斷或追蹤肝性腦病</td>
+<td>檢驗限制</td>
+<td>以氨值調整治療</td>
+</tr>
+<tr>
+<td style="text-align: right;">61</td>
+<td>肝硬化腹水低血鈉是<strong>稀釋性</strong> → 限水而非補鈉</td>
+<td>電解質處置</td>
+<td>給高張食鹽水</td>
+</tr>
+<tr>
+<td style="text-align: right;">62</td>
+<td>腹水首選 spironolactone（對抗續發性高醛固酮）</td>
+<td>藥物選擇</td>
+<td>先用 furosemide</td>
+</tr>
+<tr>
+<td style="text-align: right;">63</td>
+<td>大量抽腹水每 1 L 補白蛋白 6–8 g</td>
+<td>劑量題</td>
+<td>記成每 1 L 補 1 g</td>
+</tr>
+<tr>
+<td style="text-align: right;">64</td>
+<td>TIPS 改善腹水但<strong>惡化肝性腦病</strong></td>
+<td>併發症</td>
+<td>以為 TIPS 無中樞影響</td>
+</tr>
+<tr>
+<td style="text-align: right;">65</td>
+<td>肝腎症候群：terlipressin ＋ 白蛋白，根治靠移植</td>
+<td>治療</td>
+<td>誤以為利尿劑有效</td>
+</tr>
+<tr>
+<td style="text-align: right;">66</td>
+<td>肝移植禁忌：無法控制的肝外惡性腫瘤、敗血症等</td>
+<td>「何者不適合移植」</td>
+<td>把可控共病當禁忌</td>
+</tr>
+<tr>
+<td style="text-align: right;">67</td>
+<td>黃疸三分類與尿膽紅素／尿膽素原變化</td>
+<td>判讀題</td>
+<td>阻塞性時尿膽素原記成增加</td>
+</tr>
+<tr>
+<td style="text-align: right;">68</td>
+<td>Gilbert（禁食後黃疸、未結合）、Crigler-Najjar II 對 phenobarbital 有反應</td>
+<td>遺傳性黃疸</td>
+<td>I 型與 II 型對調</td>
+</tr>
+<tr>
+<td style="text-align: right;">69</td>
+<td>Dubin-Johnson <strong>肝呈黑色</strong>；Rotor 不黑</td>
+<td>鑑別</td>
+<td>兩者對調</td>
+</tr>
+<tr>
+<td style="text-align: right;">70</td>
+<td>自體免疫肝炎：ANA/ASMA、IgG 升高、界面性肝炎、類固醇有效</td>
+<td>診斷與治療</td>
+<td>與 PBC 的 AMA 混淆</td>
+</tr>
+<tr>
+<td style="text-align: right;">71</td>
+<td>PBC：AMA 陽性、UDCA 第一線；PSC：ANCA、串珠狀膽管、與 UC 相關</td>
+<td>兩者對照</td>
+<td>治療與抗體對調</td>
+</tr>
+<tr>
+<td style="text-align: right;">72</td>
+<td>膽固醇結石機轉：膽固醇過飽和、膽鹽／卵磷脂不足、膽囊排空不良</td>
+<td>「何者錯誤」</td>
+<td>誤以為膽紅素結石機轉相同</td>
+</tr>
+<tr>
+<td style="text-align: right;">73</td>
+<td>急性膽囊炎：Murphy sign、TG18 診斷三要件、<strong>早期腹腔鏡切除</strong></td>
+<td>診斷與時機</td>
+<td>一律延遲手術</td>
+</tr>
+<tr>
+<td style="text-align: right;">74</td>
+<td>急性膽管炎：Charcot triad 敏感度低；Grade III <strong>緊急引流</strong></td>
+<td>處置優先序</td>
+<td>先觀察抗生素反應</td>
+</tr>
+<tr>
+<td style="text-align: right;">75</td>
+<td>Mirizzi 症候群：膽囊頸／膽囊管結石壓迫總肝管</td>
+<td>阻塞性黃疸病因</td>
+<td>誤答總膽管結石</td>
+</tr>
+<tr>
+<td style="text-align: right;">76</td>
+<td>膽道閉鎖：陶土色便＋直接型高膽紅素，<strong>60 天內 Kasai</strong></td>
+<td>小兒膽汁鬱積</td>
+<td>當成生理性黃疸觀察</td>
+</tr>
+<tr>
+<td style="text-align: right;">77</td>
+<td>膽管癌：延遲期漸進性強化、CA19-9；壺腹癌預後最好</td>
+<td>鑑別與預後</td>
+<td>以為三者預後相同</td>
+</tr>
+<tr>
+<td style="text-align: right;">78</td>
+<td>Caroli 病：肝內膽管囊狀擴張、central dot sign、易膽管炎與膽管癌</td>
+<td>少見但近年入題</td>
+<td>與膽總管囊腫混淆</td>
+</tr>
+<tr>
+<td style="text-align: right;">79</td>
+<td>妊娠肝內膽汁鬱積：<strong>膽酸濃度</strong>與胎兒風險最相關</td>
+<td>產科交界題</td>
+<td>用膽紅素或 ALT 判斷風險</td>
+</tr>
+<tr>
+<td style="text-align: right;">80</td>
+<td>細菌性肝膿瘍：多為腸道來源多菌種，Klebsiella 在台灣重要</td>
+<td>本土流行病學</td>
+<td>一律當阿米巴</td>
+</tr>
+<tr>
+<td style="text-align: right;">81</td>
+<td>肝腺瘤與口服避孕藥相關、易出血與惡性轉化；HNF1α 型幾乎不惡性</td>
+<td>良性腫瘤鑑別</td>
+<td>把 FNH 當易出血</td>
+</tr>
+<tr>
+<td style="text-align: right;">82</td>
+<td>FNH 有<strong>中央疤痕</strong>、血管瘤週邊結節狀填充</td>
+<td>影像鑑別</td>
+<td>三者影像特徵互換</td>
+</tr>
+<tr>
+<td style="text-align: right;">83</td>
+<td>MASLD／MASH 新命名與代謝共病</td>
+<td>近年新命名</td>
+<td>仍用 NAFLD 定義作答</td>
+</tr>
+<tr>
+<td style="text-align: right;">84</td>
+<td>酒精性肝病 AST/ALT &gt;2；重症用 Maddrey DF ≥32 評估類固醇</td>
+<td>判讀與治療</td>
+<td>比值方向記反</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="c.-胰臟59-題">C. 胰臟（59 題）</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>考點</th>
+<th>命題角度</th>
+<th>常見陷阱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">85</td>
+<td>急性胰臟炎病因：膽石與酒精為兩大宗；ALT &gt;3 倍指向膽石性</td>
+<td>病因推理</td>
+<td>忽略高三酸甘油酯與高血鈣</td>
+</tr>
+<tr>
+<td style="text-align: right;">86</td>
+<td>膽石性胰臟炎的關鍵治療是<strong>解除膽道阻塞</strong>（合併膽管炎時緊急 ERCP）並在同次住院切膽囊</td>
+<td>「最重要的治療」</td>
+<td>只做支持療法</td>
+</tr>
+<tr>
+<td style="text-align: right;">87</td>
+<td>Ranson 需 <strong>48 小時</strong>才完成；BISAP 24 小時內可算</td>
+<td>時機題</td>
+<td>入院當下用 Ranson</td>
+</tr>
+<tr>
+<td style="text-align: right;">88</td>
+<td>Atlanta 2012：器官衰竭 <strong>&gt;48 小時</strong>為重度</td>
+<td>定義題</td>
+<td>把預測分數當嚴重度定義</td>
+</tr>
+<tr>
+<td style="text-align: right;">89</td>
+<td>amylase／lipase 高低<strong>與嚴重度無關</strong></td>
+<td>檢驗限制</td>
+<td>用酵素值判斷預後</td>
+</tr>
+<tr>
+<td style="text-align: right;">90</td>
+<td>早期積極輸液、早期腸道營養優於禁食</td>
+<td>治療新觀念</td>
+<td>沿用「完全禁食」舊觀念</td>
+</tr>
+<tr>
+<td style="text-align: right;">91</td>
+<td>晚期併發症：假性囊腫、包裹性壞死、感染性壞死、脾靜脈栓塞</td>
+<td>「何者最少見」</td>
+<td>把早期併發症當晚期</td>
+</tr>
+<tr>
+<td style="text-align: right;">92</td>
+<td>低血鈣：脂肪皂化 → 預後不良指標</td>
+<td>機轉題</td>
+<td>誤以為與副甲狀腺有關</td>
+</tr>
+<tr>
+<td style="text-align: right;">93</td>
+<td>慢性胰臟炎：鈣化、脂肪便、糖尿病三聯；併發症含假性囊腫、膽道狹窄、脾靜脈栓塞</td>
+<td>「何者非常見併發症」</td>
+<td>把肝硬化列為併發症</td>
+</tr>
+<tr>
+<td style="text-align: right;">94</td>
+<td>胰臟癌：無痛性進行性黃疸、Courvoisier sign、CA19-9、預後最差</td>
+<td>臨床表現</td>
+<td>誤以為早期就有疼痛</td>
+</tr>
+<tr>
+<td style="text-align: right;">95</td>
+<td>胰臟癌可切除性判斷：血管侵犯程度（borderline resectable 概念）</td>
+<td>手術適應症</td>
+<td>只看腫瘤大小</td>
+</tr>
+<tr>
+<td style="text-align: right;">96</td>
+<td>胰臟神經內分泌腫瘤：insulinoma（Whipple 三徵）、gastrinoma（ZES）、VIPoma（WDHA）</td>
+<td>症候群配對</td>
+<td>三者症狀互換</td>
+</tr>
+<tr>
+<td style="text-align: right;">97</td>
+<td>ZES：多發或不典型潰瘍、腹瀉、secretin 刺激試驗<strong>反常上升</strong></td>
+<td>診斷</td>
+<td>用 secretin 抑制反應判斷</td>
+</tr>
+<tr>
+<td style="text-align: right;">98</td>
+<td>IPMN：主胰管型惡性風險高需手術；分支型依 worrisome features 決定</td>
+<td>囊性病變處置</td>
+<td>一律手術或一律追蹤</td>
+</tr>
+<tr>
+<td style="text-align: right;">99</td>
+<td>漿液性囊腺瘤多為良性（中央疤痕、蜂窩狀），黏液性有惡性潛能</td>
+<td>囊性病變鑑別</td>
+<td>兩者惡性風險對調</td>
+</tr>
+<tr>
+<td style="text-align: right;">100</td>
+<td>自體免疫胰臟炎（IgG4）：臘腸狀胰臟、對類固醇反應好</td>
+<td>少見但可入題</td>
+<td>誤診為胰臟癌直接手術</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="d.-食道胃92-題-併入上表未列者">D. 食道・胃（92 題）— 併入上表未列者</h2>
+<ul>
+<li><strong>GERD</strong>：LA 分級 C/D 才算客觀證據；長期併發症為 Barrett（Prague C&amp;M 描述範圍，不含分化不良）。</li>
+<li><strong>Barrett 食道</strong>：腸化生＋杯狀細胞；分化不良程度決定內視鏡治療。</li>
+<li><strong>食道癌</strong>：台灣以鱗狀細胞癌為主（菸酒檳榔），腺癌好發下段與 GEJ。</li>
+<li><strong>Achalasia</strong>：LES 鬆弛不全＋蠕動消失、鳥嘴狀；Chicago v4.0 分三型，<strong>II 型治療反應最好</strong>。</li>
+<li><strong>食道憩室</strong>：Zenker（咽食道，假性憩室）、中段牽引性、膈上型。</li>
+<li><strong>食道穿孔</strong>：Boerhaave；治療原則為引流、控制感染、修補或支架，<strong>延遲診斷死亡率高</strong>。</li>
+<li><strong>食道裂孔疝氣</strong>：I 型滑動最常見；II 型 paraesophageal 有嵌頓風險，有症狀者需手術。</li>
+<li><strong>胃癌</strong>：腸型（萎縮→腸化生→分化不良）vs 瀰漫型（CDH1、印戒細胞、皮革胃）；D2 淋巴結廓清。</li>
+<li><strong>胃 MALT 淋巴瘤</strong>：早期可單靠除菌治癒（t(11;18) 陰性反應較好）。</li>
+<li><strong>GIST</strong>：KIT（CD117）陽性，治療用 imatinib；風險依大小與有絲分裂數。</li>
+<li><strong>胃切除後</strong>：早期／晚期傾食、輸入袢症候群、鹼性逆流性胃炎、B12 與鐵缺乏、殘胃癌。</li>
+</ul>
+<hr />
+<h2 id="e.-小腸大腸161-題">E. 小腸・大腸（161 題）</h2>
+<ul>
+<li><strong>大腸直腸癌</strong>：篩檢（糞便潛血）、腺瘤—癌序列、APC→KRAS→TP53、右側與左側表現差異。</li>
+<li><strong>息肉追蹤間隔</strong>：絨毛狀、≥10 mm、高度分化不良任一即縮短追蹤。</li>
+<li><strong>遺傳症候群</strong>：Lynch（MMR、右側、子宮內膜癌）、FAP（APC、上千顆）、Peutz-Jeghers（STK11、錯構瘤、黏膜色素斑）。</li>
+<li><strong>IBD</strong>：克隆氏 vs UC 的六大區分；UC 手術適應症（毒性巨結腸、大出血、癌變、藥物無效）。</li>
+<li><strong>感染性腹瀉</strong>：EHEC O157:H7 <strong>禁抗生素與止瀉劑</strong>（HUS 風險）；C. difficile 用口服 vancomycin 或 fidaxomicin。</li>
+<li><strong>寄生蟲</strong>：阿米巴肝膿瘍（果醬樣）、Giardia（脂肪瀉）、Clonorchis（膽管癌）、Ascaris（膽道阻塞）。</li>
+<li><strong>吸收不良定位</strong>：腔內消化 vs 黏膜吸收 vs 淋巴運送；乳糜瀉抗 tTG IgA 與十二指腸切片。</li>
+<li><strong>小腸出血</strong>：血管發育不良（angiodysplasia）為成人常見原因；兒童想 Meckel。</li>
+<li><strong>缺血性大腸炎</strong>：脾曲好發、多為自限性，與急性腸繫膜缺血不同。</li>
+<li><strong>痔瘡與肛裂</strong>：內痔分度決定治療；肛裂好發後正中線。</li>
+</ul>
+<hr />
+<h2 id="f.-急腹症與外科55-題">F. 急腹症與外科（55 題）</h2>
+<ul>
+<li>闌尾炎轉移痛機轉、三條結腸帶定位、腹腔鏡利弊、延遲就醫的併發症。</li>
+<li>小腸阻塞（沾黏＞疝氣＞腫瘤）與絞窄五警訊；水溶性顯影劑的診療角色。</li>
+<li>乙狀結腸扭轉先內視鏡減壓；盲腸扭轉直接手術。</li>
+<li>腸繫膜缺血：pain out of proportion → CTA。</li>
+<li>憩室炎 Hinchey 分級；急性期不做大腸鏡。</li>
+<li>術後腸阻塞用 alvimopan；Ogilvie 用 neostigmine。</li>
+<li>腹內感染源控制後抗生素約 4 天。</li>
+<li>腸壁積氣需合併臨床判讀，不等於一定壞死。</li>
+</ul>
+<hr />
+<h2 id="g.-小兒消化30-題幾乎全在醫學四與醫學五">G. 小兒消化（30 題，幾乎全在醫學四與醫學五）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>疾病</th>
+<th>關鍵辨識</th>
+<th>陷阱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>肥厚性幽門狹窄</td>
+<td>3–6 週、<strong>非膽汁性噴射狀嘔吐</strong>、低血氯低血鉀代謝性鹼中毒</td>
+<td>先手術而未矯正電解質</td>
+</tr>
+<tr>
+<td>腸旋轉不良併中腸扭轉</td>
+<td>新生兒<strong>膽汁性嘔吐</strong>、漩渦徵</td>
+<td>當成餵食不耐觀察</td>
+</tr>
+<tr>
+<td>腸套疊</td>
+<td>6 月–2 歲、草莓果醬便、靶心徵</td>
+<td>直接手術而未先嘗試復位</td>
+</tr>
+<tr>
+<td>先天性巨結腸</td>
+<td>胎便延遲 &gt;48 小時、直腸指診後噴便、無神經節細胞</td>
+<td>只靠鋇劑而未切片</td>
+</tr>
+<tr>
+<td>壞死性腸炎</td>
+<td>早產兒、腸壁積氣</td>
+<td>忽略禁食與抗生素時機</td>
+</tr>
+<tr>
+<td>膽道閉鎖</td>
+<td>陶土色便、直接型高膽紅素、60 天內 Kasai</td>
+<td>誤為母乳性黃疸</td>
+</tr>
+<tr>
+<td>小腸閉鎖</td>
+<td>產前羊水過多、double bubble（十二指腸閉鎖）</td>
+<td>與環狀胰臟混淆</td>
+</tr>
+<tr>
+<td>Meckel 憩室</td>
+<td>兩歲、2 吋、2 呎、2%</td>
+<td>忘記 ⁹⁹ᵐTc 掃描</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="使用建議">使用建議</h2>
+<ol type="1">
+<li><strong>第一輪</strong>：只讀「陷阱」欄，這是最短路徑的失分預防。</li>
+<li><strong>第二輪</strong>：對照各章節的「病理生理｜為什麼」補上機轉。</li>
+<li><strong>第三輪</strong>：用 <code>site/quiz.html</code> 做自我測驗，錯題回到對應章節。</li>
+<li>一階讀者優先 A 段與各章的「一階基礎」；二階讀者優先 D–G 段與各章的「治療策略」。</li>
+</ol>
+<h2>圖譜</h2><p class="tt">以下圖片來自 Wikimedia Commons，授權為 CC0／PD／CC BY／CC BY-SA，已逐張人工確認內容與說明相符。</p><div class="figs"><figure class="fig"><img src="assets/figures/colon-adenoma.jpg" alt="絨毛狀腺瘤大體：表面呈絨毛／花椰菜狀。絨毛成分、≥10 mm、高度分化不良任一出現就要縮短追蹤間隔" loading="lazy"><figcaption>絨毛狀腺瘤大體：表面呈絨毛／花椰菜狀。絨毛成分、≥10 mm、高度分化不良任一出現就要縮短追蹤間隔<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Tubulovillous_Polyp_of_the_Colon_1.jpg" target="_blank" rel="noopener">Tubulovillous Polyp of the Colon 1.jpg</a>｜見來源頁｜Public domain</span></figcaption></figure><figure class="fig"><img src="assets/figures/colorectal-cancer-gross.jpg" alt="剖開的大腸標本（已標註 Polyp／Cancer）：同一段腸子上同時看到息肉與癌，是腺瘤—癌序列最直觀的證據" loading="lazy"><figcaption>剖開的大腸標本（已標註 Polyp／Cancer）：同一段腸子上同時看到息肉與癌，是腺瘤—癌序列最直觀的證據<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Colon_cancer.jpg" target="_blank" rel="noopener">Colon cancer.jpg</a>｜Emmanuelm at English Wikipedia
+
+(Original text: Emmanuelm (t｜CC BY 3.0</span></figcaption></figure><figure class="fig"><img src="assets/figures/crohn-cobblestone.jpg" alt="克隆氏症內視鏡：蛇行潰瘍（serpiginous ulcer），潰瘍之間黏膜相對正常，即跳躍性病灶" loading="lazy"><figcaption>克隆氏症內視鏡：蛇行潰瘍（serpiginous ulcer），潰瘍之間黏膜相對正常，即跳躍性病灶<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:CD_serpiginous_ulcer.jpg" target="_blank" rel="noopener">CD serpiginous ulcer.jpg</a>｜見來源頁｜CC BY-SA 3.0</span></figcaption></figure><figure class="fig"><img src="assets/figures/uc-gross.jpg" alt="潰瘍性結腸炎大體：黏膜呈**連續性**受侵、與正常段界線分明，對比克隆氏症的跳躍性病灶" loading="lazy"><figcaption>潰瘍性結腸炎大體：黏膜呈<b>連續性</b>受侵、與正常段界線分明，對比克隆氏症的跳躍性病灶<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Severe_ulcerative_colitis.jpg" target="_blank" rel="noopener">Severe ulcerative colitis.jpg</a>｜Mikael Häggström, M.D. Author info - Reusing images- Conflic｜CC0</span></figcaption></figure><figure class="fig"><img src="assets/figures/uc-crypt-abscess.jpg" alt="潰瘍性結腸炎組織學：隱窩膿瘍（隱窩腔內聚集嗜中性球），病變侷限於黏膜與黏膜下層" loading="lazy"><figcaption>潰瘍性結腸炎組織學：隱窩膿瘍（隱窩腔內聚集嗜中性球），病變侷限於黏膜與黏膜下層<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Moderate_chronic_active_ulcerative_colitis,_very_high_mag.jpg" target="_blank" rel="noopener">Moderate chronic active ulcerative colitis, very high mag.jp</a>｜CoRus13｜CC BY-SA 4.0</span></figcaption></figure><figure class="fig"><img src="assets/figures/granuloma-crohn.jpg" alt="非乾酪性肉芽腫：上皮樣組織球聚集、中央無乾酪化壞死。是克隆氏症的特徵，但只在約三成病例找得到" loading="lazy"><figcaption>非乾酪性肉芽腫：上皮樣組織球聚集、中央無乾酪化壞死。是克隆氏症的特徵，但只在約三成病例找得到<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:CD_Granuloma.jpg" target="_blank" rel="noopener">CD Granuloma.jpg</a>｜Samir at English Wikipedia｜CC BY-SA 3.0</span></figcaption></figure><figure class="fig"><img src="assets/figures/pancreatitis-ct.jpg" alt="急性胰臟炎 CT（箭頭處）：胰臟腫大、周邊脂肪滲液。注意過早（&lt;72 小時）做 CT 會低估壞死範圍" loading="lazy"><figcaption>急性胰臟炎 CT（箭頭處）：胰臟腫大、周邊脂肪滲液。注意過早（&lt;72 小時）做 CT 會低估壞死範圍<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Pankreatitis_exsudativ_CT_axial.jpg" target="_blank" rel="noopener">Pankreatitis exsudativ CT axial.jpg</a>｜Hellerhoff｜CC BY-SA 3.0</span></figcaption></figure><figure class="fig"><img src="assets/figures/pancreas-histology.jpg" alt="胰臟解剖與組織學：外分泌腺泡與內分泌胰島（Langerhans islets）並存，腺泡細胞是酵素原分泌的來源" loading="lazy"><figcaption>胰臟解剖與組織學：外分泌腺泡與內分泌胰島（Langerhans islets）並存，腺泡細胞是酵素原分泌的來源<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Anatomy_and_histology_of_the_pancreas.png" target="_blank" rel="noopener">Anatomy and histology of the pancreas.png</a>｜Paoli, C.; Carrer, A.｜CC BY 4.0</span></figcaption></figure><figure class="fig"><img src="assets/figures/celiac-villous-atrophy.jpg" alt="乳糜瀉十二指腸切片對照（左正常／右乳糜瀉）：絨毛萎縮、隱窩增生、上皮內淋巴球增加" loading="lazy"><figcaption>乳糜瀉十二指腸切片對照（左正常／右乳糜瀉）：絨毛萎縮、隱窩增生、上皮內淋巴球增加<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Histopathology_of_villous_atrophy_in_celiac_disease.jpg" target="_blank" rel="noopener">Histopathology of villous atrophy in celiac disease.jpg</a>｜GeneFood｜CC BY 4.0</span></figcaption></figure><figure class="fig"><img src="assets/figures/barrett-esophagus.jpg" alt="Barrett 食道組織學（已標註三種上皮）：食道複層鱗狀上皮 → 腸化生上皮 → 胃柱狀上皮的交界" loading="lazy"><figcaption>Barrett 食道組織學（已標註三種上皮）：食道複層鱗狀上皮 → 腸化生上皮 → 胃柱狀上皮的交界<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Histopathology_of_Barrett%27s_esophagus,_annotated.jpg" target="_blank" rel="noopener">Histopathology of Barrett&#x27;s esophagus, annotated.jpg</a>｜Mikael Häggström, M.D. Author info - Reusing images- Conflic｜CC0</span></figcaption></figure><figure class="fig"><img src="assets/figures/barrett-esophagus-2.jpg" alt="Barrett 食道高倍（箭頭指杯狀細胞）：診斷需要看到**腸化生的杯狀細胞**，不是只有柱狀上皮" loading="lazy"><figcaption>Barrett 食道高倍（箭頭指杯狀細胞）：診斷需要看到<b>腸化生的杯狀細胞</b>，不是只有柱狀上皮<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Histopathology_of_goblet_cells_(annotated)_and_foveolar_cells_in_incomplete_Barrett%27s_esophagus.jpg" target="_blank" rel="noopener">Histopathology of goblet cells (annotated) and foveolar cell</a>｜Mikael Häggström, M.D. Author info - Reusing images- Conflic｜CC0</span></figcaption></figure><figure class="fig"><img src="assets/figures/ascaris.jpg" alt="蛔蟲（Ascaris lumbricoides）成蟲：可造成腸阻塞與膽道阻塞，是寄生蟲題的常客" loading="lazy"><figcaption>蛔蟲（Ascaris lumbricoides）成蟲：可造成腸阻塞與膽道阻塞，是寄生蟲題的常客<span class="cred">來源：<a href="https://commons.wikimedia.org/wiki/File:Ascaris_lumbricoides.jpeg" target="_blank" rel="noopener">Ascaris lumbricoides.jpeg</a>｜見來源頁｜Public domain</span></figcaption></figure></div></main></div></div>
+<footer><div class="wrap">題源：考選部考畢試題（公開資料）111-1～115-2｜內容為自撰整理，非官方詳解｜
+最後建置：<span id="bt"></span></div></footer>
+<script>
+(function(){
+ var t=localStorage.getItem('theme'); if(t)document.documentElement.setAttribute('data-theme',t);
+ window.toggleTheme=function(){var c=document.documentElement.getAttribute('data-theme');
+  var n=c==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('theme',n); if(window.mermaid){location.reload();}};
+})();
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('table').forEach(function(t){
+    if(t.parentElement.classList.contains('tablewrap'))return;
+    var w=document.createElement('div');w.className='tablewrap';
+    t.parentNode.insertBefore(w,t);w.appendChild(t);});
+});
+document.getElementById('bt').textContent=new Date().toLocaleDateString('zh-TW');</script>
+<script src="assets/mermaid.min.js"></script><script>mermaid.initialize({{startOnLoad:true,theme:(document.documentElement.getAttribute("data-theme")==="dark"||(!document.documentElement.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme:dark)").matches))?"dark":"neutral",flowchart:{{useMaxWidth:true}}}});</script></body></html>
