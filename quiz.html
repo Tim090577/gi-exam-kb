@@ -1,5 +1,6 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>自我測驗</title><style>
 :root{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;--accent2:#2c6e63;
 --card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
@@ -19,12 +20,26 @@ header.top .wrap{display:flex;gap:16px;align-items:center;height:56px}
 .brand{font-weight:700;letter-spacing:.02em;color:var(--fg)}
 .brand small{color:var(--muted);font-weight:400;margin-left:8px}
 .grid{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
-@media(max-width:900px){.grid{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
 nav.side{position:sticky;top:72px;max-height:calc(100vh - 90px);overflow:auto;font-size:14px;
-padding-right:8px;border-right:1px solid var(--line)}
+padding-right:8px;border-right:1px solid var(--line);transition:transform .2s}
 nav.side a{display:block;padding:5px 8px;border-radius:6px;color:var(--fg)}
 nav.side a:hover{background:var(--card);text-decoration:none}
 nav.side a.on{background:var(--card);color:var(--accent);font-weight:600}
+#menu{display:none}
+/* 手機：目錄改成抽屜。這段必須排在 nav.side 基礎規則之後——
+   同權重下後定義者勝，先前寫在前面導致 position:sticky 蓋掉 static，
+   目錄因此黏住滑不掉並壓在內文上。 */
+@media(max-width:900px){
+ .grid{grid-template-columns:1fr}
+ #menu{display:inline-block}
+ nav.side{position:fixed;top:56px;left:0;bottom:0;width:78%;max-width:300px;z-index:60;
+  background:var(--bg);border-right:1px solid var(--line);padding:12px 8px;overflow:auto;
+  max-height:none;transform:translateX(-102%)}
+ body.navopen nav.side{transform:none;box-shadow:0 0 40px rgba(0,0,0,.35)}
+ body.navopen::after{content:"";position:fixed;inset:56px 0 0 0;background:rgba(0,0,0,.35);z-index:55}
+ h1{font-size:24px} h2{font-size:19px}
+ th,td{padding:6px 8px;font-size:13px}
+}
 nav.side .grp{margin:14px 0 4px;color:var(--muted);font-size:12px;letter-spacing:.08em}
 main{min-width:0;padding-bottom:80px}
 h1{font-size:30px;line-height:1.35;margin:24px 0 6px}
@@ -40,7 +55,15 @@ tbody tr:nth-child(even){background:color-mix(in srgb,var(--card) 60%,transparen
 code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:13px;
 font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
-pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center}
+pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center;
+overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding:12px 8px}
+pre.mermaid svg{max-width:none}
+/* 手機螢幕放不下整張決策樹：維持原尺寸讓它左右滑，比縮到看不清楚好 */
+@media(max-width:900px){
+ pre.mermaid{position:relative}
+ pre.mermaid::after{content:"← 左右滑動看完整流程 →";position:sticky;left:0;display:block;
+  margin-top:6px;font-size:11px;color:var(--muted);text-align:left}
+}
 blockquote{margin:14px 0;padding:10px 14px;background:var(--warnbg);border-left:4px solid var(--warn);
 border-radius:0 8px 8px 0}
 blockquote p{margin:4px 0}
@@ -80,12 +103,13 @@ figure.fig .cred{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
 @media(max-width:900px){figure.fig img{height:190px}}
 </style></head><body>
 <header class="top"><div class="wrap">
+<button class="btn" id="menu" onclick="document.body.classList.toggle('navopen')">☰</button>
 <a class="brand" href="index.html">消化科國考知識庫<small>逆向命題拆解</small></a>
 <span style="flex:1"></span>
 <button class="btn" onclick="toggleTheme()">☾/☀</button>
 </div></header>
-<div class="wrap"><div class="grid"><nav class="side"><a href="index.html" class="">總覽與命題地圖</a><a href="top100.html" class="">近五年 100 大考點</a><a href="tables.html" class="">高鑑別度比較表</a><a href="scores.html" class="">分級系統總表</a><a href="quiz.html" class="on">自我測驗</a><a href="canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></nav><main><h1>自我測驗</h1>
-<p class="tt">共 23 題，全部自撰、對應各章高頻考點。可依章節篩選；作答後顯示解析。</p>
+<div class="wrap"><div class="grid"><nav class="side"><a href="index.html" class="">總覽與命題地圖</a><a href="top100.html" class="">近五年 100 大考點</a><a href="tables.html" class="">高鑑別度比較表</a><a href="scores.html" class="">分級系統總表</a><a href="quiz.html" class="on">自我測驗</a><a href="canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a><div class="grp">肝</div><a class="" href="ch/jaundice-hyperbilirubinemia.html">黃疸與高膽紅素血症（含酒精性肝病、胰臟癌的無痛性黃疸）</a></nav><main><h1>自我測驗</h1>
+<p class="tt">共 28 題，全部自撰、對應各章高頻考點。可依章節篩選；作答後顯示解析。</p>
 <p><select id="f" class="btn"></select> <button class="btn" onclick="shuffleQ()">重新出題</button>
 <span id="score" class="tt"></span></p><div id="list"></div></main></div></div>
 <footer><div class="wrap">題源：考選部考畢試題（公開資料）111-1～115-2｜內容為自撰整理，非官方詳解｜
@@ -102,6 +126,18 @@ document.addEventListener('DOMContentLoaded',function(){
     if(t.parentElement.classList.contains('tablewrap'))return;
     var w=document.createElement('div');w.className='tablewrap';
     t.parentNode.insertBefore(w,t);w.appendChild(t);});
+  // 圖比螢幕寬時先捲到中間，否則手機一開始只看到空白邊
+  var centerDiagrams=function(){
+    document.querySelectorAll('pre.mermaid').forEach(function(m){
+      if(m.scrollWidth>m.clientWidth) m.scrollLeft=(m.scrollWidth-m.clientWidth)/2;});};
+  setTimeout(centerDiagrams,1200); setTimeout(centerDiagrams,3000);
+  // 點目錄連結或點遮罩後收起抽屜
+  document.querySelectorAll('nav.side a').forEach(function(a){
+    a.addEventListener('click',function(){document.body.classList.remove('navopen');});});
+  document.addEventListener('click',function(e){
+    if(document.body.classList.contains('navopen')&&
+       !e.target.closest('nav.side')&&e.target.id!=='menu'){
+      document.body.classList.remove('navopen');}});
 });
 document.getElementById('bt').textContent=new Date().toLocaleDateString('zh-TW');</script>
 <script>

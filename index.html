@@ -55,7 +55,15 @@ tbody tr:nth-child(even){background:color-mix(in srgb,var(--card) 60%,transparen
 code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:13px;
 font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
-pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center}
+pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center;
+overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding:12px 8px}
+pre.mermaid svg{max-width:none}
+/* 手機螢幕放不下整張決策樹：維持原尺寸讓它左右滑，比縮到看不清楚好 */
+@media(max-width:900px){
+ pre.mermaid{position:relative}
+ pre.mermaid::after{content:"← 左右滑動看完整流程 →";position:sticky;left:0;display:block;
+  margin-top:6px;font-size:11px;color:var(--muted);text-align:left}
+}
 blockquote{margin:14px 0;padding:10px 14px;background:var(--warnbg);border-left:4px solid var(--warn);
 border-radius:0 8px 8px 0}
 blockquote p{margin:4px 0}
@@ -100,11 +108,11 @@ figure.fig .cred{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
 <span style="flex:1"></span>
 <button class="btn" onclick="toggleTheme()">☾/☀</button>
 </div></header>
-<div class="wrap"><div class="grid"><nav class="side"><a href="index.html" class="on">總覽與命題地圖</a><a href="top100.html" class="">近五年 100 大考點</a><a href="tables.html" class="">高鑑別度比較表</a><a href="scores.html" class="">分級系統總表</a><a href="quiz.html" class="">自我測驗</a><a href="canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></nav><main><h1>消化科國考知識庫</h1>
+<div class="wrap"><div class="grid"><nav class="side"><a href="index.html" class="on">總覽與命題地圖</a><a href="top100.html" class="">近五年 100 大考點</a><a href="tables.html" class="">高鑑別度比較表</a><a href="scores.html" class="">分級系統總表</a><a href="quiz.html" class="">自我測驗</a><a href="canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a><div class="grp">肝</div><a class="" href="ch/jaundice-hyperbilirubinemia.html">黃疸與高膽紅素血症（含酒精性肝病、胰臟癌的無痛性黃疸）</a></nav><main><h1>消化科國考知識庫</h1>
 <p class="tt">以考選部 111-1～115-2 醫師分階段考試（一階：醫學一、二；二階：醫學三、四、五、六）
 共 5200 題為語料，逆向拆解命題邏輯後依出題頻率排序。</p>
 <p><input id="q" placeholder="搜尋疾病、藥物、分級系統、考點關鍵字…"><div id="results"></div></p>
-<h2>章節（依近五年出題頻率排序）</h2><div class="cards"><div class="card"><h3><a href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a></h3><div class="n">肝｜近五年 29 題</div><div class="bar"><i style="width:52%"></i></div><div class="n">台灣消化科命題的主軸；一階考病毒致癌機轉，二階考分期與治療決策，是整個知識庫的橋樑示範</div></div><div class="card"><h3><a href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a></h3><div class="n">肝｜近五年 36 題</div><div class="bar"><i style="width:65%"></i></div><div class="n">一個機轉（內臟血管擴張）串起全部併發症，是二階最會出「下一步處置」的章節</div></div><div class="card"><h3><a href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a></h3><div class="n">胃｜近五年 38 題</div><div class="bar"><i style="width:69%"></i></div><div class="n">一階考胃腺細胞與胃酸調控，二階考根除療法與併發症手術，是最典型的「同一主題兩階段各考一半」</div></div><div class="card"><h3><a href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></h3><div class="n">腹膜腹壁｜近五年 55 題</div><div class="bar"><i style="width:100%"></i></div><div class="n">二階醫學五的最大得分區；命題核心是「什麼時候要開刀、什麼時候還能等」</div></div></div>
+<h2>章節（依近五年出題頻率排序）</h2><div class="cards"><div class="card"><h3><a href="ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a></h3><div class="n">肝｜近五年 29 題</div><div class="bar"><i style="width:52%"></i></div><div class="n">台灣消化科命題的主軸；一階考病毒致癌機轉，二階考分期與治療決策，是整個知識庫的橋樑示範</div></div><div class="card"><h3><a href="ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a></h3><div class="n">肝｜近五年 36 題</div><div class="bar"><i style="width:65%"></i></div><div class="n">一個機轉（內臟血管擴張）串起全部併發症，是二階最會出「下一步處置」的章節</div></div><div class="card"><h3><a href="ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a></h3><div class="n">胃｜近五年 38 題</div><div class="bar"><i style="width:69%"></i></div><div class="n">一階考胃腺細胞與胃酸調控，二階考根除療法與併發症手術，是最典型的「同一主題兩階段各考一半」</div></div><div class="card"><h3><a href="ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a></h3><div class="n">腹膜腹壁｜近五年 55 題</div><div class="bar"><i style="width:100%"></i></div><div class="n">二階醫學五的最大得分區；命題核心是「什麼時候要開刀、什麼時候還能等」</div></div><div class="card"><h3><a href="ch/jaundice-hyperbilirubinemia.html">黃疸與高膽紅素血症（含酒精性肝病、胰臟癌的無痛性黃疸）</a></h3><div class="n">肝｜近五年 22 題</div><div class="bar"><i style="width:40%"></i></div><div class="n">一條「間接還是直接」的岔路，把整個肝膽胰的鑑別診斷全部串起來</div></div></div>
 <h2>怎麼用這個知識庫</h2>
 <ol>
 <li>先看每章「一句話定位」與「高頻考點與陷阱」，這是最短路徑。</li>
@@ -126,6 +134,11 @@ document.addEventListener('DOMContentLoaded',function(){
     if(t.parentElement.classList.contains('tablewrap'))return;
     var w=document.createElement('div');w.className='tablewrap';
     t.parentNode.insertBefore(w,t);w.appendChild(t);});
+  // 圖比螢幕寬時先捲到中間，否則手機一開始只看到空白邊
+  var centerDiagrams=function(){
+    document.querySelectorAll('pre.mermaid').forEach(function(m){
+      if(m.scrollWidth>m.clientWidth) m.scrollLeft=(m.scrollWidth-m.clientWidth)/2;});};
+  setTimeout(centerDiagrams,1200); setTimeout(centerDiagrams,3000);
   // 點目錄連結或點遮罩後收起抽屜
   document.querySelectorAll('nav.side a').forEach(function(a){
     a.addEventListener('click',function(){document.body.classList.remove('navopen');});});

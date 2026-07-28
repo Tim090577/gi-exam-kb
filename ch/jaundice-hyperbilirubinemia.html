@@ -1,0 +1,1160 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>黃疸與高膽紅素血症（含酒精性肝病、胰臟癌的無痛性黃疸）｜消化科國考知識庫</title><style>
+:root{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;--accent2:#2c6e63;
+--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;
+--accent:#d9a066;--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}}
+:root[data-theme=dark]{--bg:#15171a;--fg:#e6e4e0;--muted:#9aa1a9;--line:#2c2f34;--accent:#d9a066;
+--accent2:#6fbcae;--card:#1c1f23;--warn:#f0b429;--warnbg:#2a2113;--hi:#3b3520}
+:root[data-theme=light]{--bg:#fbfaf7;--fg:#1f2328;--muted:#6b7280;--line:#e5e2dc;--accent:#8a5a2b;
+--accent2:#2c6e63;--card:#fff;--warn:#b45309;--warnbg:#fff7ed;--hi:#fef9c3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.75 -apple-system,BlinkMacSystemFont,
+"PingFang TC","Noto Sans TC","Helvetica Neue",sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;height:56px}
+.brand{font-weight:700;letter-spacing:.02em;color:var(--fg)}
+.brand small{color:var(--muted);font-weight:400;margin-left:8px}
+.grid{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+nav.side{position:sticky;top:72px;max-height:calc(100vh - 90px);overflow:auto;font-size:14px;
+padding-right:8px;border-right:1px solid var(--line);transition:transform .2s}
+nav.side a{display:block;padding:5px 8px;border-radius:6px;color:var(--fg)}
+nav.side a:hover{background:var(--card);text-decoration:none}
+nav.side a.on{background:var(--card);color:var(--accent);font-weight:600}
+#menu{display:none}
+/* 手機：目錄改成抽屜。這段必須排在 nav.side 基礎規則之後——
+   同權重下後定義者勝，先前寫在前面導致 position:sticky 蓋掉 static，
+   目錄因此黏住滑不掉並壓在內文上。 */
+@media(max-width:900px){
+ .grid{grid-template-columns:1fr}
+ #menu{display:inline-block}
+ nav.side{position:fixed;top:56px;left:0;bottom:0;width:78%;max-width:300px;z-index:60;
+  background:var(--bg);border-right:1px solid var(--line);padding:12px 8px;overflow:auto;
+  max-height:none;transform:translateX(-102%)}
+ body.navopen nav.side{transform:none;box-shadow:0 0 40px rgba(0,0,0,.35)}
+ body.navopen::after{content:"";position:fixed;inset:56px 0 0 0;background:rgba(0,0,0,.35);z-index:55}
+ h1{font-size:24px} h2{font-size:19px}
+ th,td{padding:6px 8px;font-size:13px}
+}
+nav.side .grp{margin:14px 0 4px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+main{min-width:0;padding-bottom:80px}
+h1{font-size:30px;line-height:1.35;margin:24px 0 6px}
+h2{font-size:21px;margin:38px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+h3{font-size:17px;margin:24px 0 6px;color:var(--accent)}
+h4{font-size:15px;margin:18px 0 4px;color:var(--muted)}
+p,li{overflow-wrap:break-word}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--card);font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--card) 60%,transparent)}
+code{background:var(--card);padding:1px 5px;border-radius:4px;font-size:13px;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto}
+pre.mermaid{background:transparent;border:1px dashed var(--line);text-align:center;
+overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding:12px 8px}
+pre.mermaid svg{max-width:none}
+/* 手機螢幕放不下整張決策樹：維持原尺寸讓它左右滑，比縮到看不清楚好 */
+@media(max-width:900px){
+ pre.mermaid{position:relative}
+ pre.mermaid::after{content:"← 左右滑動看完整流程 →";position:sticky;left:0;display:block;
+  margin-top:6px;font-size:11px;color:var(--muted);text-align:left}
+}
+blockquote{margin:14px 0;padding:10px 14px;background:var(--warnbg);border-left:4px solid var(--warn);
+border-radius:0 8px 8px 0}
+blockquote p{margin:4px 0}
+details.rawblock{margin:12px 0;border:1px solid var(--line);border-radius:8px;padding:8px 12px;
+background:var(--card)}
+details.rawblock summary{cursor:pointer;color:var(--muted);font-size:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 20px;font-size:13px;color:var(--muted)}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.chip.hot{border-color:var(--accent);color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:16px}
+.card .bar{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0 4px}
+.card .bar i{display:block;height:100%;background:var(--accent)}
+.card .n{font-size:12px;color:var(--muted)}
+#q{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);
+color:var(--fg);font-size:14px}
+#results{margin-top:10px}
+#results .hit{padding:8px 10px;border-bottom:1px solid var(--line)}
+.tt{font-size:13px;color:var(--muted)}
+.btn{background:var(--card);border:1px solid var(--line);color:var(--fg);border-radius:8px;
+padding:5px 10px;font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;color:var(--muted);font-size:13px}
+.qz{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.qz .opt{display:block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:6px 0;
+cursor:pointer}
+.qz .opt.ok{background:#dcfce7;border-color:#16a34a}
+.qz .opt.no{background:#fee2e2;border-color:#dc2626}
+@media (prefers-color-scheme:dark){.qz .opt.ok{background:#14351f}.qz .opt.no{background:#3a1717}}
+.qz .exp{display:none;margin-top:8px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:14px}
+mark{background:var(--hi);color:inherit}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:14px 0}
+figure.fig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+figure.fig img{width:100%;height:210px;object-fit:contain;background:var(--bg);border-radius:6px}
+figure.fig figcaption{font-size:13px;line-height:1.55;margin-top:8px}
+figure.fig .cred{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+@media(max-width:900px){figure.fig img{height:190px}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<button class="btn" id="menu" onclick="document.body.classList.toggle('navopen')">☰</button>
+<a class="brand" href="../index.html">消化科國考知識庫<small>逆向命題拆解</small></a>
+<span style="flex:1"></span>
+<button class="btn" onclick="toggleTheme()">☾/☀</button>
+</div></header>
+<div class="wrap"><div class="grid"><nav class="side"><a href="../index.html" class="">總覽與命題地圖</a><a href="../top100.html" class="">近五年 100 大考點</a><a href="../tables.html" class="">高鑑別度比較表</a><a href="../scores.html" class="">分級系統總表</a><a href="../quiz.html" class="">自我測驗</a><a href="../canvas/index.html">決策畫布</a><div class="grp">肝</div><a class="" href="../ch/hbv-hcc.html">B 型肝炎與肝細胞癌</a><a class="" href="../ch/cirrhosis-portal-hypertension.html">肝硬化與門脈高壓（含腹水、SBP、靜脈曲張、肝性腦病）</a><div class="grp">胃</div><a class="" href="../ch/peptic-ulcer-hpylori.html">消化性潰瘍與幽門螺旋桿菌（含胃酸生理與胃腺組織學）</a><div class="grp">腹膜腹壁</div><a class="" href="../ch/acute-abdomen-obstruction.html">急性腹症與腸阻塞（闌尾炎、腸扭轉、腸繫膜缺血、疝氣、憩室炎）</a><div class="grp">肝</div><a class="on" href="../ch/jaundice-hyperbilirubinemia.html">黃疸與高膽紅素血症（含酒精性肝病、胰臟癌的無痛性黃疸）</a></nav><main><h1>黃疸與高膽紅素血症（含酒精性肝病、胰臟癌的無痛性黃疸）</h1><div class="meta"><span class="chip">器官：肝</span><span class="chip hot">近五年 22 題（一階 0／二階 22）</span><span class="chip">版本 1.0.0｜更新 2026-07-28</span><span class="chip">高頻</span><span class="chip">二階為主</span><span class="chip">演算法型章節</span><span class="chip">中英對照</span></div><p><a class="chip" href="../canvas/jaundice-hyperbilirubinemia.html">▦ 本章決策畫布（決策帶 × 知識層）</a></p><blockquote>
+<p><strong>一句話定位</strong>：近五年 22 題<strong>全部落在二階</strong>。這章的價值不在記憶量， 而在一張決策樹：<strong>先分「間接 vs 直接」，再分「肝細胞型 vs 膽汁鬱積型」， 最後用影像分「膽管擴張 vs 不擴張」</strong>。三個岔路走完，鑑別診斷就只剩兩三個。</p>
+</blockquote>
+<h2 id="定義與分類">1. 定義與分類</h2>
+<ul>
+<li><strong>黃疸（jaundice / icterus）</strong>：膽紅素沉積於組織所致的黃染。 <strong>鞏膜（sclera）比皮膚更早顯現</strong>，總膽紅素約 &gt;2–3 mg/dL 即可看出。</li>
+<li><strong>高膽紅素血症的兩大類</strong>：</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>類型</th>
+<th>英文</th>
+<th>主要升高者</th>
+<th>尿膽紅素</th>
+<th>核心機轉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未結合型</td>
+<td><strong>Unconjugated</strong>（indirect &gt;50%）</td>
+<td>未結合膽紅素</td>
+<td><strong>陰性</strong>（不溶於水、與白蛋白結合、無法過濾）</td>
+<td>產生過多、攝取或結合障礙</td>
+</tr>
+<tr>
+<td>結合型</td>
+<td><strong>Conjugated</strong>（direct &gt;50%）</td>
+<td>結合膽紅素</td>
+<td><strong>陽性</strong></td>
+<td>排泄障礙、膽汁鬱積、膽管阻塞</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>最快的床邊判斷</strong>：驗尿。<strong>尿膽紅素陽性＝結合型</strong>，一步就砍掉一半的鑑別診斷。</p>
+</blockquote>
+<h2 id="流行病學台灣視角">2. 流行病學（台灣視角）</h2>
+<ul>
+<li>阻塞性黃疸在台灣的三大宗：<strong>膽結石、胰臟癌、膽管癌</strong>。</li>
+<li>慢性肝病仍以 <strong>B、C 型肝炎</strong>為主，但 <strong>MASLD 與酒精</strong>占比持續上升。</li>
+<li>Gilbert 症候群盛行率約 3–7%，是「健檢發現膽紅素微幅上升」最常見的良性原因。</li>
+<li>新生兒黃疸中，<strong>膽道閉鎖（biliary atresia）</strong>雖罕見，但錯過 60 天黃金期後果嚴重。</li>
+</ul>
+<h2 id="病理生理為什麼膽紅素會卡在不同地方">3. 病理生理｜<strong>為什麼膽紅素會卡在不同地方</strong></h2>
+<p>膽紅素代謝有三個關卡，<strong>卡在哪一關，就決定驗出來是哪一型</strong>：</p>
+<pre class="mermaid">flowchart TD
+  A["血基質 Heme<br/>（老化紅血球）"] --> B["膽綠素 Biliverdin"]
+  B --> C["未結合膽紅素<br/>Unconjugated bilirubin<br/>脂溶性・與白蛋白結合"]
+  C --> D["① 肝細胞攝取<br/>Hepatic uptake（OATP）"]
+  D --> E["② 結合作用 Conjugation<br/>UGT1A1 → 雙葡萄糖醛酸酯"]
+  E --> F["③ 排入膽小管<br/>Canalicular excretion（MRP2）"]
+  F --> G["腸道細菌 → 尿膽素原<br/>Urobilinogen"]
+  G --> H["糞便 糞膽素<br/>Stercobilin（糞便顏色來源）"]
+  G --> I["腸肝循環 → 少量入尿<br/>Enterohepatic circulation"]
+
+  C -.->|"產生過多 Overproduction<br/>溶血 Hemolysis"| X1["未結合型上升"]
+  D -.->|"攝取障礙<br/>某些藥物"| X1
+  E -.->|"UGT1A1 活性下降<br/>Gilbert / Crigler-Najjar"| X1
+  F -.->|"排泄障礙<br/>Dubin-Johnson / Rotor"| X2["結合型上升<br/>但肝功能其他項正常"]
+  F -.->|"膽汁鬱積 Cholestasis<br/>膽管阻塞 Obstruction"| X3["結合型上升<br/>ALP・GGT 顯著上升"]</pre>
+<h3 id="三個為什麼">三個「為什麼」</h3>
+<ul>
+<li><strong>為什麼阻塞性黃疸的糞便是灰白色？</strong> 膽紅素進不了腸道 → 腸菌無法轉成糞膽素 → 失去顏色來源。同理<strong>尿膽素原減少甚至消失</strong>。</li>
+<li><strong>為什麼溶血性黃疸的尿膽紅素是陰性？</strong> 未結合膽紅素<strong>脂溶性且緊密結合白蛋白</strong>，腎絲球濾不過去。所以「黃疸但尿色不深」要想溶血。</li>
+<li><strong>為什麼 Gilbert 在禁食、感染、壓力時才發作？</strong> UGT1A1 活性只剩約三成，平時夠用；禁食會減少 UDP-葡萄糖醛酸供應並增加膽紅素產生， 超過餘裕就顯現。<strong>這是良性的，不需治療。</strong></li>
+</ul>
+<h2 id="一階基礎組織學生化生理">4. 一階基礎：組織學・生化・生理</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>一階知識點</th>
+<th>內容</th>
+<th>二階怎麼用到</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UGT1A1</strong></td>
+<td>肝細胞內質網的葡萄糖醛酸轉移酶</td>
+<td>Gilbert（活性↓）、Crigler-Najjar（I 型全缺、II 型部分）</td>
+</tr>
+<tr>
+<td><strong>MRP2 / cMOAT</strong></td>
+<td>膽小管側的主動輸出幫浦</td>
+<td>Dubin-Johnson（排出缺陷、肝呈黑色）</td>
+</tr>
+<tr>
+<td>膽紅素與白蛋白結合</td>
+<td>未結合型脂溶、需載體</td>
+<td>新生兒核黃疸（kernicterus）的基礎；某些藥物競爭結合位</td>
+</tr>
+<tr>
+<td>腸肝循環</td>
+<td>尿膽素原部分再吸收</td>
+<td>糞便與尿液顏色的判讀</td>
+</tr>
+<tr>
+<td><strong>ALP 的來源</strong></td>
+<td>肝（膽小管膜）、骨、胎盤、腸</td>
+<td>ALP 單獨上升要分肝源或骨源 → 驗 <strong>GGT</strong></td>
+</tr>
+<tr>
+<td><strong>GGT</strong></td>
+<td>膽管上皮，酒精與藥物可誘導</td>
+<td>確認 ALP 是肝源；酒精性肝病常明顯上升</td>
+</tr>
+<tr>
+<td>AST 的位置</td>
+<td>細胞質＋<strong>粒線體</strong></td>
+<td>酒精傷粒線體 → <strong>AST/ALT &gt;2</strong></td>
+</tr>
+<tr>
+<td>維生素 K 依賴凝血因子</td>
+<td>II、VII、IX、X</td>
+<td>膽汁鬱積 → 脂溶性維生素吸收差 → PT 延長，<strong>打維生素 K 可矯正</strong>（肝細胞衰竭則不能）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="主流程圖高膽紅素血症的診斷路徑中英對照">5. 主流程圖：高膽紅素血症的診斷路徑（中英對照）</h2>
+<p>整條路徑拆成三張圖，對應三個岔路。<strong>手機上一次看一張，比一次塞完整棵樹好讀。</strong></p>
+<h3 id="岔路①-先分間接還是直接">岔路① 先分間接還是直接</h3>
+<pre class="mermaid">flowchart TD
+  S["血清膽紅素上升<br/>Elevated serum bilirubin"] --> Q1{"何者 >50%？<br/>Indirect vs direct"}
+  Q1 -->|"間接為主<br/>Unconjugated"| U["未結合型<br/>→ 走岔路②"]
+  Q1 -->|"直接為主<br/>Conjugated"| C["結合型<br/>→ 走岔路③"]
+  Q1 -.->|"床邊最快：驗尿<br/>Urine bilirubin"| T["陰性 → 未結合<br/>陽性 → 結合"]</pre>
+<h3 id="岔路②-未結合型先問有沒有貧血">岔路② 未結合型：先問有沒有貧血</h3>
+<pre class="mermaid">flowchart TD
+  U["未結合型高膽紅素血症<br/>Unconjugated hyperbilirubinemia"] --> A{"新發或惡化的貧血？<br/>New or worsening anemia?"}
+  A -->|"有 Yes"| B["溶血 Hemolysis<br/>LDH↑・haptoglobin↓<br/>網狀紅血球↑ Reticulocytosis"]
+  A -->|"沒有 No"| C{"門診穩定 or 住院重症？<br/>Stable outpatient vs sick inpatient"}
+  C -->|"穩定 Stable"| D["Gilbert 症候群<br/>禁食 Fasting<br/>藥物 Medications"]
+  C -->|"重症 Sick"| E["心衰竭 HF<br/>敗血症 Sepsis<br/>門體分流 Portosystemic shunt"]</pre>
+<h3 id="岔路③-結合型先看型態再看膽管擴不擴張">岔路③ 結合型：先看型態，再看膽管擴不擴張</h3>
+<pre class="mermaid">flowchart TD
+  C["結合型高膽紅素血症<br/>Conjugated hyperbilirubinemia"] --> L{"其他肝功能檢查<br/>Other liver tests"}
+  L -->|"正常 Normal"| N["敗血症 Sepsis<br/>Rotor 症候群<br/>Dubin-Johnson 症候群"]
+  L -->|"異常 Abnormal"| P{"看型態（比倍數）<br/>Pattern of abnormalities"}
+
+  P -->|"轉胺酶↑ > ALP↑"| H["<b>肝細胞型 Hepatocellular</b>"]
+  P -->|"ALP↑ > 轉胺酶↑"| K["<b>膽汁鬱積型 Cholestatic</b>"]
+
+  H --> H1{"上升幅度 Degree"}
+  H1 -->|">1000 U/L 顯著"| H2["急性病毒性肝炎<br/>缺血性肝炎 Ischemic<br/>藥物毒素 Drug-toxin<br/>自體免疫肝炎<br/>急性膽道阻塞<br/>急性 Budd-Chiari"]
+  H1 -->|"輕至中度 Mild-moderate"| H3["病毒性肝炎・酒精性肝病<br/>MASLD・藥物毒素・肝硬化<br/>自體免疫肝炎・血色素沉著症<br/>α1-antitrypsin 缺乏・Wilson 病"]
+
+  K --> K1["影像 Imaging<br/>超音波 / CT / MRCP"]
+  K1 -->|"膽管擴張 Dilated"| K2["<b>肝外阻塞 Extrahepatic</b><br/>結石・狹窄・息肉<br/>胰臟癌・膽管癌<br/>壺腹癌・淋巴結壓迫"]
+  K1 -->|"膽管正常 Normal"| K3["<b>肝內鬱積 Intrahepatic</b><br/>肝炎・肝硬化・藥物毒素<br/>敗血症・TPN・術後<br/>PBC・PSC・浸潤性病變"]</pre>
+<blockquote>
+<p><strong>這三張圖是本章的骨幹。</strong>只要能自己畫出來，二階的黃疸情境題大多可以直接推到答案。</p>
+</blockquote>
+<h3 id="三個岔路的臨床意義">三個岔路的臨床意義</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>岔路</th>
+<th>問的是什麼</th>
+<th>一句話決斷</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>間接 vs 直接</td>
+<td>卡在「結合前」還是「結合後」</td>
+<td><strong>驗尿膽紅素</strong>最快</td>
+</tr>
+<tr>
+<td>肝細胞型 vs 膽汁鬱積型</td>
+<td>傷的是肝細胞還是膽管</td>
+<td>比較 <strong>AST/ALT 與 ALP</strong> 各自超過上限的<strong>倍數</strong>，不是絕對值</td>
+</tr>
+<tr>
+<td>膽管擴張 vs 不擴張</td>
+<td>阻塞在肝外還是問題在肝內</td>
+<td>擴張 → 找機械性阻塞；不擴張 → 想肝內原因</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>陷阱</strong>：ALP 與轉胺酶要比「<strong>各自超過正常上限幾倍</strong>」（R value 概念）， 直接比較數字大小會判錯型態。</p>
+</blockquote>
+<h2 id="實驗室檢查怎麼讀">6. 實驗室檢查怎麼讀</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>反映什麼</th>
+<th>判讀重點與陷阱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>總膽紅素／直接膽紅素</td>
+<td>代謝關卡位置</td>
+<td>直接 &gt;50% 即走結合型路線</td>
+</tr>
+<tr>
+<td>尿膽紅素 Urine bilirubin</td>
+<td>有無結合型膽紅素</td>
+<td><strong>未結合型一定陰性</strong></td>
+</tr>
+<tr>
+<td>尿膽素原 Urobilinogen</td>
+<td>膽汁是否進得了腸道</td>
+<td>完全阻塞時<strong>減少或消失</strong></td>
+</tr>
+<tr>
+<td>AST / ALT</td>
+<td>肝細胞損傷</td>
+<td><strong>ALT 對肝較專一</strong>；AST 也來自心肌與骨骼肌</td>
+</tr>
+<tr>
+<td><strong>AST/ALT 比值</strong></td>
+<td>病因線索</td>
+<td><strong>&gt;2 高度提示酒精性</strong>；MASLD 多 &lt;1</td>
+</tr>
+<tr>
+<td>ALP</td>
+<td>膽小管膜酵素</td>
+<td>也可來自骨；<strong>用 GGT 確認是否肝源</strong></td>
+</tr>
+<tr>
+<td>GGT</td>
+<td>膽管上皮</td>
+<td>酒精與多種藥物可誘導，<strong>單獨升高特異性低</strong></td>
+</tr>
+<tr>
+<td>白蛋白</td>
+<td>合成功能（半衰期長）</td>
+<td>反映慢性</td>
+</tr>
+<tr>
+<td><strong>PT / INR</strong></td>
+<td>合成功能（半衰期短）</td>
+<td>反映急性；<strong>補維生素 K 後可矯正 → 膽汁鬱積；不可矯正 → 肝細胞衰竭</strong></td>
+</tr>
+<tr>
+<td>CA 19-9</td>
+<td>胰膽腫瘤輔助</td>
+<td><strong>阻塞性黃疸本身就會升高</strong>，不能單獨用來診斷；Lewis 抗原陰性者不表現</td>
+</tr>
+</tbody>
+</table>
+<h2 id="影像判讀順序">7. 影像判讀順序</h2>
+<pre class="mermaid">flowchart LR
+  A["膽汁鬱積型<br/>Cholestatic"] --> B["<b>超音波 Ultrasound</b><br/>第一線：便宜、無輻射<br/>看膽管是否擴張、有無結石"]
+  B -->|"擴張但看不到原因"| C["<b>CT / MRCP</b><br/>找腫瘤、狹窄、壺腹病灶"]
+  B -->|"高度懷疑總膽管結石"| D["<b>EUS 或 MRCP</b><br/>敏感度優於超音波"]
+  C --> E{"需要治療性介入？"}
+  E -->|"是：取石、放支架、取檢體"| F["<b>ERCP</b><br/>侵入性，有胰臟炎與出血風險"]
+  E -->|"否"| G["依病因處理"]</pre>
+<blockquote>
+<p><strong>考點</strong>：超音波對<strong>膽囊結石</strong>敏感度高，但對<strong>總膽管結石</strong>敏感度明顯較低。 <strong>ERCP 現在的定位是「治療」而非單純診斷</strong> —— 純診斷用 MRCP 或 EUS，避免不必要的胰臟炎風險。</p>
+</blockquote>
+<h2 id="鑑別診斷三大類黃疸對照中英對照">8. 鑑別診斷：三大類黃疸對照（中英對照）</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>項目</th>
+<th>溶血性 Hemolytic</th>
+<th>肝細胞性 Hepatocellular</th>
+<th>阻塞性 Obstructive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要膽紅素 Bilirubin</td>
+<td>未結合 Unconjugated</td>
+<td>混合 Mixed</td>
+<td><strong>結合 Conjugated</strong></td>
+</tr>
+<tr>
+<td>尿膽紅素 Urine bilirubin</td>
+<td>陰性 Negative</td>
+<td>陽性 Positive</td>
+<td><strong>強陽性 Strongly positive</strong></td>
+</tr>
+<tr>
+<td>尿膽素原 Urobilinogen</td>
+<td>增加 Increased</td>
+<td>不定 Variable</td>
+<td><strong>減少／消失 Decreased</strong></td>
+</tr>
+<tr>
+<td>糞便顏色 Stool</td>
+<td>正常或深</td>
+<td>不定</td>
+<td><strong>灰白 Clay-colored</strong></td>
+</tr>
+<tr>
+<td>AST / ALT</td>
+<td>正常</td>
+<td><strong>顯著上升</strong></td>
+<td>輕度上升</td>
+</tr>
+<tr>
+<td>ALP / GGT</td>
+<td>正常</td>
+<td>輕度上升</td>
+<td><strong>顯著上升</strong></td>
+</tr>
+<tr>
+<td>搔癢 Pruritus</td>
+<td>無</td>
+<td>少</td>
+<td><strong>明顯</strong></td>
+</tr>
+<tr>
+<td>貧血 Anemia</td>
+<td><strong>有</strong></td>
+<td>不一定</td>
+<td>無（除非腫瘤慢性病貧血）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="遺傳性高膽紅素血症每年都可能出一題">遺傳性高膽紅素血症（每年都可能出一題）</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>疾病</th>
+<th>型態</th>
+<th>缺陷</th>
+<th>關鍵辨識</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gilbert</strong></td>
+<td>未結合</td>
+<td>UGT1A1 活性約降至 30%</td>
+<td>禁食／壓力／感染時黃疸，<strong>無害不需治療</strong></td>
+</tr>
+<tr>
+<td><strong>Crigler-Najjar I</strong></td>
+<td>未結合，極高</td>
+<td>UGT1A1 <strong>完全缺失</strong></td>
+<td>新生兒核黃疸，<strong>對 phenobarbital 無反應</strong>，需換肝</td>
+</tr>
+<tr>
+<td><strong>Crigler-Najjar II</strong></td>
+<td>未結合</td>
+<td>UGT1A1 部分缺失</td>
+<td><strong>對 phenobarbital 有反應</strong></td>
+</tr>
+<tr>
+<td><strong>Dubin-Johnson</strong></td>
+<td>結合</td>
+<td>MRP2 排出缺陷</td>
+<td><strong>肝呈黑色</strong>；尿 coproporphyrin <strong>I</strong> 上升</td>
+</tr>
+<tr>
+<td><strong>Rotor</strong></td>
+<td>結合</td>
+<td>肝細胞儲存／再攝取缺陷</td>
+<td><strong>肝不黑</strong>；總 coproporphyrin 上升</td>
+</tr>
+</tbody>
+</table>
+<h2 id="重點鑑別一酒精性肝病alcohol-associated-liver-disease-ald">9. 重點鑑別一：酒精性肝病（Alcohol-associated liver disease, ALD）</h2>
+<h3 id="疾病譜與診斷">9.1 疾病譜與診斷</h3>
+<p>三個病理階段：<strong>脂肪變性 Steatosis → 酒精性脂肪肝炎 Steatohepatitis → 纖維化／肝硬化</strong>。</p>
+<ul>
+<li><strong>酒精性肝炎是臨床診斷</strong>，不是單靠切片：飲酒史 ＋ 黃疸 ＋ 排除其他病因。</li>
+<li>典型檢驗：<strong>AST/ALT &gt;2</strong>（&gt;3 更специфи）、轉胺酶通常 <strong>&lt;300–500 U/L</strong>、GGT 上升。 &gt; <strong>陷阱</strong>：酒精性肝炎的轉胺酶<strong>很少超過 500</strong>。看到 &gt;1000 要改想病毒、缺血、藥物、自體免疫。</li>
+<li>影像（超音波／CT）主要用來<strong>排除其他診斷</strong>，不是確診工具。</li>
+</ul>
+<h3 id="嚴重度評分與治療決策中英對照流程">9.2 嚴重度評分與治療決策（中英對照流程）</h3>
+<pre class="mermaid">flowchart TD
+  A["疑似重症酒精性肝炎<br/>Suspected severe alcoholic hepatitis"] --> B["計算 Maddrey 判別函數<br/>Modified discriminant function (mDF)<br/>= 4.6 × (PT − 對照PT) + 總膽紅素"]
+  B --> C{"mDF ≥ 32 ?<br/>（或 MELD 偏高）"}
+  C -->|"否 No"| D["戒酒 Abstinence<br/>營養支持 Nutrition<br/>不需類固醇"]
+  C -->|"是 Yes"| E{"有無禁忌症？<br/>Contraindications<br/>活動性感染・消化道出血<br/>腎衰竭・胰臟炎"}
+  E -->|"有 Present"| F["先處理禁忌症<br/>暫不使用類固醇"]
+  E -->|"無 Absent"| G["Prednisolone 40 mg/day<br/>療程 28 天"]
+  G --> H["<b>第 7 天算 Lille score</b>"]
+  H -->|"Lille < 0.45<br/>有反應 Responder"| I["完成 28 天療程"]
+  H -->|"Lille ≥ 0.45<br/>無反應 Non-responder"| J["<b>停用類固醇</b><br/>避免感染風險<br/>評估移植等其他路徑"]
+  D --> K["<b>戒酒是所有階段的核心治療</b><br/>Abstinence is the cornerstone"]
+  I --> K
+  J --> K</pre>
+<p><strong>三個評分的分工</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>評分</th>
+<th>用途</th>
+<th>關鍵點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Maddrey mDF</strong></td>
+<td>決定<strong>要不要</strong>給類固醇</td>
+<td><strong>≥32</strong> 為重症門檻</td>
+</tr>
+<tr>
+<td><strong>Lille score</strong></td>
+<td>決定<strong>要不要停</strong>類固醇</td>
+<td><strong>第 7 天</strong>評估，<strong>≥0.45</strong> 代表無反應</td>
+</tr>
+<tr>
+<td><strong>MELD</strong></td>
+<td>死亡率與移植排序</td>
+<td>與 mDF 互補，近年愈來愈常用</td>
+</tr>
+<tr>
+<td><strong>GAHS</strong></td>
+<td>另一種嚴重度分層</td>
+<td>含年齡、WBC、BUN、PT/INR、膽紅素</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>國考陷阱</strong> 1. 把 mDF ≥32 當成「診斷標準」→ 錯，它是<strong>治療決策</strong>門檻。 2. 忘記第 7 天要重新評估 → 無反應者繼續用類固醇只增加感染。 3. 以為戒酒只對早期有用 → <strong>任何階段戒酒都改善預後</strong>，五年存活差距很大。</p>
+</blockquote>
+<h2 id="重點鑑別二胰臟癌的無痛性黃疸">10. 重點鑑別二：胰臟癌的「無痛性黃疸」</h2>
+<h3 id="為什麼是無痛性">10.1 為什麼是無痛性</h3>
+<p>胰頭腫瘤壓迫總膽管 → 膽汁鬱積，<strong>但沒有結石那種陣發性膽絞痛</strong>。 <strong>Courvoisier 徵象</strong>：可觸及的無痛性腫大膽囊 ＋ 黃疸 → 高度提示惡性阻塞而非結石 （結石反覆發炎使膽囊纖維化、不易脹大）。</p>
+<h3 id="診斷流程中英對照">10.2 診斷流程（中英對照）</h3>
+<pre class="mermaid">flowchart TD
+  A["無痛性進行性黃疸 ± 體重減輕<br/>Painless progressive jaundice"] --> B["<b>超音波 Ultrasound</b><br/>第一線"]
+  B -->|"看到胰臟腫塊<br/>Mass seen"| C["<b>胰臟專用三相 CT</b><br/>Pancreatic-protocol CT<br/>判斷可切除性 Resectability"]
+  B -->|"沒看到腫塊但膽管擴張<br/>No mass but ducts dilated"| D["CT / MRCP / <b>EUS</b>"]
+  D --> C
+  C --> E{"血管侵犯程度<br/>Vascular involvement"}
+  E -->|"未侵犯 Resectable"| F["手術切除<br/>胰頭癌 → Whipple"]
+  E -->|"交界可切除 Borderline"| G["先行全身治療<br/>Neoadjuvant therapy"]
+  E -->|"局部進展／轉移<br/>Locally advanced / metastatic"| H["全身治療 ± 緩解性處置<br/>膽道支架 Biliary stent"]
+  C --> I["需要組織診斷時<br/><b>EUS 導引細針抽吸</b><br/>EUS-FNA"]</pre>
+<p><strong>檢查的取捨</strong></p>
+<table>
+<thead>
+<tr>
+<th>檢查</th>
+<th>優點</th>
+<th>限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>超音波</td>
+<td>第一線、無輻射</td>
+<td>肥胖與腸氣影響；小腫瘤易漏</td>
+</tr>
+<tr>
+<td>胰臟專用 CT</td>
+<td><strong>判斷可切除性最佳</strong></td>
+<td>對 &lt;2 cm 腫瘤敏感度下降</td>
+</tr>
+<tr>
+<td>MRCP</td>
+<td>非侵入、看膽胰管</td>
+<td>無法取檢體</td>
+</tr>
+<tr>
+<td><strong>EUS</strong></td>
+<td>敏感度高、<strong>可同時 FNA 取檢體</strong></td>
+<td>需內視鏡、操作者依賴</td>
+</tr>
+<tr>
+<td>ERCP</td>
+<td><strong>可治療</strong>（支架、取石）</td>
+<td>侵入性；胰臟炎與出血風險</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>考點</strong>：114-2 醫學三 Q17 直接問「胰<strong>頭</strong>癌相對體尾部較常見的症狀」→ <strong>黃疸</strong>。 體尾部腫瘤不壓迫膽管，多以背痛與體重減輕表現，診斷更晚、預後更差。</p>
+</blockquote>
+<h3 id="ipmn近年新增考點">10.3 IPMN（近年新增考點）</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>型別</th>
+<th>惡性風險</th>
+<th>處置原則</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主胰管型 Main-duct IPMN</strong></td>
+<td>高</td>
+<td>傾向手術切除</td>
+</tr>
+<tr>
+<td><strong>分支型 BD-IPMN</strong></td>
+<td>較低</td>
+<td>依「令人擔憂的特徵 worrisome features」與高風險徵象決定追蹤或手術</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>113-1 醫學五 Q37 就考 BD-IPMN 的處置原則。</p>
+</blockquote>
+<h2 id="治療策略總覽">11. 治療策略總覽</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>情境</th>
+<th>處置核心</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>溶血性</td>
+<td>治療溶血本身；黃疸會隨之改善</td>
+</tr>
+<tr>
+<td>Gilbert</td>
+<td><strong>不需治療</strong>，衛教即可</td>
+</tr>
+<tr>
+<td>Crigler-Najjar II</td>
+<td>phenobarbital 誘導 UGT1A1</td>
+</tr>
+<tr>
+<td>急性膽管炎</td>
+<td><strong>緊急膽道引流（ERCP）</strong> ＋ 抗生素（見急腹症章）</td>
+</tr>
+<tr>
+<td>總膽管結石</td>
+<td>ERCP 取石；同次住院處理膽囊</td>
+</tr>
+<tr>
+<td>酒精性肝炎</td>
+<td>戒酒＋營養；mDF ≥32 且無禁忌 → prednisolone，第 7 天 Lille 評估</td>
+</tr>
+<tr>
+<td>膽汁鬱積搔癢</td>
+<td>cholestyramine 為第一線；PBC 用 UDCA</td>
+</tr>
+<tr>
+<td>惡性阻塞</td>
+<td>可切除者手術；不可切除者<strong>膽道支架</strong>緩解</td>
+</tr>
+<tr>
+<td>脂溶性維生素缺乏</td>
+<td>補充 A/D/E/K；<strong>PT 延長先試維生素 K</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="一階-二階橋樑">12. 一階 ↔︎ 二階橋樑</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>一階考點</th>
+<th>機轉</th>
+<th>二階對應</th>
+<th>臨床決策</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UGT1A1 結合膽紅素</td>
+<td>活性下降</td>
+<td>Gilbert、Crigler-Najjar</td>
+<td>分辨良性與需換肝</td>
+</tr>
+<tr>
+<td>未結合型與白蛋白結合、脂溶</td>
+<td>腎絲球濾不過</td>
+<td><strong>尿膽紅素陰性</strong></td>
+<td>一步分流鑑別診斷</td>
+</tr>
+<tr>
+<td>腸菌把膽紅素轉成尿膽素原</td>
+<td>阻塞則無</td>
+<td><strong>灰白便＋尿膽素原消失</strong></td>
+<td>判定完全阻塞</td>
+</tr>
+<tr>
+<td>ALP 位於膽小管膜</td>
+<td>膽汁鬱積誘導其合成</td>
+<td>ALP 上升為主</td>
+<td>走膽汁鬱積路線做影像</td>
+</tr>
+<tr>
+<td>GGT 在膽管上皮、可被酒精誘導</td>
+<td>確認肝源</td>
+<td>ALP↑ 時的佐證</td>
+<td>排除骨源</td>
+</tr>
+<tr>
+<td>AST 有粒線體亞型</td>
+<td>酒精傷粒線體</td>
+<td><strong>AST/ALT &gt;2</strong></td>
+<td>指向酒精性</td>
+</tr>
+<tr>
+<td>維生素 K 依賴凝血因子</td>
+<td>脂溶性吸收需膽汁</td>
+<td>PT 延長</td>
+<td><strong>補 K 可否矯正</strong> 分辨鬱積 vs 衰竭</td>
+</tr>
+<tr>
+<td>膽囊纖維化 vs 可擴張</td>
+<td>慢性發炎</td>
+<td><strong>Courvoisier 徵象</strong></td>
+<td>無痛脹大膽囊 → 想惡性</td>
+</tr>
+</tbody>
+</table>
+<h2 id="高頻考點與陷阱">13. 高頻考點與陷阱</h2>
+<ul>
+<li><strong>考點</strong>：尿膽紅素陰性 → 未結合型 → 想溶血或 Gilbert。</li>
+<li><strong>考點</strong>：型態判定要看「超過上限的倍數」，不是絕對數字。</li>
+<li><strong>考點</strong>：酒精性肝炎轉胺酶很少 &gt;500；&gt;1000 要改想別的。</li>
+<li><strong>考點</strong>：mDF ≥32 決定用類固醇，Lille ≥0.45 決定停藥。</li>
+<li><strong>考點</strong>：Courvoisier 徵象指向惡性阻塞。</li>
+<li><strong>陷阱</strong>：CA 19-9 升高就當胰臟癌 —— <strong>阻塞性黃疸本身就會升高</strong>。</li>
+<li><strong>陷阱</strong>：把 ERCP 當第一線診斷工具（應為 MRCP／EUS）。</li>
+<li><strong>陷阱</strong>：Dubin-Johnson 與 Rotor 對調（記「<strong>黑肝 = Dubin-Johnson</strong>」）。</li>
+<li><strong>陷阱</strong>：新生兒持續黃疸＋灰白便當成母乳性黃疸觀察 → 錯過<strong>膽道閉鎖 60 天黃金期</strong>。</li>
+</ul>
+<h2 id="口訣與記憶法">14. 口訣與記憶法</h2>
+<ul>
+<li><strong>三岔路</strong>：「<strong>先分間直、再分肝膽、最後看擴不擴</strong>」。</li>
+<li><strong>溶血的尿</strong>：「<strong>血黃尿不黃</strong>」（未結合型過不了腎絲球）。</li>
+<li><strong>阻塞三件套</strong>：「<strong>灰便、深尿、癢</strong>」。</li>
+<li><strong>酒精比值</strong>：「<strong>酒 AST 大</strong>」（AST/ALT &gt;2；反過來 ALT 大多想病毒或 MASLD）。</li>
+<li><strong>兩個分數</strong>：「<strong>32 開始吃、7 天看 Lille 停</strong>」。</li>
+<li><strong>黑肝</strong>：<strong>D</strong>ubin-Johnson = <strong>D</strong>ark liver。</li>
+<li><strong>Courvoisier</strong>：「<strong>不痛又脹的膽囊，多半是壞東西</strong>」。</li>
+</ul>
+<h2 id="值得關注的方向">15. 2024–2026 值得關注的方向</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>主題</th>
+<th>內容</th>
+<th>對考試的意義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>早期肝移植治療重症酒精性肝炎</strong></td>
+<td>對類固醇無反應者，選擇性早期移植的存活獲益證據累積，戒酒期限的傳統「6 個月規則」受到挑戰</td>
+<td>「戒酒 6 個月才能移植」不再是絕對答案</td>
+</tr>
+<tr>
+<td><strong>MASLD／MetALD 新命名</strong></td>
+<td>2023 年更名，明確定義代謝與酒精共存族群</td>
+<td>命名題已於 115-2 出現</td>
+</tr>
+<tr>
+<td><strong>非侵入性纖維化評估</strong></td>
+<td>彈性造影與血清標記取代部分切片</td>
+<td>診斷流程的位置改變</td>
+</tr>
+<tr>
+<td><strong>EUS 的角色前移</strong></td>
+<td>敏感度高且可同時取檢體</td>
+<td>「下一步該做什麼」的答案更常是 EUS</td>
+</tr>
+<tr>
+<td><strong>IPMN 監測共識更新</strong></td>
+<td>高風險徵象與追蹤間隔持續調整</td>
+<td>分支型的處置原則</td>
+</tr>
+</tbody>
+</table>
+<h2 id="心智圖">16. 心智圖</h2>
+<pre class="mermaid">mindmap
+  root((黃疸與高膽紅素血症))
+    分流三岔路
+      間接 vs 直接
+        尿膽紅素最快
+      肝細胞型 vs 膽汁鬱積型
+        看倍數不看絕對值
+      膽管擴張 vs 不擴張
+        擴張找機械阻塞
+    未結合型
+      溶血
+      Gilbert 禁食誘發
+      CriglerNajjar I 無反應
+      CriglerNajjar II 有反應
+    結合型_肝功能正常
+      DubinJohnson 黑肝
+      Rotor 不黑
+      敗血症
+    肝細胞型
+      大於1000想病毒缺血藥物
+      酒精很少超過500
+      ASTALT大於2想酒精
+    膽汁鬱積型
+      肝外阻塞
+        結石
+        胰臟癌
+        膽管癌
+        壺腹癌
+      肝內鬱積
+        藥物
+        PBC PSC
+        TPN 敗血症
+    酒精性肝病
+      mDF32給類固醇
+      Lille第7天決定停
+      戒酒是核心
+    胰臟癌
+      無痛性黃疸
+      Courvoisier
+      超音波到CT到EUS
+      CA199會被阻塞灌水</pre>
+<h2 id="歷屆考題對照">17. 歷屆考題對照</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>年度</th>
+<th>階段/科目</th>
+<th>題號</th>
+<th>考點核心</th>
+<th>答案方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>111-2</td>
+<td>二階 醫學三</td>
+<td>21</td>
+<td>胰腺癌<strong>不常見</strong>的症狀</td>
+<td>依腫瘤位置判斷</td>
+</tr>
+<tr>
+<td>112-1</td>
+<td>二階 醫學三</td>
+<td>15</td>
+<td>體重減輕＋右上腹悶＋肝腫大</td>
+<td>由理學檢查推進診斷</td>
+</tr>
+<tr>
+<td>112-1</td>
+<td>二階 醫學三</td>
+<td>17</td>
+<td>Mirizzi 症候群的原發原因</td>
+<td>膽囊頸／膽囊管結石壓迫總肝管</td>
+</tr>
+<tr>
+<td>112-1</td>
+<td>二階 醫學三</td>
+<td>18</td>
+<td>黃疸＋發燒＋腹脹＋反彈痛</td>
+<td>膽管炎與腹膜炎的判斷</td>
+</tr>
+<tr>
+<td>112-1</td>
+<td>二階 醫學四</td>
+<td>11</td>
+<td>嬰兒膽汁滯留何者屬<strong>肝外</strong></td>
+<td>膽道閉鎖</td>
+</tr>
+<tr>
+<td>112-2</td>
+<td>二階 醫學四</td>
+<td>9</td>
+<td>4 週大嬰兒持續黃疸＋灰白便</td>
+<td>膽道閉鎖，60 天內 Kasai</td>
+</tr>
+<tr>
+<td>112-2</td>
+<td>二階 醫學五</td>
+<td>6</td>
+<td>MELD 分數的組成與用途</td>
+<td>膽紅素、INR、creatinine</td>
+</tr>
+<tr>
+<td>112-2</td>
+<td>二階 醫學五</td>
+<td>33</td>
+<td>胰臟癌敘述何者錯誤</td>
+<td>流病、症狀、預後</td>
+</tr>
+<tr>
+<td>113-1</td>
+<td>二階 醫學五</td>
+<td>36</td>
+<td>Charcot triad <strong>不含</strong>何者</td>
+<td>發燒、黃疸、右上腹痛以外者</td>
+</tr>
+<tr>
+<td>113-1</td>
+<td>二階 醫學五</td>
+<td>37</td>
+<td>BD-IPMN 的處置</td>
+<td>依高風險徵象決定</td>
+</tr>
+<tr>
+<td>113-1</td>
+<td>二階 醫學六</td>
+<td>39</td>
+<td>妊娠肝內膽汁鬱積最相關的指標</td>
+<td><strong>血中膽酸濃度</strong></td>
+</tr>
+<tr>
+<td>114-1</td>
+<td>二階 醫學三</td>
+<td>15</td>
+<td>抗結核藥物與 B 肝帶原者</td>
+<td>藥物性肝損傷</td>
+</tr>
+<tr>
+<td>114-1</td>
+<td>二階 醫學三</td>
+<td>23</td>
+<td><strong>非</strong>NAFLD 主要危險因子</td>
+<td>代謝症候群相關者為是</td>
+</tr>
+<tr>
+<td>114-2</td>
+<td>二階 醫學三</td>
+<td>17</td>
+<td>胰<strong>頭</strong>癌較常見的症狀</td>
+<td>黃疸</td>
+</tr>
+<tr>
+<td>114-2</td>
+<td>二階 醫學三</td>
+<td>19</td>
+<td>肥胖糖尿病不飲酒者的脂肪肝</td>
+<td>MASLD 的診斷與處置</td>
+</tr>
+<tr>
+<td>115-2</td>
+<td>二階 醫學三</td>
+<td>57</td>
+<td>MASH 與 MASLD 命名</td>
+<td>2023 年新命名</td>
+</tr>
+</tbody>
+</table>
+<h2 id="影像資源標準圖片來源">18. 影像資源（標準圖片來源）</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>影像</th>
+<th>建議來源</th>
+<th>連結</th>
+<th>授權</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>鞏膜黃染</td>
+<td>見本章圖譜（已內嵌）</td>
+<td>—</td>
+<td>Public domain</td>
+</tr>
+<tr>
+<td>膽管擴張超音波</td>
+<td>Radiopaedia — Biliary dilatation</td>
+<td>https://radiopaedia.org/articles/biliary-dilatation</td>
+<td>CC BY-NC-SA 3.0</td>
+</tr>
+<tr>
+<td>胰頭癌 CT（double duct sign）</td>
+<td>Radiopaedia — Pancreatic ductal adenocarcinoma</td>
+<td>https://radiopaedia.org/articles/pancreatic-ductal-adenocarcinoma</td>
+<td>CC BY-NC-SA 3.0</td>
+</tr>
+<tr>
+<td>MRCP 膽胰管解剖</td>
+<td>Radiopaedia — MRCP</td>
+<td>https://radiopaedia.org/articles/mrcp</td>
+<td>CC BY-NC-SA 3.0</td>
+</tr>
+<tr>
+<td>酒精性脂肪肝組織學</td>
+<td>見肝硬化章圖譜</td>
+<td>—</td>
+<td>CC BY 2.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="自我測驗">19. 自我測驗</h2>
+<details class="rawblock"><summary>測驗題原始碼</summary><pre>Q: 55 歲男性因黃疸就醫。總膽紅素 8.2 mg/dL，直接膽紅素 6.5 mg/dL，AST 95 U/L、ALT 80 U/L、ALP 620 U/L（上限 120）、GGT 480 U/L。下一步最適當的檢查為何？
+A) 立即安排肝穿刺切片
+B) 腹部超音波評估膽管是否擴張
+C) 驗自體免疫抗體後再決定
+D) 直接安排 ERCP 取石
+ans: B
+why: 直接膽紅素為主且 ALP 上升倍數（約 5 倍）遠大於轉胺酶（約 2 倍），屬膽汁鬱積型。此時第一步是影像判斷膽管有無擴張，超音波為第一線。ERCP 是治療性工具，不應作為未定位前的第一步。
+
+Q: 28 歲男性健檢發現總膽紅素 2.4 mg/dL，直接膽紅素 0.3 mg/dL，其餘肝功能、血色素、網狀紅血球均正常。自述考試熬夜或禁食後偶爾眼白偏黃。最可能的診斷與處置為何？
+A) Dubin-Johnson 症候群，需長期追蹤肝功能
+B) Gilbert 症候群，衛教即可，不需治療
+C) 溶血性貧血，需進一步做 Coombs test
+D) 早期原發性膽汁性膽管炎，開始 UDCA
+ans: B
+why: 未結合型為主（直接僅 0.3）、其他肝功能與血液檢查正常、禁食壓力時誘發，是 Gilbert 的典型表現。UGT1A1 活性約降至三成，屬良性且不需治療。Dubin-Johnson 為結合型；無貧血與網狀紅血球上升不支持溶血。
+
+Q: 48 歲男性長期大量飲酒，因黃疸與發燒入院。總膽紅素 12 mg/dL，AST 210 U/L、ALT 85 U/L，PT 較對照延長 9 秒。計算 mDF 約 53。下列處置何者最適當？
+A) 因 AST 未超過 500，可排除酒精性肝炎
+B) 先排除活動性感染等禁忌症，若無則給予 prednisolone，並於第 7 天以 Lille score 評估是否繼續
+C) 立即給予 prednisolone 並固定使用滿 28 天，不需中途評估
+D) mDF ≥32 即可確立酒精性肝炎的診斷
+ans: B
+why: AST/ALT &gt;2 且轉胺酶未超過 500，符合酒精性肝炎的典型型態（A 錯，這正是支持而非排除的依據）。mDF ≥32 是啟動類固醇的門檻而非診斷標準（D 錯）。用藥前須排除感染、消化道出血等禁忌，第 7 天以 Lille score 判斷反應，≥0.45 應停藥（C 錯）。
+
+Q: 關於阻塞性黃疸病人的尿液與糞便變化，下列何者正確？
+A) 尿膽紅素陰性、尿膽素原增加
+B) 尿膽紅素陽性、尿膽素原減少、糞便灰白
+C) 尿膽紅素陰性、糞便顏色加深
+D) 尿膽紅素陽性、尿膽素原增加、糞便正常
+ans: B
+why: 結合型膽紅素水溶性可經腎排出故尿膽紅素陽性；膽汁無法進入腸道，腸菌無法將其轉為尿膽素原，故尿膽素原減少甚至消失，糞便失去糞膽素而呈灰白。
+
+Q: 62 歲男性出現無痛性進行性黃疸與體重減輕，理學檢查可觸及無壓痛的腫大膽囊。下列敘述何者最正確？
+A) 此為 Courvoisier 徵象，較支持惡性膽道阻塞而非結石
+B) 可觸及腫大膽囊代表慢性膽結石反覆發炎
+C) CA 19-9 若升高即可確立胰臟癌診斷
+D) 應直接安排 ERCP 作為診斷的第一步
+ans: A
+why: Courvoisier 徵象指黃疸合併無痛性可觸及的腫大膽囊，提示惡性阻塞；結石反覆發炎會使膽囊纖維化而不易脹大。CA 19-9 在單純阻塞性黃疸即可升高，不能單獨確診。診斷順序應為超音波→胰臟專用 CT，必要時 EUS 取檢體。</pre></details>
+<h2 id="anki-卡片">20. Anki 卡片</h2>
+<details class="rawblock"><summary>Anki 卡片原始碼</summary><pre>黃疸最早在哪裡看得出來？大約幾 mg/dL？  鞏膜（比皮膚更早）；總膽紅素約 &gt;2–3 mg/dL  黃疸
+未結合型高膽紅素血症為何尿膽紅素陰性？ 未結合膽紅素脂溶性且與白蛋白緊密結合，腎絲球無法濾過  黃疸
+高膽紅素血症診斷的三個岔路依序是什麼？ ① 間接 vs 直接 ② 肝細胞型 vs 膽汁鬱積型 ③ 膽管擴張 vs 不擴張    黃疸
+如何判定肝細胞型或膽汁鬱積型？ 比較 AST/ALT 與 ALP 各自超過正常上限的倍數，不是比絕對數值    黃疸
+轉胺酶 &gt;1000 U/L 要優先想哪些病因？ 急性病毒性肝炎、缺血性肝炎、藥物毒素、自體免疫肝炎、急性膽道阻塞、急性 Budd-Chiari 黃疸
+阻塞性黃疸的尿與糞便如何變化？ 尿膽紅素強陽性、尿膽素原減少或消失、糞便呈灰白色    黃疸
+Gilbert 症候群的機轉與處置？  UGT1A1 活性約降至 30%，禁食壓力感染時誘發；良性，不需治療  黃疸
+Crigler-Najjar I 型與 II 型如何區分？   I 型 UGT1A1 完全缺失、對 phenobarbital 無反應、需換肝；II 型部分缺失、對 phenobarbital 有反應    黃疸
+Dubin-Johnson 與 Rotor 如何區分？ Dubin-Johnson 肝呈黑色、尿 coproporphyrin I 上升；Rotor 肝不黑  黃疸
+PT 延長時如何分辨膽汁鬱積與肝細胞衰竭？   給維生素 K 後可矯正為膽汁鬱積（吸收不良）；不可矯正代表合成功能衰竭 黃疸
+ALP 上升時如何確認是肝源？ 驗 GGT；GGT 同時上升支持肝膽來源，可排除骨源  黃疸
+酒精性肝病的轉胺酶特徵？    AST/ALT &gt;2（&gt;3 更特異），且轉胺酶通常 &lt;300–500 U/L，很少超過 500 酒精性肝病
+Maddrey mDF 的公式、切點與用途？  4.6 ×（病人PT − 對照PT）+ 總膽紅素；≥32 為重症，決定是否給類固醇   酒精性肝病
+Lille score 何時算？切點意義？   類固醇治療第 7 天評估；≥0.45 代表無反應，應停用類固醇 酒精性肝病
+使用類固醇治療酒精性肝炎前要排除什麼？ 活動性感染、消化道出血、腎衰竭、急性胰臟炎等禁忌症   酒精性肝病
+酒精性肝病最核心的治療是什麼？ 戒酒；任何階段戒酒都能改善存活 酒精性肝病
+Courvoisier 徵象的內容與意義？   黃疸合併可觸及的無痛性腫大膽囊，提示惡性膽道阻塞而非結石    胰臟癌
+胰頭癌與體尾部胰臟癌的症狀差異？    胰頭癌壓迫總膽管故較常以黃疸表現；體尾部多以背痛與體重減輕表現，診斷更晚    胰臟癌
+胰臟癌的影像順序與各自角色？  超音波第一線 → 胰臟專用三相 CT 判斷可切除性 → 必要時 EUS 取檢體；MRCP 非侵入看管道；ERCP 以治療為主  胰臟癌
+CA 19-9 用於胰臟癌的限制？   阻塞性黃疸本身即可使其升高，不能單獨診斷；Lewis 抗原陰性者不表現 胰臟癌
+主胰管型與分支型 IPMN 的處置差異？    主胰管型惡性風險高傾向手術；分支型依 worrisome features 與高風險徵象決定追蹤或手術 胰臟癌
+妊娠肝內膽汁鬱積症與胎兒風險最相關的指標？   母體血中膽酸（bile acid）濃度 黃疸</pre></details>
+<h2 id="參考資料">21. 參考資料</h2>
+<ol type="1">
+<li>EASL Clinical Practice Guidelines on the management of cholestatic liver diseases（2022）。</li>
+<li>AASLD Practice Guidance: Alcohol-Associated Liver Disease（2019；後續更新）。</li>
+<li>Singal AK, et al. ACG Clinical Guideline: Alcoholic Liver Disease. Am J Gastroenterol 2018.</li>
+<li>Louvet A, et al. The Lille model：類固醇治療反應的早期預測。</li>
+<li>NCCN Clinical Practice Guidelines in Oncology: Pancreatic Adenocarcinoma（最新版）。</li>
+<li>Stern SDC, Cifu AS, Altkorn D. <em>Symptoms to Diagnosis: An Evidence-Based Guide</em>, Chapter 26「Jaundice and Abnormal Liver Enzymes」—— 本章的分流架構參考其臨床演算法， 流程圖與表格均為自行重繪與改寫，未重製原書圖表。</li>
+<li>考選部，111-1～115-2 醫師分階段考試試題與答案（公開資料）。</li>
+</ol>
+</main></div></div>
+<footer><div class="wrap">題源：考選部考畢試題（公開資料）111-1～115-2｜內容為自撰整理，非官方詳解｜
+最後建置：<span id="bt"></span></div></footer>
+<script>
+(function(){
+ var t=localStorage.getItem('theme'); if(t)document.documentElement.setAttribute('data-theme',t);
+ window.toggleTheme=function(){var c=document.documentElement.getAttribute('data-theme');
+  var n=c==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('theme',n); if(window.mermaid){location.reload();}};
+})();
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('table').forEach(function(t){
+    if(t.parentElement.classList.contains('tablewrap'))return;
+    var w=document.createElement('div');w.className='tablewrap';
+    t.parentNode.insertBefore(w,t);w.appendChild(t);});
+  // 圖比螢幕寬時先捲到中間，否則手機一開始只看到空白邊
+  var centerDiagrams=function(){
+    document.querySelectorAll('pre.mermaid').forEach(function(m){
+      if(m.scrollWidth>m.clientWidth) m.scrollLeft=(m.scrollWidth-m.clientWidth)/2;});};
+  setTimeout(centerDiagrams,1200); setTimeout(centerDiagrams,3000);
+  // 點目錄連結或點遮罩後收起抽屜
+  document.querySelectorAll('nav.side a').forEach(function(a){
+    a.addEventListener('click',function(){document.body.classList.remove('navopen');});});
+  document.addEventListener('click',function(e){
+    if(document.body.classList.contains('navopen')&&
+       !e.target.closest('nav.side')&&e.target.id!=='menu'){
+      document.body.classList.remove('navopen');}});
+});
+document.getElementById('bt').textContent=new Date().toLocaleDateString('zh-TW');</script>
+<script src="../assets/mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:true,theme:(document.documentElement.getAttribute("data-theme")==="dark"||(!document.documentElement.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme:dark)").matches))?"dark":"neutral",flowchart:{useMaxWidth:false},htmlLabels:true});</script></body></html>
