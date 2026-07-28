@@ -20,12 +20,26 @@ header.top .wrap{display:flex;gap:16px;align-items:center;height:56px}
 .brand{font-weight:700;letter-spacing:.02em;color:var(--fg)}
 .brand small{color:var(--muted);font-weight:400;margin-left:8px}
 .grid{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
-@media(max-width:900px){.grid{grid-template-columns:1fr}nav.side{position:static;max-height:none}}
 nav.side{position:sticky;top:72px;max-height:calc(100vh - 90px);overflow:auto;font-size:14px;
-padding-right:8px;border-right:1px solid var(--line)}
+padding-right:8px;border-right:1px solid var(--line);transition:transform .2s}
 nav.side a{display:block;padding:5px 8px;border-radius:6px;color:var(--fg)}
 nav.side a:hover{background:var(--card);text-decoration:none}
 nav.side a.on{background:var(--card);color:var(--accent);font-weight:600}
+#menu{display:none}
+/* 手機：目錄改成抽屜。這段必須排在 nav.side 基礎規則之後——
+   同權重下後定義者勝，先前寫在前面導致 position:sticky 蓋掉 static，
+   目錄因此黏住滑不掉並壓在內文上。 */
+@media(max-width:900px){
+ .grid{grid-template-columns:1fr}
+ #menu{display:inline-block}
+ nav.side{position:fixed;top:56px;left:0;bottom:0;width:78%;max-width:300px;z-index:60;
+  background:var(--bg);border-right:1px solid var(--line);padding:12px 8px;overflow:auto;
+  max-height:none;transform:translateX(-102%)}
+ body.navopen nav.side{transform:none;box-shadow:0 0 40px rgba(0,0,0,.35)}
+ body.navopen::after{content:"";position:fixed;inset:56px 0 0 0;background:rgba(0,0,0,.35);z-index:55}
+ h1{font-size:24px} h2{font-size:19px}
+ th,td{padding:6px 8px;font-size:13px}
+}
 nav.side .grp{margin:14px 0 4px;color:var(--muted);font-size:12px;letter-spacing:.08em}
 main{min-width:0;padding-bottom:80px}
 h1{font-size:30px;line-height:1.35;margin:24px 0 6px}
@@ -81,6 +95,7 @@ figure.fig .cred{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
 @media(max-width:900px){figure.fig img{height:190px}}
 </style></head><body>
 <header class="top"><div class="wrap">
+<button class="btn" id="menu" onclick="document.body.classList.toggle('navopen')">☰</button>
 <a class="brand" href="index.html">消化科國考知識庫<small>逆向命題拆解</small></a>
 <span style="flex:1"></span>
 <button class="btn" onclick="toggleTheme()">☾/☀</button>
@@ -783,6 +798,13 @@ document.addEventListener('DOMContentLoaded',function(){
     if(t.parentElement.classList.contains('tablewrap'))return;
     var w=document.createElement('div');w.className='tablewrap';
     t.parentNode.insertBefore(w,t);w.appendChild(t);});
+  // 點目錄連結或點遮罩後收起抽屜
+  document.querySelectorAll('nav.side a').forEach(function(a){
+    a.addEventListener('click',function(){document.body.classList.remove('navopen');});});
+  document.addEventListener('click',function(e){
+    if(document.body.classList.contains('navopen')&&
+       !e.target.closest('nav.side')&&e.target.id!=='menu'){
+      document.body.classList.remove('navopen');}});
 });
 document.getElementById('bt').textContent=new Date().toLocaleDateString('zh-TW');</script>
 <script src="assets/mermaid.min.js"></script><script>mermaid.initialize({{startOnLoad:true,theme:(document.documentElement.getAttribute("data-theme")==="dark"||(!document.documentElement.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme:dark)").matches))?"dark":"neutral",flowchart:{{useMaxWidth:true}}}});</script></body></html>
